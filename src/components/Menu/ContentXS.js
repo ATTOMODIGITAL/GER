@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from "gatsby";
 
-const paths = ["Restaurantes", "El Grupo", "Contacto"];
+const paths = ["Restaurantes", "Grupo", "Contacto"];
 
 const ContentXs = ({ onClick }) => {
   return (
