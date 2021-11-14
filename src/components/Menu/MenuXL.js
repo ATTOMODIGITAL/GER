@@ -51,7 +51,6 @@ const Menu = () => {
         </Link>
 
         <Link
-          partiallyActive={true}
           className="MenuXL__content--navlink"
           activeClassName="MenuXL__content--active"
           to="/contacto"
