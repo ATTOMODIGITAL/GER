@@ -1,53 +1,40 @@
 import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
-import { IoLogoInstagram } from "react-icons/io"
 import { Link } from "gatsby"
 
-const FooterXS = ({ email, tlf, dir1, dir2, ig }) => {
+const FooterXS = () => {
   return (
-    <>
-      <div className="FooterXS--item">
-        <p>{dir1}</p>
-        <p>{dir2}</p>
-        <p>España</p>{" "}
-      </div>
-
-      <div className="FooterXS--item">
-        <p>{tlf}</p>
-        <p>{email}</p>
-      </div>
-
-      <div className="FooterXS--item">
-        <a href={ig} target="_blank" rel="noreferrer">
-          <IoLogoInstagram fontSize="2.3em" color="#47535B" />
-        </a>
-      </div>
-
-      <div className="FooterXS--item__attomo">
-          <p>Powered by</p>
-          <div className="FooterXS--item__attomo--img"
-          >
-            <StaticImage
-              src="../../images/attomo-black.png"
-              alt="Attomo"
-              placeholder="none"
-              style={{
-                zIndex: 1,
-              }}
-            />
-          </div>
+    <div className="FooterXS__container">
+      <div className="FooterXS__container__attomo">
+        <p>Powered by</p>
+        <div className="FooterXS__container__attomo--img">
+          <StaticImage
+            src="../../images/attomo-black.png"
+            alt="Attomo"
+            placeholder="none"
+            style={{
+              zIndex: 1,
+            }}
+          />
         </div>
+      </div>
 
-        <div className="FooterXS--item">
-          <Link to="/aviso-legal" className="FooterXS--item--legal">
-            <p style={{color: "#e3e7e1"}}>Aviso Legal</p>
+      <div className="FooterXS__container__items">
+        <p>
+          <Link to="/aviso-legal" className="FooterXS__container__items--legal">
+            <span style={{marginRight: 20}}>Aviso Legal</span>
           </Link>
-          <Link to="/privacidad" className="FooterXS--item--legal">
-            <p style={{color: "#e3e7e1"}}>Política de privacidad</p>
+          <Link to="/cookies" className="FooterXS__container__items--legal">
+            <span>Política de cookies</span>
           </Link>
-        </div>
-
-    </>
+        </p>
+        <p>
+        <Link to="/privacidad" className="FooterXS__container__items--legal">
+          <span>Política de privacidad</span>
+        </Link>
+        </p>
+      </div>
+    </div>
   )
 }
 

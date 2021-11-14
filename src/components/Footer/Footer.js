@@ -9,13 +9,8 @@ const Footer = () => {
   return (
     <>
       <div className="FooterXS">
-        {/* <FooterXS
-          email={data.email}
-          tlf={data.telefono}
-          dir1={data.direccionLinea1}
-          dir2={data.direccionLinea2}
-          ig={data.igUrl}
-        /> */}
+        <FooterXS
+        />
       </div>
 
       <div className="FooterXL">
