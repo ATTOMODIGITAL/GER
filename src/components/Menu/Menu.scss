@@ -18,11 +18,32 @@
     display: none;
   }
 
+  .MenuXS__header--blankInShadow {
+    position: fixed;
+    z-index: 999999;
+    top: calc($TOP-margin-mobile + 1px);
+    left: 50%;
+    transform: translate(-50%);
+    width: 25%;
+    height: 5px;
+    background-color: rgba(255, 255, 255, 0.926);
+  }
+
+  .MenuXS__header--background {
+    z-index: 99999;
+    position: fixed;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: calc($TOP-margin-mobile + 5px);
+    background-color: #fff;
+  }
+
   .MenuXS {
-    &__header {
+    &__header--bar {
       z-index: 99999;
       position: fixed;
-      top: 0;
+      top: 3px;
       left: 0;
       display: flex;
       flex-direction: row-reverse;
@@ -33,6 +54,8 @@
       background-color: #fff;
       padding: 10px 22px;
       border-bottom: 1px solid #e3e7e1;
+      border-top: 1px solid #e3e7e1;
+      box-shadow: 0px 0px 0px #fff, 0px -2px 5px rgba(45, 45, 45, 0.1);
 
       &__brand {
         height: $HEIGHT-level-1;
@@ -51,7 +74,7 @@
       left: 0;
       width: 100%;
       z-index: 1;
-      overflow-y: auto;
+      //overflow-y: auto;
       background-color: #fff;
       animation: openMenu 0.4s;
 

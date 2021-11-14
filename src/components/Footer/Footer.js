@@ -5,28 +5,7 @@ import FooterXS from "./FooterXS"
 import FooterXL from "./FooterXL"
 import './Footer.scss'
 
-/* const useContact = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      allContentfulContacto {
-        edges {
-          node {
-            email
-            telefono
-            direccionLinea1
-            direccionLinea2
-            igUrl
-          }
-        }
-      }
-    }
-  `)
-
-  return data.allContentfulContacto.edges[0].node
-} */
-
 const Footer = () => {
-  //const data = useContact()
   return (
     <>
       <div className="FooterXS">

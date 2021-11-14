@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
@@ -33,6 +33,7 @@ const MenuXS = () => {
     setTimeout(() => {
       setOpenHam(!openHam)
     }, 100)
+    
   }
 
   const handleLinkClick = pathname => {
@@ -41,26 +42,42 @@ const MenuXS = () => {
       setOpenHam(false)
     }
   }
+
+  useEffect(() => {
+    const htmlNode = document.querySelector("html");
+    if (openHam) {
+      htmlNode.style.overflow = "hidden";
+    } else {
+      htmlNode.style.overflow = null;
+    }
+
+    return () => {
+      htmlNode.style.overflow = null;
+    };
+  }, [openHam]);
+
   return (
     <>
-      <div className="MenuXS__header">
-        <HamburgerMenu
-          isOpen={openHam}
-          menuClicked={() => handleHamClick()}
-          color="#303546"
-          width={27}
-          height={16}
-          strokeWidth={1}
-          animationDuration={0.6}
-          className="MenuXS__header--hamburger"
-        />
-
-      {/*   <Link to="/" className="MenuXS__header__brand">
-          <GatsbyImage image={getImage(data.logo)} alt="Estudio" className="MenuXS__header__brand--logoImg" />
-        </Link> */}
-
-        <div style={{ width: 27, color: "#fff" }}>hj</div>
-      </div>
+      <div className="MenuXS__header--background"></div>
+      <div className="MenuXS__header--blankInShadow"></div>
+        
+        <div className="MenuXS__header--bar">
+          <HamburgerMenu
+            isOpen={openHam}
+            menuClicked={() => handleHamClick()}
+            color="#303546"
+            width={27}
+            height={16}
+            strokeWidth={1}
+            animationDuration={0.6}
+            className="MenuXS__header--hamburger"
+          />
+        {/* <Link to="/" className="MenuXS__header__brand">
+            <GatsbyImage image={getImage(data.logo)} alt="Estudio" className="MenuXS__header__brand--logoImg" />
+          </Link> */}
+          <h1>GER</h1>
+          <div style={{ width: 27, color: "#fff" }}>hj</div>
+        </div>
 
       {openHam && (
         <>

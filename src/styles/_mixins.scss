@@ -1,9 +1,49 @@
-@mixin positionQuadruple {
-  
+@use "src/styles/constants" as *;
+/******************************* MOBILE *******************************/
+
+@mixin basicLayoutXS {
+  margin-top: calc($TOP-margin-mobile + 25px);
 }
 
-@mixin button {
-  
+/******************************* DESKTOP *******************************/
+
+@mixin basicLayoutXL {
+  margin-top: $TOP-margin-level-1;
+  margin-left: $LEFT-margin-level-2;
+  margin-right: $RIGHT-margin;
 }
 
-// to use --> @include button;
+@mixin level-1 {
+  height: $HEIGHT-level-1;
+  > h1 {
+    line-height: 1;
+  }
+}
+
+@mixin level-2-text {
+  margin-top: calc(
+    $TOP-margin-level-2 - ($TOP-margin-level-1 + $HEIGHT-level-1) - 4px
+  );
+  p {
+    margin-bottom: $margin-bottom-paragraphs;
+  }
+}
+
+@mixin level-2-element {
+  margin-top: calc(
+    $TOP-margin-level-2 - ($TOP-margin-level-1 + $HEIGHT-level-1)
+  );
+}
+
+@mixin imgsGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .Proyecto__imgs--item,
+  .Proyecto__imgs--item img {
+    width: 100%;
+    max-height: 85vh;
+    object-fit: contain !important;
+  }
+}
