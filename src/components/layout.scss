@@ -1,0 +1,50 @@
+@use "src/constants" as *;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap');
+
+:root {
+  scroll-behavior: auto !important;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html,
+body {
+  background-color: #fff !important;
+  overflow-x: hidden;
+  font-size: 16px;
+
+  /* remove m in div that gatsby mounts into */
+  > div {
+    margin-top: 0;
+    height: 100%;
+  }
+
+  p {
+    font-weight: 300;
+    font-size: 12px;
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.3rem;
+    color: $c-text;
+  }
+
+  h1 {
+    font-size: 28px;
+    font-weight: 400;
+    font-family: 'Oswald', sans-serif;
+    color: $c-titles;
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 300;
+    font-family: 'Oswald', sans-serif;
+    color: $c-titles;
+  }
+}
