@@ -2,12 +2,12 @@ import * as React from "react"
 import PropTypes from "prop-types"
 
 import Menu from "../components/Menu/Menu"
-import useViewport from "../hooks/useViewport";
+import useViewport from "../hooks/useViewport"
 import "./layout.scss"
-import Footer from "./Footer/Footer";
+import Footer from "./Footer/Footer"
 
 const Layout = ({ children }) => {
-  useViewport();
+  useViewport()
   return (
     <div className="Layout">
       <Menu />
