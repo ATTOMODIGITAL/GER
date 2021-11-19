@@ -3,24 +3,26 @@ import { graphql, useStaticQuery } from "gatsby"
 const UseListRestQuery = () => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulHome {
+      allContentfulRestaurantes {
         edges {
           node {
-            mobileImgs {
-              gatsbyImageData(layout: FULL_WIDTH, placeholder: DOMINANT_COLOR)
+            url
+            nombre
+            zona
+            ordenListado
+            mobileListadoImgs {
+              gatsbyImageData(placeholder: DOMINANT_COLOR, layout: FULL_WIDTH)
             }
-            desktopImgs {
-              gatsbyImageData(layout: FULL_WIDTH, placeholder: DOMINANT_COLOR)
+            desktopListadoImgs {
+              gatsbyImageData(placeholder: DOMINANT_COLOR, layout: FULL_WIDTH)
             }
-            seoTitle
-            seoMetaDescription
           }
         }
       }
     }
   `)
 
-  return data.allContentfulHome.edges[0].node
+  return data.allContentfulRestaurantes.edges[0].node
 }
 
 export default UseListRestQuery
