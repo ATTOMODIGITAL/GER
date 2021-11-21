@@ -3,13 +3,12 @@ import { graphql, useStaticQuery } from "gatsby"
 const UseListRestQuery = () => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulRestaurantes {
+      allContentfulRestaurantes(sort: { fields: ordenListado, order: ASC }) {
         edges {
           node {
             url
             nombre
             zona
-            ordenListado
             mobileListadoImgs {
               gatsbyImageData(placeholder: DOMINANT_COLOR, layout: FULL_WIDTH)
             }
@@ -22,7 +21,7 @@ const UseListRestQuery = () => {
     }
   `)
 
-  return data.allContentfulRestaurantes.edges[0].node
+  return data.allContentfulRestaurantes.edges
 }
 
 export default UseListRestQuery

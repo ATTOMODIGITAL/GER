@@ -53,17 +53,17 @@ body {
     .Layout {
       @include basicLayoutXS;
 
-      /* EL GRUPO */
-      .ElGrupo__titles {
+      /* MAIN */
+      .Main__titles {
         @include level-1;
         text-align: center;
         margin-bottom: 20px;
       }
-      .ElGrupo__text {
+      .Main__text {
         @include mobileSidesMargins;
       }
 
-      .ElGrupo__img {
+      .Main__img {
         @include mobileSidesMargins;
 
         &--img {
@@ -79,14 +79,14 @@ body {
     .Layout {
       @include basicLayoutXL;
 
-      /* EL GRUPO */
-      .ElGrupo__titles {
+      /* MAIN */
+      .Main__titles {
         @include level-1;
       }
-      .ElGrupo__text {
+      .Main__text {
         @include level-2-text;
       }
-      .ElGrupo__img {
+      .Main__img {
         max-height: 65vh;
         width: 100%;
         display: flex;

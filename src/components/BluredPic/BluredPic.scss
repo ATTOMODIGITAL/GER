@@ -1,0 +1,22 @@
+@use "src/styles/constants" as *;
+
+.BluredPic {
+  &--imgSeeMore {
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+  }
+  
+  &--buttonSeeMore {
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 9998;
+  
+    &:hover {
+      color: $c-text;
+    }
+  }
+}

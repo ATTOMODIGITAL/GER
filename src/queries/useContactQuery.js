@@ -12,6 +12,7 @@ const useContactQuery = () => {
               raw
             }
             titulo
+            subtitulo
           }
         }
       }

@@ -17,17 +17,17 @@ const Grupo = () => {
         titleSEO={data.seoTitle}
         description={data.seoMetaDescripcion}
       />
-      <div className="ElGrupo__titles">
+      <div className="Main__titles">
         <h1>{data.titulo}</h1>
         <h6>{data.subtitulo}</h6>
       </div>
 
-      <div className="ElGrupo__text">
+      <div className="Main__text">
         <p>{useRichText(data.texto)}</p>
       </div>
 
-      <div className="ElGrupo__img" >
-        <GatsbyImage image={getImage(data.imagen)} alt="GER" className="ElGrupo__img--img" />
+      <div className="Main__img" >
+        <GatsbyImage image={getImage(data.imagen)} alt="GER" className="Main__img--img" />
       </div>
     </Layout>
   )
