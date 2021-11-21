@@ -40,7 +40,7 @@ const ProjectItem = ({ name, year, slug, imgs }) => {
         </div>
       ) : (
         // ----------------------------------------------------------------- Grid
-        <div className="container mb-5 pb-5">
+        <div className="container mb-2 pb-3">
           <div className="row pb-5">
             <div className="col-11">
               <p className="text-grid">

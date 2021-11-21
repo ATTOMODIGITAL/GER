@@ -1,5 +1,14 @@
 @use "src/styles/utils" as *;
 
+@keyframes hoverImg {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.9;
+  }
+}
+
 .HomeXL {
   display: none;
 }
@@ -23,6 +32,7 @@
     width: 100%;
     
     &__container {
+      cursor: pointer;
 
       &__upperRow {
         height: 35vh;
@@ -36,6 +46,10 @@
 
         &--img {
           width: 50%;
+          &:hover {
+            animation: hoverImg 0.4s;
+            opacity: 0.9;
+          }
         }
       }
 
@@ -53,6 +67,10 @@
           height: 100%;
           &--img {
             height: 100%;
+            &:hover {
+              animation: hoverImg 0.4s;
+              opacity: 0.9;
+            }
           }
         }
 
@@ -71,7 +89,12 @@
           &--img {
             width: 100%;
             height: 100%;
+            &:hover {
+              animation: hoverImg 0.4s;
+              opacity: 0.9;
+            }
           }
+
         }
 
         &--img3 {
@@ -79,6 +102,10 @@
           height: 100%;
           &--img {
             height: 100%;
+          }
+          &:hover {
+            animation: hoverImg 0.4s;
+            opacity: 0.9;
           }
         }
       }
