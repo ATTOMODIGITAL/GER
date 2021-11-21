@@ -1,23 +1,28 @@
 import * as React from "react"
-import { Link } from "gatsby"
 
 import Seo from "../components/seo"
-import "../components/layout.scss"
+import Home from "../components/Home/Home"
+import useHomesQuery from "../queries/useHomesQuery"
 import useViewport from "../hooks/useViewport"
 
 const IndexPage = () => {
+  const data = useHomesQuery()
+
   useViewport()
   return (
-  <div>
-    <Seo
-      title="Home"
-      lang="es"
-      description="page description"
-      meta="metatilte"
-    />
-    <Link to="restaurantes">Start</Link>
-  </div>
+    <>
+      <Seo
+        title="Home"
+        lang="es"
+        titleSEO={data.seoTitle}
+        description={data.seoMetaDescripcion}
+      />
+      <Home
+        imgsMob={data.mobileImgs}
+        imgsDesktop={data.desktopImgs}
+      />
+    </>
   )
-  }
+}
 
 export default IndexPage
