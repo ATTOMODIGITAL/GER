@@ -41,9 +41,9 @@ const Restaurante = props => {
 
       <div className="">
         {size > 880 ? (
-          <p>Large {props.data.contentfulRestaurantes.nombre}</p>
+          <h1>Comming soon... {props.data.contentfulRestaurantes.nombre}</h1>
         ) : (
-          <p>Small {props.data.contentfulRestaurantes.nombre}</p>
+          <h1 style={{ textAlign: "center"}}>Comming soon...  {props.data.contentfulRestaurantes.nombre}</h1>
         )}
       </div>
     </Layout>
