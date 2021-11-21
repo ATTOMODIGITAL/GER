@@ -5,6 +5,11 @@
   margin-top: calc($TOP-margin-mobile + 25px);
 }
 
+@mixin mobileSidesMargins {
+  margin-right: $SIDES-margin-mobile-text;
+  margin-left: $SIDES-margin-mobile-text;
+}
+
 /******************************* DESKTOP *******************************/
 
 @mixin basicLayoutXL {
@@ -15,6 +20,7 @@
 
 @mixin level-1 {
   height: $HEIGHT-level-1;
+
   > h1 {
     line-height: 1;
   }
@@ -24,6 +30,7 @@
   margin-top: calc(
     $TOP-margin-level-2 - ($TOP-margin-level-1 + $HEIGHT-level-1) - 4px
   );
+  margin-bottom: 25px;
   p {
     margin-bottom: $margin-bottom-paragraphs;
   }
@@ -33,6 +40,7 @@
   margin-top: calc(
     $TOP-margin-level-2 - ($TOP-margin-level-1 + $HEIGHT-level-1)
   );
+  margin-bottom: 20px;
 }
 
 @mixin imgsGroup {

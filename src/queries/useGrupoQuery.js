@@ -6,9 +6,10 @@ const UseGrupoQuery = () => {
       allContentfulElGrupo {
         edges {
           node {
-            titulo
             seoMetaDescripcion
             seoTitle
+            titulo
+            subtitulo
             texto {
               raw
             }

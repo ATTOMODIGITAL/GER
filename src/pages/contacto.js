@@ -1,4 +1,5 @@
 import React from 'react'
+
 import useContactQuery from "../queries/useContactQuery"
 import useRichText from "../hooks/useRichText"
 import Layout from '../components/layout'
