@@ -23,30 +23,30 @@ const Restaurantes = () => {
       />
 
       {size > 880 // ------------------------------ PROJECT ITEM DESKTOP
-        ? data.map((proyect, i) => (
+        ? data.map((rest, i) => (
             <ProjectItem
               key={i}
-              name={proyect.node.nombre}
-              year={proyect.node.zona}
-              slug={proyect.node.url}
-              imgs={proyect.node.desktopListadoImgs.slice(0, 4)}
+              name={rest.node.nombre}
+              year={rest.node.zona}
+              slug={rest.node.url}
+              imgs={rest.node.desktopListadoImgs.slice(0, 4)}
             />
           ))
         : // ------------------------------------------ CAROUSEL MOBILE
-          data.map((proyect, i) => (
+          data.map((rest, i) => (
             <div className="container">
               <Carousel
                 key={i}
-                images={proyect.node.mobileListadoImgs.slice(0, 4)}
+                images={rest.node.mobileListadoImgs.slice(0, 4)}
                 linked={true}
-                slug={`restaurantes/${proyect.node.url}`}
+                slug={`restaurantes/${rest.node.url}`}
               />
               <div className="justify-content-center text-center mb-5 mt-2">
                 <p>
-                  <b>{proyect.node.nombre}</b>
+                  <b>{rest.node.nombre}</b>
                   <br />
                   <small>
-                    {proyect.node.zona}
+                    {rest.node.zona}
                   </small>
                 </p>
               </div>

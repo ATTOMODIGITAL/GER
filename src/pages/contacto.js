@@ -25,9 +25,9 @@ const Contacto = () => {
       <div className="Main__text">
         <p>{useRichText(data.texto)}</p>
       </div>
-      <div className="Main__form">
-        <Form />
-      </div>
+
+      <Form />
+
     </Layout>
   )
 }

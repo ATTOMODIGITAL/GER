@@ -1,0 +1,65 @@
+@use "src/styles/utils" as *;
+
+.input {
+  position: relative;
+
+  &__label {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: calc(var(--size-bezel) * 0.75) calc(var(--size-bezel) * 0.5);
+    margin: calc(var(--size-bezel) * 0.75 + 3px) calc(var(--size-bezel) * 0.5);
+    white-space: nowrap;
+    transform: translate(0, 0);
+    transform-origin: 0 0;
+    background: var(--color-background);
+    transition: transform 120ms ease-in;
+    font-weight: 300;
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+  }
+  &__field {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid currentColor;
+    padding: calc(var(--size-bezel) * 1.5) var(--size-bezel);
+    color: currentColor;
+    background: transparent;
+    border-radius: var(--size-radius);
+    font-weight: 400;
+    font-size: 16px;
+    font-family: "Montserrat", sans-serif;
+
+    &:focus,
+    &:not(:placeholder-shown) {
+      & + .input__label {
+        transform: translate(0.25rem, -65%) scale(0.8);
+        color: var(--color-accent);
+      }
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.comentsInput {
+  width: 100%;
+}
+
+.infoInput {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+@media (min-width: $break-point) {
+  .comentsInput {
+    width: 100%;
+  }
+
+  .infoInput {
+    width: 230px;
+  }
+}
