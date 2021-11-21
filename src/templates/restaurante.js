@@ -41,9 +41,12 @@ const Restaurante = props => {
 
       <div className="">
         {size > 880 ? (
-          <h1>Comming soon... {props.data.contentfulRestaurantes.nombre}</h1>
+          <>
+          <h1>{props.data.contentfulRestaurantes.nombre}</h1>
+          <h6>Coming soon...</h6>
+          </>
         ) : (
-          <h1 style={{ textAlign: "center"}}>Comming soon...  {props.data.contentfulRestaurantes.nombre}</h1>
+          <h1 style={{ textAlign: "center"}}>Coming soon...  {props.data.contentfulRestaurantes.nombre}</h1>
         )}
       </div>
     </Layout>
