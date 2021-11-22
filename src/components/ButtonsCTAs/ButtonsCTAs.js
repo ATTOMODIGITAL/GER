@@ -1,5 +1,4 @@
 import React from "react"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import "./ButtonsCTAs.scss"
 const ButtonsCTAs = ({ booking, menu }) => {
@@ -15,7 +14,7 @@ const ButtonsCTAs = ({ booking, menu }) => {
     <>
       <div className="ButtonsCTAs">
         <a
-          href={`${menu.localFile.publicURL}`}
+          href={`${menu?.localFile?.publicURL}`}
           target="_blank"
           rel="noreferrer"
           className="ButtonsCTAs__buton"
