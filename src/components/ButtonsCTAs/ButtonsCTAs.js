@@ -10,19 +10,29 @@ const ButtonsCTAs = ({ booking, menu }) => {
       return true
     }
   }
-  console.log(menu)
+
   return (
     <>
-    <div className="ButtonsCTAs">
-      <a className="ButtonsCTAs__buton" href={menu} target="_blank" rel="noreferrer">
-        Ver carta
-      </a>
-      {isItBooked() && (
-        <a className="ButtonsCTAs__buton" href={booking} target="_blank" rel="noreferrer">
-          Reservar
+      <div className="ButtonsCTAs">
+        <a
+          href={`${menu.localFile.publicURL}`}
+          target="_blank"
+          rel="noreferrer"
+          className="ButtonsCTAs__buton"
+        >
+          Ver carta
         </a>
-      )}
-    </div>
+        {isItBooked() && (
+          <a
+            className="ButtonsCTAs__buton"
+            href={booking}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Reservar
+          </a>
+        )}
+      </div>
     </>
   )
 }

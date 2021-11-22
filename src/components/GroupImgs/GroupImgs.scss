@@ -1,0 +1,14 @@
+@use "src/styles/utils" as *;
+
+.GroupImgs {
+  @include mobileSidesMargins;
+  margin-top: 40px;
+}
+
+@media (min-width: $break-point) {
+  .GroupImgs {
+    @include imgsGroup;
+    margin: 0;
+    margin-top: 20px;
+  }
+}

@@ -1,0 +1,48 @@
+@use "src/styles/utils" as *;
+
+.InfoRest {
+  @include mobileSidesMargins;
+  text-align: center;
+  border-top: 1px solid #e3e7e1;
+  margin-top: 20px;
+  
+  &__item {
+    margin-top: 25px;
+  }
+
+  &__item:first-child {
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+
+  &__3 {
+    > a:last-child {
+      margin-left: 20px;
+    }
+  }
+}
+
+@media (min-width: $break-point) {
+  .InfoRest {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 30px;
+    margin: 0;
+    border: none;
+
+    &__item {
+      text-align: center;
+      margin: 0;
+    }
+
+    &__item:first-child {
+      margin: 0;
+    }
+
+    &__3 {
+      > a:last-child {
+        margin-left: 20px;
+      }
+    }
+  }
+}
