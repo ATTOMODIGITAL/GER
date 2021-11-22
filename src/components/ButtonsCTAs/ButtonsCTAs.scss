@@ -1,0 +1,26 @@
+@use "src/styles/utils" as *;
+
+
+.ButtonsCTAs {
+  display: flex;
+    justify-content: space-evenly;
+    padding: 20px 0px;
+
+  &__buton {
+    @include button;
+  }
+}
+
+@media (min-width: $break-point) {
+  .ButtonsCTAs {
+    display: flex;
+    justify-content: space-around;
+    padding: 35px 0px;
+    border-bottom: 1px solid $c-text-light;
+    border-top: 1px solid $c-text-light;
+
+    &__buton {
+      @include button;
+    }
+  }
+}

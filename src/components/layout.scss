@@ -59,7 +59,12 @@ body {
         text-align: center;
         margin-bottom: 20px;
       }
+
       .Main__text {
+        @include mobileSidesMargins;
+      }
+
+      .Main__element {
         @include mobileSidesMargins;
       }
 
@@ -83,9 +88,15 @@ body {
       .Main__titles {
         @include level-1;
       }
+
       .Main__text {
         @include level-2-text;
       }
+
+      .Main__element {
+        @include level-2-element;
+      }
+
       .Main__img {
         max-height: 65vh;
         width: 100%;

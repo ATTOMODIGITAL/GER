@@ -1,25 +1,39 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import Seo from "../components/seo"
 import Layout from "../components/layout"
 import useWindowSize from "../hooks/useWindowSize"
 import useViewport from "../hooks/useViewport"
+import ButtonsCTAs from "../components/ButtonsCTAs/ButtonsCTAs"
 
 export const query = graphql`
   query ($slug: String!) {
     contentfulRestaurantes(url: { eq: $slug }) {
       seoTitle
       seoMetaDescripcion
-      url
       nombre
-      zona
-      ordenListado
-      mobileListadoImgs {
+      categoria
+      direccionLinea1
+      direccionLinea2
+      direccionLinea3
+      horarioLinea1
+      horarioLinea2
+      trpadvisorLink
+      instagramLink
+      reservarLinkONo
+      carta {
+        file {
+          url
+        }
+      }
+      texto {
+        raw
+      }
+      mobileDetalleImgs {
         gatsbyImageData(placeholder: DOMINANT_COLOR, layout: FULL_WIDTH)
       }
-      desktopListadoImgs {
+      desktopDetalleImgs {
         gatsbyImageData(placeholder: DOMINANT_COLOR, layout: FULL_WIDTH)
       }
     }
@@ -42,11 +56,32 @@ const Restaurante = props => {
       <div className="">
         {size > 880 ? (
           <>
-          <h1>{props.data.contentfulRestaurantes.nombre}</h1>
-          <h6>Coming soon...</h6>
+            <div className="Main__titles">
+              <h1>{props.data.contentfulRestaurantes.nombre}</h1>
+              <h6>{props.data.contentfulRestaurantes.categoria}</h6>
+            </div>
+
+            <div className="Main__element">
+              <ButtonsCTAs
+                booking={props.data.contentfulRestaurantes.reservarLinkONo}
+                menu={props.data.contentfulRestaurantes.carta}
+              />
+            </div>
           </>
         ) : (
-          <h1 style={{ textAlign: "center"}}>Coming soon...  {props.data.contentfulRestaurantes.nombre}</h1>
+          <>
+            <div className="Main__titles">
+              <h1>{props.data.contentfulRestaurantes.nombre}</h1>
+              <h6>{props.data.contentfulRestaurantes.categoria}</h6>
+            </div>
+
+            <div className="Main__element">
+              <ButtonsCTAs
+                booking={props.data.contentfulRestaurantes.reservarLinkONo}
+                menu={props.data.contentfulRestaurantes.carta}
+              />
+            </div>
+          </>
         )}
       </div>
     </Layout>
