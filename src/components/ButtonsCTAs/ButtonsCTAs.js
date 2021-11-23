@@ -15,7 +15,7 @@ const ButtonsCTAs = ({ booking, menu }) => {
     <>
       <div className="ButtonsCTAs">
         <a
-          href={`${menu?.localFile?.publicURL}`}
+          href={`${menu?.file?.url}`}
           target="_blank"
           rel="noreferrer"
           className="ButtonsCTAs__buton"
