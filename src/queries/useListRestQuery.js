@@ -9,6 +9,12 @@ const UseListRestQuery = () => {
             url
             nombre
             zona
+            homeImg {
+              gatsbyImageData(placeholder: DOMINANT_COLOR, layout: FULL_WIDTH)
+            }
+            logo {
+              gatsbyImageData(placeholder: DOMINANT_COLOR, layout: FULL_WIDTH)
+            }
             mobileListadoImgs {
               gatsbyImageData(placeholder: DOMINANT_COLOR, layout: FULL_WIDTH)
             }

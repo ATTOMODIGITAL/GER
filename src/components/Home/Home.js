@@ -5,7 +5,7 @@ import HomeXL from "./HomeXL"
 import useViewport from "../../hooks/useViewport"
 import "./Home.scss"
 
-const Home = ({ imgsMob, imgsDesktop }) => {
+const Home = ({ imgsMob, imgsDesktop, names }) => {
   useViewport()
 
   return (
@@ -15,7 +15,7 @@ const Home = ({ imgsMob, imgsDesktop }) => {
       </div>
 
       <div className="HomeXL">
-        <HomeXL imgs={imgsDesktop}/>
+        <HomeXL imgs={imgsDesktop} names={names}/>
       </div>
     </>
   )
