@@ -1,4 +1,5 @@
 import React from "react"
+import pdf from "../../../public/static/53b0d2db445704ecbdab47c651e438ff/carta.pdf"
 
 import "./ButtonsCTAs.scss"
 const ButtonsCTAs = ({ booking, menu }) => {

@@ -26,8 +26,8 @@ export const query = graphql`
       instagramLink
       reservarLinkONo
       carta {
-        localFile {
-          publicURL
+        file {
+          url
         }
       }
       texto {
