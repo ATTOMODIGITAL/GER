@@ -6,7 +6,7 @@ import useLogoQuery from "../../queries/useLogoQuery"
 import useViewport from "../../hooks/useViewport"
 import "./Home.scss"
 
-const HomeXL = ({ imgs, names }) => {
+const HomeXL = ({ imgs }) => {
   const data = useLogoQuery()
   useViewport()
 
@@ -18,16 +18,10 @@ const HomeXL = ({ imgs, names }) => {
             className="HomeXL__container__upperRow--img"
             style={{ marginRight: 15 }}
           >
-          <div className="HomeXL--name">
-            <h1 className="HomeXL--name--text">{names[0]}</h1>
             <GatsbyImage image={getImage(imgs[0])} alt="" />
-            </div>
           </div>
 
           <div className="HomeXL__container__upperRow--img">
-            <div className="HomeXL--name">
-              <h1 className="HomeXL--name--text">{names[1]}</h1>
-            </div>
             <GatsbyImage image={getImage(imgs[1])} alt="" />
           </div>
         </div>
@@ -37,7 +31,6 @@ const HomeXL = ({ imgs, names }) => {
             className="HomeXL__container__bottomRow--img1"
             style={{ marginRight: 15 }}
           >
-            <h1 className="HomeXL--name">{names[2]}</h1>
             <GatsbyImage
               image={getImage(imgs[2])}
               alt=""
@@ -54,7 +47,6 @@ const HomeXL = ({ imgs, names }) => {
               alt="GER"
               className="HomeXL__container__bottomRow--img2--logo"
             />
-            <h1 className="HomeXL--name">{names[3]}</h1>
             <GatsbyImage
               image={getImage(imgs[3])}
               alt=""
@@ -63,7 +55,6 @@ const HomeXL = ({ imgs, names }) => {
           </div>
 
           <div className="HomeXL__container__bottomRow--img3">
-            <h1 className="HomeXL--name">{names[4]}</h1>
             <GatsbyImage
               image={getImage(imgs[4])}
               alt=""

@@ -9,6 +9,9 @@ module.exports = {
     author: `I.Palma`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
+  flags: {
+    PARALLEL_QUERY_RUNNING: true,
+  },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
