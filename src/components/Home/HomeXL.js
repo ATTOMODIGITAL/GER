@@ -1,7 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { BsChevronDoubleDown } from "react-icons/bs"
 
 import useLogoQuery from "../../queries/useLogoQuery"
 import useViewport from "../../hooks/useViewport"
@@ -68,7 +67,7 @@ const HomeXL = ({ imgs }) => {
 
           <div className="HomeXL__container__bottomRow--img3">
             <GatsbyImage
-              image={getImage(imgs[4])}
+              image={getImage(imgs[3])}
               alt=""
               className="HomeXL__container__bottomRow--img3--img"
             />
