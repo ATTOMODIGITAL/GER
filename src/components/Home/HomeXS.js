@@ -15,21 +15,25 @@ const HomeXS = ({ imgs }) => {
           image={getImage(imgs[0])}
           alt=""
           style={{ marginBottom: 8 }}
+          className="HomeXS--imgsContainer--img"
         />
         <GatsbyImage
           image={getImage(imgs[1])}
           alt=""
           style={{ marginBottom: 8 }}
+          className="HomeXS--imgsContainer--img"
         />
         <GatsbyImage
           image={getImage(imgs[2])}
           alt=""
           style={{ marginBottom: 8 }}
+          className="HomeXS--imgsContainer--img"
         />
         <GatsbyImage
           image={getImage(imgs[3])}
           alt=""
           style={{ marginBottom: 8 }}
+          className="HomeXS--imgsContainer--img"
         />
         </div>
       </Link>
