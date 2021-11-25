@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { BsChevronDoubleDown } from "react-icons/bs"
 
 import useLogoQuery from "../../queries/useLogoQuery"
 import useViewport from "../../hooks/useViewport"
@@ -38,7 +39,7 @@ const HomeXL = ({ imgs }) => {
             />
           </div>
 
-          <div
+          {/* <div
             className="HomeXL__container__bottomRow--img2"
             style={{ marginRight: 15 }}
           >
@@ -47,12 +48,23 @@ const HomeXL = ({ imgs }) => {
               alt="GER"
               className="HomeXL__container__bottomRow--img2--logo"
             />
-            <GatsbyImage
-              image={getImage(imgs[3])}
-              alt=""
-              className="HomeXL__container__bottomRow--img2--img"
-            />
-          </div>
+
+            <div
+              className="icon-swipe"
+              style={{ backgroundColor: "transparent" }}
+            >
+              <div
+                className="icon-swipe"
+                style={{ backgroundColor: "transparent" }}
+              >
+                <BsChevronDoubleDown
+                  fontSize="2rem"
+                  color="#000"
+                  style={{ backgroundColor: "transparent" }}
+                />
+              </div>
+            </div>
+          </div> */}
 
           <div className="HomeXL__container__bottomRow--img3">
             <GatsbyImage

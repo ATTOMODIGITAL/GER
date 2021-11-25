@@ -45,7 +45,7 @@
       cursor: pointer;
 
       &__upperRow {
-        height: 35vh;
+        height: 45vh;
         margin-bottom: 15px;
         overflow: hidden;
         width: 100%;
@@ -73,7 +73,7 @@
         align-items: center;
 
         &--img1 {
-          width: 30%;
+          width: 50%;
           height: 100%;
           &--img {
             height: 100%;
@@ -85,7 +85,7 @@
         }
 
         &--img2 {
-          width: 30%;
+          width: 10%;
           height: 100%;
           display: flex;
           flex-direction: column;
@@ -107,7 +107,7 @@
         }
 
         &--img3 {
-          width: 40%;
+          width: 50%;
           height: 100%;
           &--img {
             height: 100%;
@@ -119,5 +119,26 @@
         }
       }
     }
+  }
+}
+
+.icon-swipe {
+  pointer-events: none;
+  animation-name: bounce-2;
+  animation-timing-function: ease-in-out;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  margin-top: 70px;
+}
+
+@keyframes bounce-2 {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }

@@ -31,7 +31,6 @@ const HomeXS = ({ imgs }) => {
           alt=""
           style={{ marginBottom: 8 }}
         />
-        <GatsbyImage image={getImage(imgs[4])} alt="" />
         </div>
       </Link>
     </>
