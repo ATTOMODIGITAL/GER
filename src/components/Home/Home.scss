@@ -24,6 +24,10 @@
     display: flex;
     flex-direction: column;
     margin-top: calc($TOP-margin-mobile + 8px);
+
+    img {
+      max-height: 100%;
+    }
   }
 }
 
@@ -40,6 +44,7 @@
     max-height: 100vh;
     position: fixed;
     width: 100%;
+    position: relative;
 
     &__container {
       cursor: pointer;
@@ -120,6 +125,14 @@
       }
     }
   }
+}
+
+.LOGO_JFK {
+  position: fixed;
+  left: 50%;
+  top: 46%;
+  transform: translate(-50%, -50%);
+  width: 100px;
 }
 
 .icon-swipe {

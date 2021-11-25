@@ -11,6 +11,12 @@ const HomeXL = ({ imgs }) => {
   useViewport()
 
   return (
+    <>
+        {/* <GatsbyImage
+          image={getImage(data.logo)}
+          alt="GER"
+          className="LOGO_JFK"
+        /> */}
     <div className="HomeXL__container">
       <Link to="/restaurantes">
         <div className="HomeXL__container__upperRow">
@@ -75,6 +81,7 @@ const HomeXL = ({ imgs }) => {
         </div>
       </Link>
     </div>
+    </>
   )
 }
 

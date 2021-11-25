@@ -26,7 +26,7 @@ const Menu = () => {
           activeClassName="MenuXL__content--active"
           to="/restaurantes"
         >
-          Restaurantes
+          Nuestros restaurantes
         </Link>
 
         <Link
@@ -34,7 +34,7 @@ const Menu = () => {
           activeClassName="MenuXL__content--active"
           to="/grupo"
         >
-          El Grupo
+          Nuestro Grupo
         </Link>
 
         <Link
