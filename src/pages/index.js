@@ -13,15 +13,13 @@ const IndexPage = () => {
     data2[0].node.homeImg,
     data2[1].node.homeImg,
     data2[2].node.homeImg,
-    data2[3].node.homeImg,
-    data2[4].node.homeImg
+    data2[3].node.homeImg
   ]
   const names = [
     data2[0].node.nombre,
     data2[1].node.nombre,
     data2[2].node.nombre,
-    data2[3].node.nombre,
-    data2[4].node.nombre
+    data2[3].node.nombre
   ]
 
   useViewport()
