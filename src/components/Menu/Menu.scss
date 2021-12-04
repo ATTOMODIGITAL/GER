@@ -152,20 +152,19 @@
         color: $c-text;
         font-weight: 300;
         font-family: "Montserrat", sans-serif;
-        margin-bottom: 10px;
+        margin-bottom: 12px;
         font-size: 12px;
 
         &:hover {
-          font-weight: 500;
-          cursor: pointer;
           color: $c-text;
+          font-weight: 500;
         }
       }
       &--active {
-        font-weight: 600;
+        font-weight: 500;
 
         &:hover {
-          font-weight: 600;
+          font-weight: 500;
           cursor: pointer;
           color: $c-text;
         }

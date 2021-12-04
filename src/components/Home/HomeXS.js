@@ -5,38 +5,45 @@ import { Link } from "gatsby"
 import "./Home.scss"
 import MenuXS from "../Menu/MenuXS"
 
-const HomeXS = ({ imgs }) => {
+const HomeXS = ({ imgs, links }) => {
   return (
     <>
       <MenuXS />
-      <Link to="/restaurantes">
       <div className="HomeXS--imgsContainer">
-        <GatsbyImage
-          image={getImage(imgs[0])}
-          alt=""
-          style={{ marginBottom: 8 }}
-          className="HomeXS--imgsContainer--img"
-        />
-        <GatsbyImage
-          image={getImage(imgs[1])}
-          alt=""
-          style={{ marginBottom: 8 }}
-          className="HomeXS--imgsContainer--img"
-        />
-        <GatsbyImage
-          image={getImage(imgs[2])}
-          alt=""
-          style={{ marginBottom: 8 }}
-          className="HomeXS--imgsContainer--img"
-        />
-        <GatsbyImage
-          image={getImage(imgs[3])}
-          alt=""
-          style={{ marginBottom: 8 }}
-          className="HomeXS--imgsContainer--img"
-        />
-        </div>
-      </Link>
+
+        <Link to={`restaurantes/${links[0]}`} className="HomeXS--imgsContainer--link">
+          <GatsbyImage
+            image={getImage(imgs[0])}
+            alt=""
+            className="HomeXS--imgsContainer--link--img"
+          />
+        </Link>
+
+        <Link to={`restaurantes/${links[1]}`} className="HomeXS--imgsContainer--link">
+          <GatsbyImage
+            image={getImage(imgs[1])}
+            alt=""
+            className="HomeXS--imgsContainer--link--img"
+          />
+        </Link>
+
+        <Link to={`restaurantes/${links[2]}`} className="HomeXS--imgsContainer--link">
+          <GatsbyImage
+            image={getImage(imgs[2])}
+            alt=""
+            className="HomeXS--imgsContainer--link--img"
+          />
+        </Link>
+
+        <Link to={`restaurantes/${links[3]}`} className="HomeXS--imgsContainer--link">
+          <GatsbyImage
+            image={getImage(imgs[3])}
+            alt=""
+            className="HomeXS--imgsContainer--link--img"
+          />
+        </Link>
+
+      </div>
     </>
   )
 }

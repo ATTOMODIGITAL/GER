@@ -21,6 +21,12 @@ const IndexPage = () => {
     data2[2].node.nombre,
     data2[3].node.nombre
   ]
+  const urls = [
+    data2[0].node.url,
+    data2[1].node.url,
+    data2[2].node.url,
+    data2[3].node.url
+  ]
 
   useViewport()
   return (
@@ -35,6 +41,7 @@ const IndexPage = () => {
         imgsMob={data.mobileImgs}
         imgsDesktop={imgsXL}
         names={names}
+        links={urls}
       />
     </>
   )
