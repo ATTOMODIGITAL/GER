@@ -1,6 +1,6 @@
 import React from "react"
 
-import Form from "../components/Form/Form"
+import Form from "../components/Forms/Form"
 import useContactQuery from "../queries/useContactQuery"
 import useRichText from "../hooks/useRichText"
 import Layout from "../components/layout"

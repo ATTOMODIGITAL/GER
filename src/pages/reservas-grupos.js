@@ -2,7 +2,7 @@ import * as React from "react"
 import Layout from "../components/layout"
 
 import Seo from "../components/seo"
-import Form from "../components/Form/Form"
+import FormGroup from "../components/Forms/FormGroup"
 import useViewport from "../hooks/useViewport"
 
 const ReservasGrupo = () => {
@@ -14,10 +14,10 @@ const ReservasGrupo = () => {
         lang="es"
       />
       <div className="Main__titles">
-        <h1>Tituño formulariop</h1>
+        <h1>Formulario para eventos</h1>
       </div>
       <div className="Main__element">
-        <Form />
+        <FormGroup />
       </div>
     </Layout>
   )

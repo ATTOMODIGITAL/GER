@@ -12,6 +12,7 @@ import GroupImgs from "../components/GroupImgs/GroupImgs"
 import Text from "../components/Text/Text"
 import Dishes from "../components/Dishes/Dishes"
 import GroupInfo from "../components/GroupInfo/GroupInfo"
+import GoBack from "../components/GoBack/GoBrack"
 
 export const query = graphql`
   query ($slug: String!) {
@@ -72,6 +73,7 @@ const Restaurante = props => {
       <div className="">
         {size > 880 ? (
           <>
+          <GoBack />
             <div className="Main__titles">
               <h1>{props.data.contentfulRestaurantes.nombre}</h1>
               <h6>{props.data.contentfulRestaurantes.categoria}</h6>

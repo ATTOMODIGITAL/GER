@@ -10,22 +10,14 @@
 }
 @keyframes hoverName {
   0% {
-    font-size: 50px;
+    width: 350px;
     visibility: hidden;
+    opacity: 0;
   }
   100% {
-    font-size: 32px;
+    width: 120px;
     visibility: visible;
-  }
-}
-@keyframes hoverNameBack {
-  0% {
-    font-size: 32px;
-    visibility: visible;
-  }
-  100% {
-    font-size: 80px;
-    visibility: hidden;
+    opacity: 1;
   }
 }
 /******************** MOBILE *********************/
@@ -124,7 +116,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    
+
     &__container {
       cursor: pointer;
       padding: 0px 14px;
@@ -155,6 +147,7 @@
         font-family: "Oswald", sans-serif;
         width: 100%;
         text-align: center;
+        width: 120px;
       }
 
       &:hover {

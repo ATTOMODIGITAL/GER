@@ -9,23 +9,24 @@ import useViewport from "../hooks/useViewport"
 const IndexPage = () => {
   const data = useHomesQuery()
   const data2 = useListRestQuery()
+
   const imgsXL = [
     data2[0].node.homeImg,
     data2[1].node.homeImg,
     data2[2].node.homeImg,
     data2[3].node.homeImg
   ]
-  const names = [
-    data2[0].node.nombre,
-    data2[1].node.nombre,
-    data2[2].node.nombre,
-    data2[3].node.nombre
-  ]
   const urls = [
     data2[0].node.url,
     data2[1].node.url,
     data2[2].node.url,
     data2[3].node.url
+  ]
+  const logos = [
+    data2[0].node.logo,
+    data2[1].node.logo,
+    data2[2].node.logo,
+    data2[3].node.logo
   ]
 
   useViewport()
@@ -38,10 +39,10 @@ const IndexPage = () => {
         description={data.seoMetaDescripcion}
       />
       <Home
-        imgsMob={data.mobileImgs}
+        imgsMob={imgsXL}
         imgsDesktop={imgsXL}
-        names={names}
         links={urls}
+        logos={logos}
       />
     </>
   )
