@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { useLocation } from '@reach/router';
 import HamburgerMenu from "react-hamburger-menu"
 
 import useLogoQuery from "../../queries/useLogoQuery"
 import Footer from "../Footer/Footer"
 import ContentXs from "./ContentXS"
+import GoBack from "../GoBack/GoBrack"
 
 const MenuXS = () => {
   const [openHam, setOpenHam] = useState(false)
   const data = useLogoQuery()
+  const location = useLocation();
 
   const handleHamClick = () => {
     setTimeout(() => {
@@ -62,7 +65,15 @@ const MenuXS = () => {
           />
         </Link>
         
-        <div style={{ width: 27, color: "#fff" }}>hj</div>
+        <div style={{ width: 27, color: "#fff" }}>
+        {
+          location.pathname.startsWith('/restaurantes/') 
+          || location.pathname.startsWith('/aviso-') 
+          || location.pathname.startsWith('/priv') 
+          || location.pathname.startsWith('/cooki') 
+          ? <GoBack /> : "pp"
+        }
+        </div>
       </div>
 
       {openHam && (

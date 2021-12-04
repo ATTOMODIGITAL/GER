@@ -50,6 +50,8 @@ module.exports = {
         optionalFields: {
           ContentfulRestaurantes: {
             cartaGrupo: "Node",
+            reservasDeGrupo: "String",
+            grupoDescripcion: "String",
           },
         },
       }

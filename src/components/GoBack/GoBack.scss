@@ -1,0 +1,7 @@
+@use "src/styles/utils" as *;
+
+.GoBack {
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+  color: $c-text;
+}

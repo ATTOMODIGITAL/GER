@@ -16,8 +16,7 @@ const InfoRest = ({ dir1, dir2, dir3, time1, time2, linkIG, linkTrip, name, cate
       <div className="InfoRest__item">
         <p>
           {dir1} <br/>
-          {dir2} <br/>
-          {dir3}
+          {dir2} 
         </p>
       </div>
 

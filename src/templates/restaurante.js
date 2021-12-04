@@ -11,6 +11,7 @@ import InfoRestXS from "../components/InfoRest/InfoRestXS"
 import GroupImgs from "../components/GroupImgs/GroupImgs"
 import Text from "../components/Text/Text"
 import Dishes from "../components/Dishes/Dishes"
+import GroupInfo from "../components/GroupInfo/GroupInfo"
 
 export const query = graphql`
   query ($slug: String!) {
@@ -27,7 +28,14 @@ export const query = graphql`
       trpadvisorLink
       instagramLink
       reservarLinkONo
+      reservasDeGrupoONo
+      grupoDescripcion
       carta {
+        file {
+          url
+        }
+      }
+      cartaGrupo {
         file {
           url
         }
@@ -91,8 +99,17 @@ const Restaurante = props => {
             />
 
             <Text text={props.data.contentfulRestaurantes.texto} />
-            
-            <Dishes images={props.data.contentfulRestaurantes.platosImgs} name={props.data.contentfulRestaurantes.nombre}/>
+
+            <Dishes
+              images={props.data.contentfulRestaurantes.platosImgs}
+            />
+
+            <GroupInfo
+              group={props.data.contentfulRestaurantes.reservasDeGrupoONo}
+              grupoDescripcion={props.data.contentfulRestaurantes.grupoDescripcion}
+              menu={props.data.contentfulRestaurantes.cartaGrupo}
+              name={props.data.contentfulRestaurantes.nombre}
+            />
           </>
         ) : (
           <>
@@ -114,7 +131,6 @@ const Restaurante = props => {
                 menu={props.data.contentfulRestaurantes.carta}
               />
             </div>
-            
 
             <GroupImgs
               imgs={props.data.contentfulRestaurantes.mobileDetalleImgs}
@@ -122,7 +138,14 @@ const Restaurante = props => {
 
             <Text text={props.data.contentfulRestaurantes.texto} />
 
-            <Dishes images={props.data.contentfulRestaurantes.platosImgs} name={props.data.contentfulRestaurantes.nombre}/>
+            <Dishes images={props.data.contentfulRestaurantes.platosImgs} />
+
+            <GroupInfo
+              group={props.data.contentfulRestaurantes.reservasDeGrupoONo}
+              name={props.data.contentfulRestaurantes.nombre}
+              menu={props.data.contentfulRestaurantes.cartaGrupo}
+              grupoDescripcion={props.data.contentfulRestaurantes.grupoDescripcion}
+            />
           </>
         )}
       </div>

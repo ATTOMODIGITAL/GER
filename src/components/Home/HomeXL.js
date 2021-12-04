@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import useViewport from "../../hooks/useViewport"
+import Footer from "../Footer/Footer"
 import "./Home.scss"
 
 const HomeXL = ({ imgs, names, links }) => {
@@ -51,6 +52,8 @@ const HomeXL = ({ imgs, names, links }) => {
 
         </div>
       </div>
+
+      <Footer />
     </>
   )
 }
