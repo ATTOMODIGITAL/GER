@@ -5,3 +5,10 @@
   text-align: center;
   margin-top: 20px;
 }
+
+@media (min-width: $break-point) {
+  .Dishes {
+    text-align: left;
+    margin: 0;
+  }
+}

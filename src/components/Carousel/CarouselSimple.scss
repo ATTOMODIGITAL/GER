@@ -1,0 +1,57 @@
+@use "src/styles/constants" as *;
+
+.navigation-wrapper-simple {
+  position: relative;
+  height: 35vh !important;
+  overflow: hidden !important;
+}
+
+.keen-slider {
+  height: 100%;
+}
+
+.keen-slider__slide {
+  cursor: pointer;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  min-width: 100%;
+
+  .image_carousel_keen {
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    min-height: 100%;
+    object-fit: cover;
+  }
+}
+
+.arrow {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  fill: #e7e5e1;
+  cursor: pointer;
+}
+
+.arrow--left {
+  left: 5px;
+}
+
+.arrow--right {
+  left: auto;
+  right: 5px;
+}
+
+@media (min-width: $break-point) { 
+  .navigation-wrapper-simple {
+    position: relative;
+    height: 50vh !important;
+    overflow: hidden !important;
+  }
+}

@@ -3,7 +3,7 @@ import { useKeenSlider } from "keen-slider/react";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 import "keen-slider/keen-slider.min.css";
-import "./Carousel.scss";
+import "./CarouselSimple.scss";
 
 const CarouselSimple = React.memo(({ images, name, linked, initial, slug }) => {
   const [currentSlide, setCurrentSlide] = React.useState(0);
@@ -21,7 +21,7 @@ const CarouselSimple = React.memo(({ images, name, linked, initial, slug }) => {
 
   return (
     <>
-      <div className="navigation-wrapper">
+      <div className="navigation-wrapper-simple">
         <div ref={sliderRef} className="keen-slider">
           {images.map((img, i) => (
             <GatsbyImage
@@ -33,7 +33,6 @@ const CarouselSimple = React.memo(({ images, name, linked, initial, slug }) => {
             />
           ))}
         </div>
-        <p className="carousel-name-project">{name}</p>
         {slider && (
           <>
             <ArrowLeft

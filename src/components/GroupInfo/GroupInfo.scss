@@ -1,0 +1,11 @@
+@use "src/styles/utils" as *;
+
+.Dishes {
+  
+}
+
+@media (min-width: $break-point) {
+  .Dishes {
+
+  }
+}

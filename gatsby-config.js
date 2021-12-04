@@ -44,5 +44,15 @@ module.exports = {
         icon: `src/images/logo-ger-example.jpeg`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: "gatsby-plugin-contentful-optional-fields",
+      options: {
+        optionalFields: {
+          ContentfulRestaurantes: {
+            cartaGrupo: "Node",
+          },
+        },
+      }
+    }
   ],
 }
