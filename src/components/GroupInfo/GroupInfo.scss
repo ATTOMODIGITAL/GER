@@ -32,6 +32,14 @@
       &:hover {
         cursor: pointer;
       }
+
+      &:active {
+        animation: hoverButton 0.3s;
+        color: rgb(0, 0, 0);
+        background-color: #fff;
+        border: 1px solid rgb(0, 0, 0);
+        cursor: pointer;
+      }
     }
   }
 }
