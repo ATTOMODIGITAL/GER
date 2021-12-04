@@ -5,6 +5,7 @@ import NavHomeXL from "./NavHomeXL"
 import HomeXL from "./HomeXL"
 import useViewport from "../../hooks/useViewport"
 import "./Home.scss"
+import Footer from "../Footer/Footer"
 
 const Home = ({ imgsMob, imgsDesktop, names, links }) => {
   useViewport()
@@ -21,6 +22,8 @@ const Home = ({ imgsMob, imgsDesktop, names, links }) => {
       <div className="HomeXL">
         <HomeXL imgs={imgsDesktop} names={names} links={links}/>
       </div>
+
+      <Footer />
     </>
   )
 }
