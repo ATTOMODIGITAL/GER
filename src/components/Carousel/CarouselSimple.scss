@@ -48,10 +48,27 @@
   right: 5px;
 }
 
+.carousel-name-project-simple {
+  position: absolute;
+  bottom: 1px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 0;
+  font-size: 12px;
+  text-shadow: 1px 1px 8px rgba(43, 43, 43, 0.464);
+  color: #fff;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 @media (min-width: $break-point) { 
   .navigation-wrapper-simple {
     position: relative;
-    height: 50vh !important;
+    height: 55vh !important;
     overflow: hidden !important;
   }
 }

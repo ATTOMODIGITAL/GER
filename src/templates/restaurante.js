@@ -13,6 +13,8 @@ import Text from "../components/Text/Text"
 import Dishes from "../components/Dishes/Dishes"
 import GroupInfo from "../components/GroupInfo/GroupInfo"
 import GoBack from "../components/GoBack/GoBrack"
+import { IoLogoInstagram } from "react-icons/io"
+import { FaTripadvisor } from "react-icons/fa"
 
 export const query = graphql`
   query ($slug: String!) {
@@ -73,7 +75,7 @@ const Restaurante = props => {
       <div className="">
         {size > 880 ? (
           <>
-          <GoBack />
+            <GoBack />
             <div className="Main__titles">
               <h1>{props.data.contentfulRestaurantes.nombre}</h1>
               <h6>{props.data.contentfulRestaurantes.categoria}</h6>
@@ -104,11 +106,14 @@ const Restaurante = props => {
 
             <Dishes
               images={props.data.contentfulRestaurantes.platosImgs}
+              name={props.data.contentfulRestaurantes.nombre}
             />
 
             <GroupInfo
               group={props.data.contentfulRestaurantes.reservasDeGrupoONo}
-              grupoDescripcion={props.data.contentfulRestaurantes.grupoDescripcion}
+              grupoDescripcion={
+                props.data.contentfulRestaurantes.grupoDescripcion
+              }
               menu={props.data.contentfulRestaurantes.cartaGrupo}
               name={props.data.contentfulRestaurantes.nombre}
             />
@@ -140,14 +145,37 @@ const Restaurante = props => {
 
             <Text text={props.data.contentfulRestaurantes.texto} />
 
-            <Dishes images={props.data.contentfulRestaurantes.platosImgs} />
+            <Dishes
+              images={props.data.contentfulRestaurantes.platosImgs}
+              name={props.data.contentfulRestaurantes.nombre}
+            />
 
             <GroupInfo
               group={props.data.contentfulRestaurantes.reservasDeGrupoONo}
               name={props.data.contentfulRestaurantes.nombre}
               menu={props.data.contentfulRestaurantes.cartaGrupo}
-              grupoDescripcion={props.data.contentfulRestaurantes.grupoDescripcion}
+              grupoDescripcion={
+                props.data.contentfulRestaurantes.grupoDescripcion
+              }
             />
+
+            <div style={{ textAlign: "center", marginTop: 40 }}>
+              <a
+                href={props.data.contentfulRestaurantes.instagramLink}
+                target="_blank"
+                rel="noreferrer"
+                style={{ marginRight: 15 }}
+              >
+                <IoLogoInstagram fontSize="2.3em" color="#47535B" />
+              </a>
+              <a
+                href={props.data.contentfulRestaurantes.trpadvisorLink}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaTripadvisor fontSize="2.3em" color="#47535B" />
+              </a>
+            </div>
           </>
         )}
       </div>

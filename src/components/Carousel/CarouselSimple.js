@@ -32,6 +32,7 @@ const CarouselSimple = React.memo(({ images, name, linked, initial, slug }) => {
               backgroundColor="#f8f8f8"
             />
           ))}
+          <p className="carousel-name-project-simple">{name}</p>
         </div>
         {slider && (
           <>
