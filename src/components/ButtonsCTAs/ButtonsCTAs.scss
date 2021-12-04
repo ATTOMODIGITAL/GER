@@ -1,10 +1,9 @@
 @use "src/styles/utils" as *;
 
-
 .ButtonsCTAs {
   display: flex;
-    justify-content: space-evenly;
-    padding: 20px 0px;
+  justify-content: space-evenly;
+  padding-top: 15px;
 
   &__buton {
     @include button;

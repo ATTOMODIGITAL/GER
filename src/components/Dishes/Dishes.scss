@@ -1,0 +1,7 @@
+@use "src/styles/utils" as *;
+
+.Dishes {
+  @include mobileSidesMargins;
+  text-align: center;
+  margin-top: 20px;
+}

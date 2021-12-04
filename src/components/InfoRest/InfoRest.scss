@@ -1,23 +1,17 @@
 @use "src/styles/utils" as *;
 
-.InfoRest {
-  @include mobileSidesMargins;
-  text-align: center;
-  border-top: 1px solid #e3e7e1;
-  margin-top: 20px;
+.InfoRestXS {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 
   &__item {
-    margin-top: 25px;
-  }
+    text-align: center;
+    width: 150px;
 
-  &__item:first-child {
-    margin-top: 40px;
-    margin-bottom: 20px;
-  }
-
-  &__3 {
-    > a:last-child {
-      margin-left: 20px;
+    > p {
+      font-size: 10px;
+      line-height: 1.6;
     }
   }
 }

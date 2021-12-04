@@ -7,8 +7,10 @@ import useWindowSize from "../hooks/useWindowSize"
 import useViewport from "../hooks/useViewport"
 import ButtonsCTAs from "../components/ButtonsCTAs/ButtonsCTAs"
 import InfoRest from "../components/InfoRest/InfoRest"
+import InfoRestXS from "../components/InfoRest/InfoRestXS"
 import GroupImgs from "../components/GroupImgs/GroupImgs"
 import Text from "../components/Text/Text"
+import Dishes from "../components/Dishes/Dishes"
 
 export const query = graphql`
   query ($slug: String!) {
@@ -37,6 +39,9 @@ export const query = graphql`
         gatsbyImageData(placeholder: DOMINANT_COLOR, layout: FULL_WIDTH)
       }
       desktopDetalleImgs {
+        gatsbyImageData(placeholder: DOMINANT_COLOR, layout: FULL_WIDTH)
+      }
+      platosImgs {
         gatsbyImageData(placeholder: DOMINANT_COLOR, layout: FULL_WIDTH)
       }
     }
@@ -86,6 +91,8 @@ const Restaurante = props => {
             />
 
             <Text text={props.data.contentfulRestaurantes.texto} />
+            
+            <Dishes images={props.data.contentfulRestaurantes.platosImgs} name={props.data.contentfulRestaurantes.nombre}/>
           </>
         ) : (
           <>
@@ -94,31 +101,28 @@ const Restaurante = props => {
               <h6>{props.data.contentfulRestaurantes.categoria}</h6>
             </div>
 
+            <InfoRestXS
+              dir1={props.data.contentfulRestaurantes.direccionLinea1}
+              dir2={props.data.contentfulRestaurantes.direccionLinea2}
+              time1={props.data.contentfulRestaurantes.horarioLinea1}
+              time2={props.data.contentfulRestaurantes.horarioLinea2}
+            />
 
-            <div className="Main__element">
+            <div className="">
               <ButtonsCTAs
                 booking={props.data.contentfulRestaurantes.reservarLinkONo}
                 menu={props.data.contentfulRestaurantes.carta}
               />
             </div>
             
+
             <GroupImgs
               imgs={props.data.contentfulRestaurantes.mobileDetalleImgs}
             />
 
             <Text text={props.data.contentfulRestaurantes.texto} />
 
-            <InfoRest
-              dir1={props.data.contentfulRestaurantes.direccionLinea1}
-              dir2={props.data.contentfulRestaurantes.direccionLinea2}
-              dir3={props.data.contentfulRestaurantes.direccionLinea3}
-              time1={props.data.contentfulRestaurantes.horarioLinea1}
-              time2={props.data.contentfulRestaurantes.horarioLinea2}
-              linkIG={props.data.contentfulRestaurantes.instagramLink}
-              linkTrip={props.data.contentfulRestaurantes.trpadvisorLink}
-              name={props.data.contentfulRestaurantes.nombre}
-              categ={props.data.contentfulRestaurantes.categoria}
-            />
+            <Dishes images={props.data.contentfulRestaurantes.platosImgs} name={props.data.contentfulRestaurantes.nombre}/>
           </>
         )}
       </div>

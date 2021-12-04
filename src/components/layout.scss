@@ -81,6 +81,11 @@ body {
   /******************************* DESKTOP *******************************/
 
   @media (min-width: $break-point) {
+
+    .displayNoneXL {
+      display: none;
+    }
+    
     .Layout {
       @include basicLayoutXL;
 

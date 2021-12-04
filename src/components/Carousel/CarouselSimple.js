@@ -1,17 +1,15 @@
 import React from "react";
 import { useKeenSlider } from "keen-slider/react";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import { navigate } from "gatsby";
 
-import BluredPic from "../BluredPic/BluredPic";
 import "keen-slider/keen-slider.min.css";
 import "./Carousel.scss";
 
-const Carousel = React.memo(({ images, name, linked, initial, slug }) => {
+const CarouselSimple = React.memo(({ images, name, linked, initial, slug }) => {
   const [currentSlide, setCurrentSlide] = React.useState(0);
   const [sliderRef, slider] = useKeenSlider({
     initial: initial || 0,
-    //loop: true,
+    loop: true,
     centered: true,
     spacing: 0,
     mode: "snap",
@@ -21,17 +19,11 @@ const Carousel = React.memo(({ images, name, linked, initial, slug }) => {
     },
   });
 
-  const goToProject = () => {
-    if (linked) {
-      navigate(`/${slug}`);
-    }
-  };
-
   return (
     <>
       <div className="navigation-wrapper">
-        <div ref={sliderRef} onClick={goToProject} className="keen-slider">
-          {images?.slice(0, images.length - 1).map((img, i) => (
+        <div ref={sliderRef} className="keen-slider">
+          {images.map((img, i) => (
             <GatsbyImage
               image={getImage(img)}
               key={i}
@@ -40,12 +32,6 @@ const Carousel = React.memo(({ images, name, linked, initial, slug }) => {
               backgroundColor="#f8f8f8"
             />
           ))}
-          <BluredPic
-            img={images[images?.length - 1]}
-            name={name}
-            class1="keen-slider__slide img_slides"
-            class2="image_carousel_keen img-see-more"
-          />
         </div>
         <p className="carousel-name-project">{name}</p>
         {slider && (
@@ -91,4 +77,4 @@ function ArrowRight(props) {
   );
 }
 
-export default Carousel;
+export default CarouselSimple;

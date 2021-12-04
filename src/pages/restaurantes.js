@@ -22,6 +22,12 @@ const Restaurantes = () => {
         description={data.seoMetaDescripcion}
       />
 
+      <div className="Main__titles displayNoneXL">
+        <h1>Nuestros restaurantes</h1>
+        <h6>Grupo El Rincón</h6>
+      </div>
+
+      <div className="Main__text">
       {size > 880 // ------------------------------ PROJECT ITEM DESKTOP
         ? data.map((rest, i) => (
             <ProjectItem
@@ -45,13 +51,14 @@ const Restaurantes = () => {
                 <p>
                   <b>{rest.node.nombre}</b>
                   <br />
-                  <small>
-                    {rest.node.zona}
-                  </small>
+                  <small>{rest.node.zona}</small>
                 </p>
               </div>
             </div>
           ))}
+      
+      </div>
+
     </Layout>
   )
 }
