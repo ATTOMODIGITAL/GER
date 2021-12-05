@@ -75,6 +75,18 @@ body {
           width: 100%;
         }
       }
+
+      .Button__container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+
+        &--button {
+          @include button;
+          width: fit-content;
+        }
+      }
     }
   }
 
@@ -110,6 +122,18 @@ body {
 
         &--img {
           width: 99%;
+        }
+      }
+
+      .Button__container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+
+        &--button {
+          @include button;
+          width: fit-content;
         }
       }
     }
