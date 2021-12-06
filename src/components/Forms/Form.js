@@ -201,17 +201,22 @@ const Form = () => {
       </div>
 
       <div className="Form__coments">
-        <Input
-          name="message"
-          type="text"
-          text="Comentarios"
-          extraClass="comentsInput"
-          value={state.fields.message}
-          onFocus={onFocus}
-          onChange={onChange}
-          onBlur={onBlur}
-          error={state.errors.message && touched.message ? state.errors.message : ""}
-        />
+        <div className="Input__container">
+          <label className={`Input__container--input comentsInput`}>
+            <textarea
+              name="message"
+              className="Input__container--input__field"
+              type="text"
+              placeholder=" "
+              value={state.fields.message}
+              onChange={onChange}
+              onBlur={onBlur}
+              onFocus={onFocus}
+            />
+            <span className="Input__container--input__label">Mensaje</span>
+            <p className="Input__container--input__error"><small>{state.errors.message && touched.message ? state.errors.message : ""}</small></p>
+          </label>
+        </div>
       </div>
 
       <div className="Form__checkboxes">
@@ -233,13 +238,13 @@ const Form = () => {
           </span>
         </label>
       </div>
+      {resError.error ? <p className="Input__container--input__error"
+      style={{marginTop: 20}}>
+        {resError.info}</p>  : ""}
 
       <div className="Form__button">
         <button>Enviar</button>
       </div>
-      {resError.error ? <p className="Input__container--input__error"
-      style={{marginTop: 20}}>
-        {resError.info}</p>  : ""}
     </form>
   )
 }
