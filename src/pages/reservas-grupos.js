@@ -18,8 +18,8 @@ const ReservasGrupo = () => {
         size > 880 && (<GoBack />)
       }
       <div className="Main__titles">
-        <h1>Formulario para eventos</h1>
-        <h6>Reservas para Grupos</h6>
+        <h1>Eventos y reservas de grupo</h1>
+        <h6>Cuéntanos qué necesitas</h6>
       </div>
       <div className="Main__element">
         <Form groupOrNot={true} />

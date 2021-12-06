@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const create = (opts = () => {}) => {
   const http = axios.create({
-    baseURL: `http://localhost:3001/api`,
+    baseURL: `https://mailer-attomo.herokuapp.com/api`,
     ...opts
   });
 

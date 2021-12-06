@@ -87,21 +87,18 @@ const Form = ({ groupOrNot }) => {
     return !Object.keys(errors).some(e => errors[e])
   }
 
-  const order = () => {
-    const allRests = []
-    dataGroup.map( e => (allRests.push(e.node.nombre)))
-    const firstRest = allRests.filter(rest => rest === groupRest)
-    const nextRests = allRests.filter(rest => rest !== groupRest)
-    const result = [ ...firstRest, ...nextRests ]
-
-    return result
-  }
+  const allRests = []
+  dataGroup.map( e => (allRests.push(e.node.nombre)))
+  const firstRest = allRests.filter(rest => rest === groupRest)
+  const nextRests = allRests.filter(rest => rest !== groupRest)
+  const order = [ ...firstRest, ...nextRests ]
 
   const onSubmit = e => {
     e.preventDefault()
-
+    
+    // send the data 
     if (isValid()) {
-      console.log(state.fields)
+      console.log(state.fields.rest)
       sendData(state.fields)
       .then(() => {
         navigate('/enviado-success')
@@ -116,7 +113,6 @@ const Form = ({ groupOrNot }) => {
 
   const onChange = (e) => {
     const { name, value } = e.target
-
     setState((prevState) => ({
       fields: {
         ...prevState.fields,
@@ -127,14 +123,38 @@ const Form = ({ groupOrNot }) => {
         [name]: validators[name] && validators[name](value)
       }
     }))
+    // Default vaule for select a restaurant
+    if ( state.fields.rest === "" ) {
+      const { name, value } = e.target
+      groupOrNot ? (
+        setState((prevState) => ({
+          fields: {
+            ...prevState.fields,
+            rest: groupRest
+          },
+          errors: {
+            ...prevState.errors,
+            [name]: validators[name] && validators[name](value)
+          }
+        }))
+        ) : (
+       setState((prevState) => ({
+        fields: {
+          ...prevState.fields,
+          rest: data[0].node.nombre
+        },
+        errors: {
+          ...prevState.errors,
+          [name]: validators[name] && validators[name](value)
+        }
+        }))
+      )
+    }
   }
 
   const onChangeCheck = (e) => {
-
     setResError({ error: false })
     let isChecked = e.target.checked;
-
-    console.log(isChecked)
 
     setState((prevState) => ({
       fields: {
@@ -172,8 +192,10 @@ const Form = ({ groupOrNot }) => {
               groupOrNot ? (
               <label>
                 <span className="Form__rests--label">Restaurante</span>
-                <select name="rest" onChange={onChange} value={state.fields.rest}>
-                  {order().map((rest, i) => (
+                <select name="rest" onChange={onChange} 
+                  value={state.fields.rest}
+                >
+                  {order.map((rest, i) => (
                     <option key={i} value={rest} >
                       {rest}
                     </option>
@@ -184,7 +206,10 @@ const Form = ({ groupOrNot }) => {
               ) : (
               <label>
                 <span className="Form__rests--label">Restaurante</span>
-                <select name="rest" onChange={onChange} value={state.fields.rest}>
+                <select 
+                  name="rest" onChange={onChange} 
+                  value={state.fields.rest}
+                >
                   {data.map((rest, i) => (
                     <option key={i} value={rest.node.nombre} >
                       {rest.node.nombre}
