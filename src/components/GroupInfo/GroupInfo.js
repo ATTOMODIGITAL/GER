@@ -26,7 +26,7 @@ const GroupInfo = ({ group, menu, name, grupoDescripcion }) => {
               Carta
             </a>
             <Link
-              to="/reservas-grupos"
+              to={`/reservas-grupos?restaurante=${name}`}
             >
               Reservar
             </Link>

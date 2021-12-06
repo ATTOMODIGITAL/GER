@@ -3,7 +3,7 @@ import * as React from "react"
 import Layout from "../components/layout"
 import useWindowSize from "../hooks/useWindowSize"
 import Seo from "../components/seo"
-import FormGroup from "../components/Forms/FormGroup"
+import Form from "../components/Forms/Form"
 import useViewport from "../hooks/useViewport"
 import GoBack from "../components/GoBack/GoBrack"
 
@@ -22,7 +22,7 @@ const ReservasGrupo = () => {
         <h6>Reservas para Grupos</h6>
       </div>
       <div className="Main__element">
-        <FormGroup />
+        <Form groupOrNot={true} />
       </div>
     </Layout>
   )

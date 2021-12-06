@@ -1,9 +1,11 @@
 import React from "react"
 import { useState } from "react"
 import { navigate } from "@reach/router"
+import { useQueryParam, StringParam } from "use-query-params";
 
 import { sendData } from "../../services/contactService"
 import useListRestQuery from "../../queries/useListRestQuery"
+import useGroupRestQuery from "../../queries/useGroupRestQuery"
 import Input from "./Input"
 import "./Form.scss"
 
@@ -57,15 +59,20 @@ const validators = {
 // --------------------------------------------------------------------
 
 
-const Form = () => {
+const Form = ({ groupOrNot }) => {
   const data = useListRestQuery()
+  const dataGroup = useGroupRestQuery()
+  const group = () => (groupOrNot ? "Sí" : "No")
+  const [groupRest, setGroupRest] = useQueryParam("restaurante", StringParam);
+  const [ resError, setResError ] = useState({ error: false, info: ''})
+  const [touched, setTouched] = useState({})
   const [state, setState] = useState({
     fields: {
-      rest: "Lardies", 
+      rest: "", 
       name: "", email: "", phone: "",
       message: "",
       legal: "", comms: "",
-      group: "No"
+      group: group()
     },
     errors: {
       rest: "",
@@ -74,12 +81,20 @@ const Form = () => {
       legal: validators.legal(), comms: "",
     }
   })
-  const [ resError, setResError ] = useState({ error: false, info: ''})
-  const [touched, setTouched] = useState({})
 
   const isValid = () => {
     const { errors } = state
     return !Object.keys(errors).some(e => errors[e])
+  }
+
+  const order = () => {
+    const allRests = []
+    dataGroup.map( e => (allRests.push(e.node.nombre)))
+    const firstRest = allRests.filter(rest => rest === groupRest)
+    const nextRests = allRests.filter(rest => rest !== groupRest)
+    const result = [ ...firstRest, ...nextRests ]
+
+    return result
   }
 
   const onSubmit = e => {
@@ -152,16 +167,33 @@ const Form = () => {
   return (
     <form method="post" className="Form" onSubmit={onSubmit}>
       <div className="Form__rests">
-        <label>
-          <span className="Form__rests--label">Restaurante</span>
-          <select name="rest" onChange={onChange} value={state.fields.rest}>
-            {data.map((rest, i) => (
-              <option key={i} value={rest.node.nombre} >
-                {rest.node.nombre}
-              </option>
-            ))}
-          </select>
-        </label>
+
+            {
+              groupOrNot ? (
+              <label>
+                <span className="Form__rests--label">Restaurante</span>
+                <select name="rest" onChange={onChange} value={state.fields.rest}>
+                  {order().map((rest, i) => (
+                    <option key={i} value={rest} >
+                      {rest}
+                    </option>
+                  ))}
+
+                </select>
+              </label>
+              ) : (
+              <label>
+                <span className="Form__rests--label">Restaurante</span>
+                <select name="rest" onChange={onChange} value={state.fields.rest}>
+                  {data.map((rest, i) => (
+                    <option key={i} value={rest.node.nombre} >
+                      {rest.node.nombre}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              )
+            }
       </div>
 
       <div className="Form__userInfo">

@@ -26,7 +26,7 @@ const Contacto = () => {
         <p>{useRichText(data.texto)}</p>
       </div>
 
-      <Form />
+      <Form groupOrNot={false}/>
 
     </Layout>
   )
