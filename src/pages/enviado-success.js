@@ -16,20 +16,12 @@ const Success = () => {
         lang="es"
       />
       <div className="Main__titles">
-        <h1>formulario enviado con Exito</h1>
+        <h1>Formulario enviado con éxito</h1>
         <h6>Gracias</h6>
       </div>
 
-      <div className="Main__text">
-        <p>dgfsgsdth</p>
-      </div>
-
-      <div className="Main__img" >
-        <GatsbyImage image={getImage(data.imagen)} alt="GER" className="Main__img--img" />
-      </div>
-
       <div className="Button__container">
-        <Link to="/contacto" className="Button__container--button">Contacto</Link>
+        <Link to="/restaurantes" className="Button__container--button">Ver restaurantes</Link>
       </div>
 
     </Layout>
