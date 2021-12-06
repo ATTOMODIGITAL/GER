@@ -50,6 +50,19 @@ body {
   /******************************* MOBILE *******************************/
 
   @media (max-width: $break-point) {
+
+    .ContainerSpin {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      margin-top: 80px;
+      margin-bottom: 200px;
+
+      &__spinner-style {
+        margin-right: 12px;
+      }
+    }
+
     .Layout {
       @include basicLayoutXS;
 
@@ -93,6 +106,18 @@ body {
   /******************************* DESKTOP *******************************/
 
   @media (min-width: $break-point) {
+
+    .ContainerSpin {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      margin-top: 80px;
+      margin-bottom: 200px;
+
+      &__spinner-style {
+        margin-right: 12px;
+      }
+    }
 
     .displayNoneXL {
       display: none;

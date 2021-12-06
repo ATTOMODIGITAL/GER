@@ -2,6 +2,7 @@ import React from "react"
 import { useState } from "react"
 import { navigate } from "@reach/router"
 import { useQueryParam, StringParam } from "use-query-params";
+import SquareLoader from "react-spinners/SquareLoader";
 
 import { sendData } from "../../services/contactService"
 import useListRestQuery from "../../queries/useListRestQuery"
@@ -64,6 +65,7 @@ const Form = ({ groupOrNot }) => {
   const dataGroup = useGroupRestQuery()
   const group = () => (groupOrNot ? "Sí" : "No")
   const [groupRest, setGroupRest] = useQueryParam("restaurante", StringParam);
+  const [loader, setLoader ] = useState(false)
   const [ resError, setResError ] = useState({ error: false, info: ''})
   const [touched, setTouched] = useState({})
   const [state, setState] = useState({
@@ -96,6 +98,8 @@ const Form = ({ groupOrNot }) => {
   const onSubmit = e => {
     e.preventDefault()
     
+    setLoader(true)
+
     // send the data 
     if (isValid()) {
       console.log(state.fields.rest)
@@ -186,128 +190,141 @@ const Form = ({ groupOrNot }) => {
   }
 
   return (
-    <form method="post" className="Form" onSubmit={onSubmit}>
-      <div className="Form__rests">
+    <>
+    {
+      loader
+      ? (
+        <div className="ContainerSpin">
+           <div className="ContainerSpin__spinner-style"><SquareLoader color="#000" size={15}/></div>
+           <div className="ContainerSpin__spinner-style"><SquareLoader color="#000" size={15}/></div>
+           <div className="ContainerSpin__spinner-style"><SquareLoader color="#000" size={15}/></div>
+        </div>
+      ) : (
+      <form method="post" className="Form" onSubmit={onSubmit}>
+        <div className="Form__rests">
 
-            {
-              groupOrNot ? (
-              <label>
-                <span className="Form__rests--label">Restaurante</span>
-                <select name="rest" onChange={onChange} 
-                  value={state.fields.rest}
-                >
-                  {order.map((rest, i) => (
-                    <option key={i} value={rest} >
-                      {rest}
-                    </option>
-                  ))}
+              {
+                groupOrNot ? (
+                <label>
+                  <span className="Form__rests--label">Restaurante</span>
+                  <select name="rest" onChange={onChange} 
+                    value={state.fields.rest}
+                  >
+                    {order.map((rest, i) => (
+                      <option key={i} value={rest} >
+                        {rest}
+                      </option>
+                    ))}
 
-                </select>
-              </label>
-              ) : (
-              <label>
-                <span className="Form__rests--label">Restaurante</span>
-                <select 
-                  name="rest" onChange={onChange} 
-                  value={state.fields.rest}
-                >
-                  {data.map((rest, i) => (
-                    <option key={i} value={rest.node.nombre} >
-                      {rest.node.nombre}
-                    </option>
-                  ))}
-                </select>
-              </label>
-              )
-            }
-      </div>
+                  </select>
+                </label>
+                ) : (
+                <label>
+                  <span className="Form__rests--label">Restaurante</span>
+                  <select 
+                    name="rest" onChange={onChange} 
+                    value={state.fields.rest}
+                  >
+                    {data.map((rest, i) => (
+                      <option key={i} value={rest.node.nombre} >
+                        {rest.node.nombre}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+                )
+              }
+        </div>
 
-      <div className="Form__userInfo">
-        <Input
-          name="name"
-          type="text"
-          value={state.fields.name}
-          text="Nombre"
-          extraClass="infoInput"
-          onFocus={onFocus}
-          onChange={onChange}
-          onBlur={onBlur}
-          error={state.errors.name && touched.name ? state.errors.name : ""}
-        />
-        <Input
-          name="email"
-          type="email"
-          value={state.fields.email}
-          text="Email"
-          extraClass="infoInput"
-          onFocus={onFocus}
-          onChange={onChange}
-          onBlur={onBlur}
-          error={state.errors.email && touched.email ? state.errors.email : ""}
-        />
-        <Input
-          name="phone"
-          type="text"
-          text="Teléfono"
-          extraClass="infoInput"
-          value={state.fields.phone}
-          onFocus={onFocus}
-          onChange={onChange}
-          onBlur={onBlur}
-          error={state.errors.phone && touched.phone ? state.errors.phone : ""}
-        />
-      </div>
+        <div className="Form__userInfo">
+          <Input
+            name="name"
+            type="text"
+            value={state.fields.name}
+            text="Nombre"
+            extraClass="infoInput"
+            onFocus={onFocus}
+            onChange={onChange}
+            onBlur={onBlur}
+            error={state.errors.name && touched.name ? state.errors.name : ""}
+          />
+          <Input
+            name="email"
+            type="email"
+            value={state.fields.email}
+            text="Email"
+            extraClass="infoInput"
+            onFocus={onFocus}
+            onChange={onChange}
+            onBlur={onBlur}
+            error={state.errors.email && touched.email ? state.errors.email : ""}
+          />
+          <Input
+            name="phone"
+            type="text"
+            text="Teléfono"
+            extraClass="infoInput"
+            value={state.fields.phone}
+            onFocus={onFocus}
+            onChange={onChange}
+            onBlur={onBlur}
+            error={state.errors.phone && touched.phone ? state.errors.phone : ""}
+          />
+        </div>
 
-      <div className="Form__coments">
-        <div className="Input__container">
-          <label className={`Input__container--input comentsInput`}>
-            <textarea
-              name="message"
-              className="Input__container--input__field"
-              type="text"
-              placeholder=" "
-              value={state.fields.message}
-              onChange={onChange}
-              onBlur={onBlur}
-              onFocus={onFocus}
-            />
-            <span className="Input__container--input__label">Mensaje</span>
-            <p className="Input__container--input__error">
-              <small>
-                {state.errors.message && touched.message ? state.errors.message : ""}
-              </small>
-            </p>
+        <div className="Form__coments">
+          <div className="Input__container">
+            <label className={`Input__container--input comentsInput`}>
+              <textarea
+                name="message"
+                className="Input__container--input__field"
+                type="text"
+                placeholder=" "
+                value={state.fields.message}
+                onChange={onChange}
+                onBlur={onBlur}
+                onFocus={onFocus}
+              />
+              <span className="Input__container--input__label">Mensaje</span>
+              <p className="Input__container--input__error">
+                <small>
+                  {state.errors.message && touched.message ? state.errors.message : ""}
+                </small>
+              </p>
+            </label>
+          </div>
+        </div>
+
+        <div className="Form__checkboxes">
+          <label>
+            <input name="legal" type="checkbox" onChange={onChangeCheck}/>
+            <span className="Form__checkboxes--checkLabel">
+              Acepto la política de privacidad y aviso legal
+            </span>
+          </label>
+
+          {state.errors.legal && resError.error ? 
+          <p className="Input__container--input__error">
+          <small>{state.errors.legal}</small></p> : ""}
+
+          <label>
+            <input name="comms" type="checkbox" onChange={onChange}/>
+            <span className="Form__checkboxes--checkLabel">
+              Acepto recibir comunicaciones comerciales
+            </span>
           </label>
         </div>
-      </div>
+        {resError.error ? <p className="Input__container--input__error"
+        style={{marginTop: 20}}>
+          {resError.info}</p>  : ""}
 
-      <div className="Form__checkboxes">
-        <label>
-          <input name="legal" type="checkbox" onChange={onChangeCheck}/>
-          <span className="Form__checkboxes--checkLabel">
-            Acepto la política de privacidad y aviso legal
-          </span>
-        </label>
-
-        {state.errors.legal && resError.error ? 
-        <p className="Input__container--input__error">
-        <small>{state.errors.legal}</small></p> : ""}
-
-        <label>
-          <input name="comms" type="checkbox" onChange={onChange}/>
-          <span className="Form__checkboxes--checkLabel">
-            Acepto recibir comunicaciones comerciales
-          </span>
-        </label>
-      </div>
-      {resError.error ? <p className="Input__container--input__error"
-      style={{marginTop: 20}}>
-        {resError.info}</p>  : ""}
-
-      <div className="Form__button">
-        <button>Enviar</button>
-      </div>
-    </form>
+        <div className="Form__button">
+          <button>Enviar</button>
+        </div>
+      </form>
+      )
+    }
+   </>
   )
 }
 
