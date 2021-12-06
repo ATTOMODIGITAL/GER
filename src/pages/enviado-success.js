@@ -1,28 +1,34 @@
 import React from "react"
 
-import useGrupoQuery from "../queries/useGrupoQuery"
+import useContactQuery from "../queries/useContactQuery"
+import useRichText from "../hooks/useRichText"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { Link } from "gatsby"
+import FormResponse from "../components/FormResponse/FormResponse"
 
 const Success = () => {
-  const data = useGrupoQuery()
+  const data = useContactQuery()
 
   return (
     <Layout>
       <Seo
-        title="El Grupo"
+        title="Contacto"
         lang="es"
+        titleSEO={data.seoTitle}
+        description={data.seoMetaDescripcion}
       />
+      
       <div className="Main__titles">
-        <h1>Formulario enviado con éxito</h1>
-        <h6>Gracias</h6>
+        <h1>{data.titulo}</h1>
+        <h6>{data.subtitulo}</h6>
+      </div>
+      <div className="Main__text">
+        <p>{useRichText(data.texto)}</p>
       </div>
 
-      <div className="Button__container">
-        <Link to="/restaurantes" className="Button__container--button">Ver restaurantes</Link>
+      <div>
+        <FormResponse />
       </div>
-
     </Layout>
   )
 }

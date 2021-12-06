@@ -1,28 +1,34 @@
 import React from "react"
 
-import useGrupoQuery from "../queries/useGrupoQuery"
+import useContactQuery from "../queries/useContactQuery"
+import useRichText from "../hooks/useRichText"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { Link } from "gatsby"
+import FormFail from "../components/FormResponse/FormFail"
 
 const Error = () => {
-  const data = useGrupoQuery()
+  const data = useContactQuery()
 
   return (
     <Layout>
       <Seo
-        title="El Grupo"
+        title="Contacto"
         lang="es"
+        titleSEO={data.seoTitle}
+        description={data.seoMetaDescripcion}
       />
+      
       <div className="Main__titles">
-        <h1>Lo sentimos, no hemos podido enviar su formulario</h1>
-        <h6>Inténtelo de nuevo más tarde</h6>
+        <h1>{data.titulo}</h1>
+        <h6>{data.subtitulo}</h6>
+      </div>
+      <div className="Main__text">
+        <p>{useRichText(data.texto)}</p>
       </div>
 
-      <div className="Button__container">
-        <Link to="/restaurantes" className="Button__container--button">Ver restaurantes</Link>
+      <div>
+        <FormFail/>
       </div>
-
     </Layout>
   )
 }

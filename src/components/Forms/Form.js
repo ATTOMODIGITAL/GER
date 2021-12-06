@@ -272,7 +272,11 @@ const Form = ({ groupOrNot }) => {
               onFocus={onFocus}
             />
             <span className="Input__container--input__label">Mensaje</span>
-            <p className="Input__container--input__error"><small>{state.errors.message && touched.message ? state.errors.message : ""}</small></p>
+            <p className="Input__container--input__error">
+              <small>
+                {state.errors.message && touched.message ? state.errors.message : ""}
+              </small>
+            </p>
           </label>
         </div>
       </div>
