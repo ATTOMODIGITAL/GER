@@ -104,6 +104,7 @@ const Form = ({ groupOrNot }) => {
         navigate('/enviado-success')
       })
       .catch(error => {
+        navigate('/enviado-error-h101')
         setResError({ error: true, info: error })
       })
     } else {

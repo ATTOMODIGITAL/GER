@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { Link } from "gatsby"
 
-const Success = () => {
+const Error = () => {
   const data = useGrupoQuery()
 
   return (
@@ -15,8 +15,8 @@ const Success = () => {
         lang="es"
       />
       <div className="Main__titles">
-        <h1>Formulario enviado con éxito</h1>
-        <h6>Gracias</h6>
+        <h1>Lo sentimos, no hemos podido enviar su formulario</h1>
+        <h6>Inténtelo de nuevo más tarde</h6>
       </div>
 
       <div className="Button__container">
@@ -27,4 +27,4 @@ const Success = () => {
   )
 }
 
-export default Success
+export default Error
