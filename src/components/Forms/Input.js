@@ -13,11 +13,11 @@ const Input = ({
   error
 }) => {
   return (
-    <>
-    <label className={`input ${extraClass}`}>
+    <div className="Input__container">
+    <label className={`Input__container--input ${extraClass}`}>
       <input
         name={name}
-        className="input__field"
+        className="Input__container--input__field"
         type={type}
         placeholder=" "
         value={value}
@@ -25,10 +25,10 @@ const Input = ({
         onBlur={onBlur}
         onFocus={onFocus}
       />
-      <span className="input__label">{text}</span>
+      <span className="Input__container--input__label">{text}</span>
+      <p className="Input__container--input__error"><small>{error}</small></p>
     </label>
-    <p><small>{error}</small></p>
-    </>
+    </div>
   )
 }
 

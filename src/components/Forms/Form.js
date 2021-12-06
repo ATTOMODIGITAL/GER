@@ -47,7 +47,7 @@ const validators = {
   legal: value => {
     let message
     if (value !== true) {
-      message = "*Es aceptar la política de privacidad"
+      message = "*Es necesario aceptar la política de privacidad"
     }
     return message
   },
@@ -95,7 +95,7 @@ const Form = () => {
         setResError({ error: true, info: error })
       })
     } else {
-      setResError({ error: true, info: "Es necesario introducir todos los campos" })
+      setResError({ error: true, info: "*Es necesario introducir todos los campos" })
     }
   }
 
@@ -216,25 +216,30 @@ const Form = () => {
 
       <div className="Form__checkboxes">
         <label>
+          <input name="legal" type="checkbox" onChange={onChangeCheck}/>
           <span className="Form__checkboxes--checkLabel">
             Acepto la política de privacidad y aviso legal
           </span>
-          <input name="legal" type="checkbox" onChange={onChangeCheck}/>
         </label>
+
+        {state.errors.legal && resError.error ? 
+        <p className="Input__container--input__error">
+        <small>{state.errors.legal}</small></p> : ""}
+
         <label>
+          <input name="comms" type="checkbox" onChange={onChange}/>
           <span className="Form__checkboxes--checkLabel">
             Acepto recibir comunicaciones comerciales
           </span>
-          <input name="comms" type="checkbox" onChange={onChange}/>
         </label>
-        {state.errors.legal && resError.error ? state.errors.legal : ""}
       </div>
-
-      <h1>{resError.error ? resError.info : ""}</h1>
 
       <div className="Form__button">
         <button>Enviar</button>
       </div>
+      {resError.error ? <p className="Input__container--input__error"
+      style={{marginTop: 20}}>
+        {resError.info}</p>  : ""}
     </form>
   )
 }
