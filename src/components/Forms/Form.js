@@ -97,11 +97,9 @@ const Form = ({ groupOrNot }) => {
 
   const onSubmit = e => {
     e.preventDefault()
-    
-    setLoader(true)
-
     // send the data 
     if (isValid()) {
+      setLoader(true)
       console.log(state.fields.rest)
       sendData(state.fields)
       .then(() => {

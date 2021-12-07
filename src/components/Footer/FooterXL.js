@@ -5,7 +5,12 @@ import { Link } from "gatsby"
 const FooterXL = () => {
   return (
     <>
-      <div className="FooterXL__bottom__attomo">
+      <a
+        className="FooterXL__bottom__attomo"
+        href="https://attomo.digital/"
+        target="_blank"
+        rel="noreferrer"
+      >
         <p>Powered by</p>
         <div className="FooterXL__bottom__attomo--img">
           <StaticImage
@@ -17,7 +22,7 @@ const FooterXL = () => {
             }}
           />
         </div>
-      </div>
+      </a>
 
       <div className="FooterXL__bottom__legal">
         <Link to="/privacidad" className="FooterXL__bottom__legal--item">
