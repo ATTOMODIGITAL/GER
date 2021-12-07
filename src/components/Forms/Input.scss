@@ -56,11 +56,14 @@
 .comentsInput {
   width: 100%;
 }
-
 .infoInput {
   width: 100%;
   margin-bottom: 0px;
 }
+.message-container {
+  width: 100% !important;
+}
+
 @media (min-width: $break-point) {
 
   .Input__container {
