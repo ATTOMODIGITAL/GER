@@ -26,10 +26,14 @@
         outline: none;
       }
     }
+
+    > label {
+      font-size: 20px;
+    }
   }
 
   &__userInfo {
-    margin: 30px 0px;
+    margin: 20px 0px;
     display: flex;
     flex-direction: column;
   }
@@ -72,7 +76,7 @@
 
 @media (min-width: $break-point) {
   .Form {
-    margin-top: 50px;
+    margin-top: 70px;
     margin: 0px;
     width: 80%;
     display: flex;
@@ -90,7 +94,7 @@
         font-size: 16px;
         font-family: "Montserrat", sans-serif;
         margin-left: 35px;
-        width: 230px;
+        width: 60%;
         &:focus {
           outline: none;
         }
@@ -100,12 +104,14 @@
     &__userInfo {
       margin: 50px 0px;
       display: flex;
-      justify-content: space-between;
+      justify-content: start;
       flex-direction: row;
+      flex-wrap: wrap;
+      width: 100%;
     }
 
     &__coments {
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
 
     &__checkboxes {

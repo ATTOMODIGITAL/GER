@@ -62,11 +62,14 @@
   margin-bottom: 0px;
 }
 @media (min-width: $break-point) {
-  .comentsInput {
-    width: 100%;
-  }
 
-  .infoInput {
-    width: 230px;
+  .Input__container {
+    width: 32.5%;
+  }
+  .comentsInput {
+    width: 100% !important;
+  }
+  .message-container {
+    width: 100% !important;
   }
 }

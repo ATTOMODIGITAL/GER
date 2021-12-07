@@ -15,7 +15,7 @@ const HomeXL = ({ imgs, links, logos }) => {
         <div className="HomeXL__container__row">
           <div
             className="HomeXL__container__row--restCard"
-            style={{ marginRight: 14 }}
+            style={{ marginRight: 30 }}
           >
             <Link to={`restaurantes/${links[0]}`}>
               <GatsbyImage
@@ -50,7 +50,7 @@ const HomeXL = ({ imgs, links, logos }) => {
         <div className="HomeXL__container__row">
           <div
             className="HomeXL__container__row--restCard"
-            style={{ marginRight: 14 }}
+            style={{ marginRight: 30 }}
           >
             <Link to={`restaurantes/${links[2]}`}>
               <GatsbyImage

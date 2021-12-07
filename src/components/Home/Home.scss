@@ -61,7 +61,7 @@
     height: calc($TOP-margin-mobile + 8px);
     width: 100%;
     display: block;
-    padding: 0px 30px;
+    padding: 0px 40px;
 
     &__container {
       display: flex;
@@ -83,7 +83,7 @@
           color: $c-text;
           position: relative;
           font-family: "Montserrat", sans-serif;
-          font-size: 13px;
+          font-size: 14px;
 
           &:hover {
             color: $c-text;
@@ -119,10 +119,10 @@
 
     &__container {
       cursor: pointer;
-      padding: 0px 14px;
+      padding: 0px 40px;
 
       &__row {
-        padding-bottom: 14px;
+        padding-bottom: 30px;
         overflow: hidden;
         width: 100%;
         display: flex;

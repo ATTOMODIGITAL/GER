@@ -11,7 +11,7 @@ const Layout = ({ children }) => {
   return (
     <div className="Layout">
       <Menu />
-      <main>{children}</main>
+        <main>{children}</main>
       <Footer />
     </div>
   )
