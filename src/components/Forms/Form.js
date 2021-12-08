@@ -24,7 +24,7 @@ const Form = ({ groupOrNot }) => {
   const [state, setState] = useState({
     fields: {
       rest: "", name: "", email: "", phone: "",
-      message: "", legal: "", comms: "", group: group(),
+      message: "", legal: "", comms: false, group: group(),
     },
     errors: {
       rest: "", name: validators.name(),
@@ -46,7 +46,7 @@ const Form = ({ groupOrNot }) => {
     // send the data
     if (isValid()) {
       setLoader(true)
-
+      console.log(state.fields)
       sendData(state.fields)
         .then(() => navigate("/enviado-success"))
         .catch(err => {
