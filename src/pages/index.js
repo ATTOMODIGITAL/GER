@@ -1,7 +1,7 @@
 import * as React from "react"
-
 import Seo from "../components/seo"
 import Home from "../components/Home/Home"
+import Cookies from "../components/Cookies/Cookies"
 import useHomesQuery from "../queries/useHomesQuery"
 import useListRestQuery from "../queries/useListRestQuery"
 import useViewport from "../hooks/useViewport"
@@ -14,19 +14,19 @@ const IndexPage = () => {
     data2[0].node.homeImg,
     data2[1].node.homeImg,
     data2[2].node.homeImg,
-    data2[3].node.homeImg
+    data2[3].node.homeImg,
   ]
   const urls = [
     data2[0].node.url,
     data2[1].node.url,
     data2[2].node.url,
-    data2[3].node.url
+    data2[3].node.url,
   ]
   const logos = [
     data2[0].node.logo,
     data2[1].node.logo,
     data2[2].node.logo,
-    data2[3].node.logo
+    data2[3].node.logo,
   ]
 
   useViewport()
@@ -38,12 +38,8 @@ const IndexPage = () => {
         titleSEO={data.seoTitle}
         description={data.seoMetaDescripcion}
       />
-      <Home
-        imgsMob={imgsXL}
-        imgsDesktop={imgsXL}
-        links={urls}
-        logos={logos}
-      />
+      <Cookies />
+      <Home imgsMob={imgsXL} imgsDesktop={imgsXL} links={urls} logos={logos} />
     </>
   )
 }

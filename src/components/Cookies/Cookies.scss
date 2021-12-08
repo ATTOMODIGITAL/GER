@@ -1,0 +1,50 @@
+@use "src/styles/utils" as *;
+
+.CookieConsent {
+  background-color: rgb(255, 255, 255) !important;
+  font-size: 11px;
+  width: 100% !important;
+  font-family: "Montserrat", sans-serif;
+  color: #000 !important;
+  box-shadow: rgba(0, 0, 0, 0.16) 3px 5px 12px, rgba(0, 0, 0, 0.23) 3px 3px 6px !important;
+  padding-bottom: 20px;
+  > div {
+    padding: 0 20px !important;
+    width: 100%;
+    button {
+      color: #fff !important;
+      background-color: #000 !important;
+      font-size: 13px;
+      border: none;
+      padding: 5px 10px;
+      width: 90% !important;
+      max-width: 100% !important;
+    }
+  }
+}
+
+@media (min-width: $break-point) {
+  .CookieConsent {
+    background-color: rgb(255, 255, 255) !important;
+    font-size: 11px;
+    width: 40% !important;
+    font-family: "Montserrat", sans-serif;
+    margin: 25px;
+    color: #000 !important;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px !important;
+    padding: 0px;
+
+    > div {
+      width: auto;
+      button {
+        color: #fff !important;
+        background-color: #000 !important;
+        font-size: 13px;
+        border: none;
+        padding: 5px 10px;
+        margin-top: 0 !important;
+        width: 80px;
+      }
+    }
+  }
+}

@@ -2,6 +2,7 @@ import * as React from "react"
 import PropTypes from "prop-types"
 
 import Menu from "../components/Menu/Menu"
+import Cookies from "../components/Cookies/Cookies"
 import useViewport from "../hooks/useViewport"
 import "./layout.scss"
 import Footer from "./Footer/Footer"
@@ -11,7 +12,8 @@ const Layout = ({ children }) => {
   return (
     <div className="Layout">
       <Menu />
-        <main>{children}</main>
+      <main>{children}</main>
+      <Cookies />
       <Footer />
     </div>
   )
