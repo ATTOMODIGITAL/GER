@@ -48,7 +48,7 @@ const Form = ({ groupOrNot }) => {
     // send the data
     if (isValid()) {
       setLoader(true)
-      console.log(state.fields)
+      
       sendData(state.fields)
         .then(() => navigate("/enviado-success"))
         .catch(err => {
