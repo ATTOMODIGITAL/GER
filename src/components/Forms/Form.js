@@ -4,6 +4,7 @@ import { useQueryParam, StringParam } from "use-query-params"
 
 import { validators, orderRests, orderGroupRests } from "./validators"
 import useGroupRestQuery from "../../queries/useGroupRestQuery"
+import useEmailRestQuery from "../../queries/useEmailRestQuery"
 import useListRestQuery from "../../queries/useListRestQuery"
 import { sendData } from "../../services/contactService"
 import Spinner from "../Spinner/Spinner"
@@ -25,6 +26,7 @@ const Form = ({ groupOrNot }) => {
     fields: {
       rest: "", name: "", email: "", phone: "",
       message: "", legal: "", comms: false, group: group(),
+      emailToRest: useEmailRestQuery().emailRestaurante
     },
     errors: {
       rest: "", name: validators.name(),
