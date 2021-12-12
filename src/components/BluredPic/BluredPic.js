@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby';
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+
 import "./BluredPic.scss"
 
 const BluredPic = ({img, class1, class2 }) => {
