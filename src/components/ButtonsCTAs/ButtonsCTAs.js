@@ -1,6 +1,6 @@
 import React from "react"
-
 import "./ButtonsCTAs.scss"
+
 const ButtonsCTAs = ({ booking, menu }) => {
   const isItBooked = () => {
     if (booking.toLowerCase() === "no") {
