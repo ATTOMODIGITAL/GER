@@ -1,13 +1,13 @@
 import { graphql, useStaticQuery } from "gatsby"
 
-const useHomesQuery = () => {
+const useRestsPageQuery = () => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulHome {
+      allContentfulPaginaListadoRestaurantes {
         edges {
           node {
             seoTitle
-            seoMetaDescription {
+            seoDescription {
               raw
             }
           }
@@ -16,7 +16,7 @@ const useHomesQuery = () => {
     }
   `)
 
-  return data.allContentfulHome.edges[0].node
+  return data.allContentfulPaginaListadoRestaurantes.edges[0].node
 }
 
-export default useHomesQuery
+export default useRestsPageQuery

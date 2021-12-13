@@ -7,7 +7,9 @@ const useContactQuery = () => {
         edges {
           node {
             seoTitle
-            seoMetaDescripcion
+            seoMetaDescripcion {
+              raw
+            }
             texto {
               raw
             }

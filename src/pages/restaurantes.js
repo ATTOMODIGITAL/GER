@@ -3,13 +3,16 @@ import * as React from "react"
 import useListRestQuery from "../queries/useListRestQuery"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import useRichText from "../hooks/useRichText"
 import useWindowSize from "../hooks/useWindowSize"
 import ProjectItem from "../components/ProjectItem/ProjectItem"
 import Carousel from "../components/Carousel/Carousel"
 import useViewport from "../hooks/useViewport"
+import useRestsPageQuery from "../queries/useRestsPageQuery"
 
 const Restaurantes = () => {
   const data = useListRestQuery()
+  const seoData = useRestsPageQuery()
   const size = useWindowSize()
   useViewport()
 
@@ -18,8 +21,8 @@ const Restaurantes = () => {
       <Seo
         title="Restaurantes"
         lang="es"
-        titleSEO={data.seoTitle}
-        description={data.seoMetaDescripcion}
+        titleSEO={seoData.seoTitle}
+        description={useRichText(seoData.seoDescription)}
       />
 
       <div className="Main__titles displayNoneXL">

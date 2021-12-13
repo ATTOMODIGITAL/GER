@@ -20,7 +20,9 @@ export const query = graphql`
   query ($slug: String!) {
     contentfulRestaurantes(url: { eq: $slug }) {
       seoTitle
-      seoMetaDescripcion
+      seoMetaDescripcion {
+        raw
+      }
       nombre
       categoria
       direccionLinea1
@@ -32,7 +34,9 @@ export const query = graphql`
       instagramLink
       reservarLinkONo
       reservasDeGrupoONo
-      grupoDescripcion
+      grupoDescripcion {
+        raw
+      }
       carta {
         file {
           url

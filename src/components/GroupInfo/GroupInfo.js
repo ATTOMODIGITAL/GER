@@ -1,5 +1,6 @@
 import { Link } from "gatsby"
 import React from "react"
+import Text from "../Text/Text"
 import "./GroupInfo.scss"
 
 const GroupInfo = ({ group, menu, name, grupoDescripcion }) => {
@@ -16,7 +17,7 @@ const GroupInfo = ({ group, menu, name, grupoDescripcion }) => {
       {hasGroup() && (
         <div className="GrupoInfo">
           <h4>Eventos para grupos {name}</h4>
-          <p>{grupoDescripcion}</p>
+          <Text text={grupoDescripcion}/>
           <div className="GrupoInfo__buttons">
             <a
               href={`${menu?.file?.url}`}

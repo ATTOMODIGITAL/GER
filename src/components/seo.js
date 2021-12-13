@@ -25,7 +25,7 @@ function Seo({ description, lang, meta, title, titleSEO }) {
     <Helmet
       htmlAttributes={{ lang }}
       title={titleSEO}
-      titleTemplate={defaultTitle ? `${defaultTitle} | ${title}` : null}
+      titleTemplate={defaultTitle ? `${defaultTitle} | ${titleSEO}` : null}
       meta={[
         {
           name: `description`,

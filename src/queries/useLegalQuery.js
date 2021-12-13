@@ -6,7 +6,9 @@ const useAvisoLegalquery = () => {
       allContentfulAvisoLegal {
         edges {
           node {
-            seoMetaDescripcion
+            seoMetaDescripcion {
+              raw
+            }
             seoTitle
             texto {
               raw

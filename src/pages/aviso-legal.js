@@ -14,7 +14,7 @@ const AvisoLegal = () => {
         title="Aviso legal"
         lang="es"
         titleSEO={data.seoTitle}
-        description={data.seoMetaDescripcion}
+        description={useRichText(data.seoMetaDescripcion)}
       />
       <Layout>
         <div className="Main__titles">

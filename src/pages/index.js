@@ -3,6 +3,7 @@ import Seo from "../components/seo"
 import Home from "../components/Home/Home"
 import Cookies from "../components/Cookies/Cookies"
 import useHomesQuery from "../queries/useHomesQuery"
+import useRichText from "../hooks/useRichText"
 import useListRestQuery from "../queries/useListRestQuery"
 import useViewport from "../hooks/useViewport"
 
@@ -30,13 +31,14 @@ const IndexPage = () => {
   ]
 
   useViewport()
+
   return (
     <>
       <Seo
         title="Home"
         lang="es"
         titleSEO={data.seoTitle}
-        description={data.seoMetaDescripcion}
+        description={useRichText(data.seoMetaDescription)}
       />
       <Cookies />
       <Home imgsMob={imgsXL} imgsDesktop={imgsXL} links={urls} logos={logos} />
