@@ -10,7 +10,7 @@ const NavHomeXL = () => {
       <GatsbyImage image={getImage(data.logo)} alt="GER" className="NavHomeXL__container--img"/>
       <div className="NavHomeXL__container--menu">
         <Link className="NavHomeXL__container--menu--item" to="/restaurantes">Nuestros restaurantes</Link>
-        <Link className="NavHomeXL__container--menu--item" to="/grupo">Nuestro Grupo</Link>
+        <Link className="NavHomeXL__container--menu--item" to="/nosotros">Nuestro Grupo</Link>
         <Link className="NavHomeXL__container--menu--item" to="/contacto">Contacto</Link>
       </div>
     </div>

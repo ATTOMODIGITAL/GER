@@ -32,7 +32,7 @@ const Menu = () => {
         <Link
           className="MenuXL__content--navlink"
           activeClassName="MenuXL__content--active"
-          to="/grupo"
+          to="/nosotros"
         >
           Nuestro Grupo
         </Link>

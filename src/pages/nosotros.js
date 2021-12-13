@@ -7,7 +7,7 @@ import useRichText from "../hooks/useRichText"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const Grupo = () => {
+const Nosotros = () => {
   const data = useGrupoQuery()
 
   return (
@@ -46,4 +46,4 @@ const Grupo = () => {
   )
 }
 
-export default Grupo
+export default Nosotros

@@ -24,7 +24,7 @@ const ContentXs = ({ onClick }) => {
         </Link>
       <Link
           className="MenuXS__content__menuButtons--menuItem"
-          to={`/grupo`}
+          to={`/nosotros`}
         >
           <h2>Nuestro Grupo</h2>
         </Link>
