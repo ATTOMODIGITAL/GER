@@ -11,9 +11,9 @@ const HomeXS = ({ imgs, links }) => {
       <MenuXS />
       <div className="HomeXS--imgsContainer">
 
-        <Link to={`restaurantes/${links[0]}`} className="HomeXS--imgsContainer--link">
+        <Link to={`restaurantes/${links[2]}`} className="HomeXS--imgsContainer--link">
           <GatsbyImage
-            image={getImage(imgs[0])}
+            image={getImage(imgs[2])}
             alt=""
             className="HomeXS--imgsContainer--link--img"
           />
@@ -27,17 +27,17 @@ const HomeXS = ({ imgs, links }) => {
           />
         </Link>
 
-        <Link to={`restaurantes/${links[2]}`} className="HomeXS--imgsContainer--link">
+        <Link to={`restaurantes/${links[3]}`} className="HomeXS--imgsContainer--link">
           <GatsbyImage
-            image={getImage(imgs[2])}
+            image={getImage(imgs[3])}
             alt=""
             className="HomeXS--imgsContainer--link--img"
           />
         </Link>
 
-        <Link to={`restaurantes/${links[3]}`} className="HomeXS--imgsContainer--link">
+        <Link to={`restaurantes/${links[0]}`} className="HomeXS--imgsContainer--link">
           <GatsbyImage
-            image={getImage(imgs[3])}
+            image={getImage(imgs[0])}
             alt=""
             className="HomeXS--imgsContainer--link--img"
           />
