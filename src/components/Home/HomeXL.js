@@ -17,14 +17,14 @@ const HomeXL = ({ imgs, links, logos }) => {
             className="HomeXL__container__row--restCard"
             style={{ marginRight: 30 }}
           >
-            <Link to={`restaurantes/${links[0]}`}>
+            <Link to={`restaurantes/${links[2]}`}>
               <GatsbyImage
-                image={getImage(imgs[0])}
+                image={getImage(imgs[2])}
                 alt=""
                 className="HomeXL__container__row--restCard--img"
               />
               <GatsbyImage
-                image={getImage(logos[0])}
+                image={getImage(logos[2])}
                 alt=""
                 className="HomeXL__container__row--restCard--name"
               />
@@ -52,21 +52,6 @@ const HomeXL = ({ imgs, links, logos }) => {
             className="HomeXL__container__row--restCard"
             style={{ marginRight: 30 }}
           >
-            <Link to={`restaurantes/${links[2]}`}>
-              <GatsbyImage
-                image={getImage(imgs[2])}
-                alt=""
-                className="HomeXL__container__row--restCard--img"
-              />
-              <GatsbyImage
-                image={getImage(logos[2])}
-                alt=""
-                className="HomeXL__container__row--restCard--name"
-              />
-            </Link>
-          </div>
-
-          <div className="HomeXL__container__row--restCard">
             <Link to={`restaurantes/${links[3]}`}>
               <GatsbyImage
                 image={getImage(imgs[3])}
@@ -75,6 +60,21 @@ const HomeXL = ({ imgs, links, logos }) => {
               />
               <GatsbyImage
                 image={getImage(logos[3])}
+                alt=""
+                className="HomeXL__container__row--restCard--name"
+              />
+            </Link>
+          </div>
+
+          <div className="HomeXL__container__row--restCard">
+            <Link to={`restaurantes/${links[0]}`}>
+              <GatsbyImage
+                image={getImage(imgs[0])}
+                alt=""
+                className="HomeXL__container__row--restCard--img"
+              />
+              <GatsbyImage
+                image={getImage(logos[0])}
                 alt=""
                 className="HomeXL__container__row--restCard--name"
               />
