@@ -7,7 +7,7 @@ import gridButton from "../../images/squares-grid.png"
 import carouselButton from "../../images/square-lista.png"
 import "./ProjectItem.scss"
 
-const ProjectItem = ({ name, year, slug, imgs }) => {
+const ProjectItem = ({ name, year, slug, imgs, dir1, dir2, time1, time2, menu, booking, bookGroup }) => {
   const [state, setState] = useState(true)
 
   const handleClick = () => {
@@ -25,6 +25,8 @@ const ProjectItem = ({ name, year, slug, imgs }) => {
                 name={`${name}, ${year}`}
                 linked={true}
                 slug={`restaurantes/${slug}`}
+                dir1={dir1} dir2={dir2} time1={time1} time2={time2} menu={menu} booking={booking}
+                bookGroup={bookGroup}
               />
             </div>
 

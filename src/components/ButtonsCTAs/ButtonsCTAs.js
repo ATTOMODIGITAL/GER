@@ -1,7 +1,7 @@
 import React from "react"
 import "./ButtonsCTAs.scss"
 
-const ButtonsCTAs = ({ booking, menu }) => {
+const ButtonsCTAs = ({ booking, menu, extraClassname }) => {
   const isItBooked = () => {
     if (booking.toLowerCase() === "no") {
       return false
@@ -12,7 +12,7 @@ const ButtonsCTAs = ({ booking, menu }) => {
 
   return (
     <>
-      <div className="ButtonsCTAs">
+      <div className={`ButtonsCTAs ${extraClassname ? "ExtraButtonsCTAs" : ""}`}>
         <a
           href={`${menu?.file?.url}`}
           target="_blank"

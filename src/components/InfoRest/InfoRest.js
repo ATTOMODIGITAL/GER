@@ -3,7 +3,7 @@ import { IoLogoInstagram } from "react-icons/io"
 import { FaTripadvisor } from "react-icons/fa"
 import "./InfoRest.scss"
 
-const InfoRest = ({ dir1, dir2, dir3, time1, time2, linkIG, linkTrip, name, categ }) => {
+const InfoRest = ({ dir1, dir2, time1, time2, linkIG, linkTrip, name, categ }) => {
   return (
     <div className="InfoRest">
       {

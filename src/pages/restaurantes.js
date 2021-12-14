@@ -39,6 +39,9 @@ const Restaurantes = () => {
               year={rest.node.zona}
               slug={rest.node.url}
               imgs={rest.node.desktopListadoImgs.slice(0, 4)}
+              dir1={rest.node.direccionLinea1} dir2={rest.node.direccionLinea2} time1={rest.node.horarioLinea1} time2={rest.node.horarioLinea2} 
+              menu={rest.node.carta} booking={rest.node.reservarLinkONo} bookGroup={rest.node.reservasDeGrupoONo}
+              
             />
           ))
         : // ------------------------------------------ CAROUSEL MOBILE
@@ -49,12 +52,14 @@ const Restaurantes = () => {
                 images={rest.node.mobileListadoImgs.slice(0, 4)}
                 linked={true}
                 slug={`restaurantes/${rest.node.url}`}
+                dir1={rest.node.direccionLinea1} dir2={rest.node.direccionLinea2} time1={rest.node.horarioLinea1} time2={rest.node.horarioLinea2} 
+                menu={rest.node.carta} booking={rest.node.reservarLinkONo} bookGroup={rest.node.reservasDeGrupoONo}
               />
               <div className="justify-content-center text-center mb-5 mt-2">
                 <p>
-                  <b>{rest.node.nombre}</b>
+                  <b style={{fontSize: 16, lineHeight: 0}}>{rest.node.nombre}</b>
                   <br />
-                  <small>{rest.node.zona}</small>
+                  {rest.node.zona}
                 </p>
               </div>
             </div>

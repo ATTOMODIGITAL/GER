@@ -89,6 +89,7 @@ const Restaurante = props => {
               <ButtonsCTAs
                 booking={props.data.contentfulRestaurantes.reservarLinkONo}
                 menu={props.data.contentfulRestaurantes.carta}
+                extraClassname={true}
               />
             </div>
 
@@ -140,6 +141,7 @@ const Restaurante = props => {
               <ButtonsCTAs
                 booking={props.data.contentfulRestaurantes.reservarLinkONo}
                 menu={props.data.contentfulRestaurantes.carta}
+                extraClassname={true}
               />
             </div>
 

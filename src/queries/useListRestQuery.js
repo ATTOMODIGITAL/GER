@@ -21,6 +21,17 @@ const UseListRestQuery = () => {
             desktopListadoImgs {
               gatsbyImageData(placeholder: DOMINANT_COLOR, layout: FULL_WIDTH)
             }
+            carta {
+              file {
+                url
+              }
+            }
+            direccionLinea1
+            direccionLinea2
+            horarioLinea1
+            horarioLinea2
+            reservarLinkONo
+            reservasDeGrupoONo
           }
         }
       }

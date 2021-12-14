@@ -3,11 +3,11 @@ import { useKeenSlider } from "keen-slider/react";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { navigate } from "gatsby";
 
-import BluredPic from "../BluredPic/BluredPic";
+import CardPic from "../CardPic/CardPic";
 import "keen-slider/keen-slider.min.css";
 import "./Carousel.scss";
 
-const Carousel = React.memo(({ images, name, linked, initial, slug }) => {
+const Carousel = React.memo(({ images, name, linked, initial, slug, dir1, dir2, time1, time2, menu, booking, bookGroup }) => {
   const [currentSlide, setCurrentSlide] = React.useState(0);
   const [sliderRef, slider] = useKeenSlider({
     initial: initial || 0,
@@ -40,11 +40,12 @@ const Carousel = React.memo(({ images, name, linked, initial, slug }) => {
               backgroundColor="#f8f8f8"
             />
           ))}
-          <BluredPic
+          <CardPic
             img={images[images?.length - 1]}
             name={name}
             class1="keen-slider__slide img_slides"
-            class2="image_carousel_keen img-see-more"
+            dir1={dir1} dir2={dir2} time1={time1} time2={time2} menu={menu} booking={booking}
+            bookGroup={bookGroup}
           />
         </div>
         <p className="carousel-name-project">{name}</p>

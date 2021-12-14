@@ -6,7 +6,7 @@ import "./BluredPic.scss"
 const BluredPic = ({img, class1, class2 }) => {
   return (
     <div className={`${class1} BluredPic`}>
-      <Link className="BluredPic--buttonSeeMore">Ver más</Link>
+      <Link className="BluredPic--buttonSeeMore">Ver restaurante</Link>
       <GatsbyImage
         image={getImage(img)}
         alt=""
