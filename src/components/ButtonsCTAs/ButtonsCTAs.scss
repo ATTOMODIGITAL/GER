@@ -10,6 +10,18 @@
   }
 }
 
+.ExtraButtonsCTA {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  margin-top: 25px;
+  &__buton {
+    margin-top: 5px;
+    font-size: 12px !important;
+  }
+}
+
 @media (min-width: $break-point) {
   .ButtonsCTAs {
     display: flex;
