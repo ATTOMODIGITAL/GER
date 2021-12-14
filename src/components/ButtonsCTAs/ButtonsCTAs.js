@@ -15,7 +15,7 @@ const ButtonsCTAs = ({ booking, menu, extraClassname }) => {
       <div className={`ButtonsCTAs ${extraClassname ? "ExtraButtonsCTAs" : "ExtraButtonsCTA"}`}>
         <a
           href={`${menu?.file?.url}`}
-          target="_blank"
+          // target="_blank"
           rel="noreferrer"
           className={`ButtonsCTAs__buton ${extraClassname ?  "" : "ExtraButtonsCTA__buton"}`}
         >
@@ -25,7 +25,7 @@ const ButtonsCTAs = ({ booking, menu, extraClassname }) => {
           <a
             className={`ButtonsCTAs__buton ${extraClassname ?  "" : "ExtraButtonsCTA__buton"}`}
             href={booking}
-            target="_blank"
+            // target="_blank"
             rel="noreferrer"
           >
             Reservar
