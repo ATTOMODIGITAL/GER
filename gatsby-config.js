@@ -7,7 +7,7 @@ module.exports = {
     title: `El Rincón`,
     description: `Grupo de restauración`,
     author: `I.Palma`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    siteUrl: `https://www.grupoelrincon.es/`,
   },
   flags: {
     PARALLEL_QUERY_RUNNING: true
@@ -42,7 +42,7 @@ module.exports = {
         start_url: `/`,
         background_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/logo-ger-example.jpeg`, // This path is relative to the root of the site.
+        icon: `src/images/logo-GER.png`, // This path is relative to the root of the site.
       },
     },
     {
