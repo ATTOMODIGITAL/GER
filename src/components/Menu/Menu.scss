@@ -58,7 +58,7 @@
       box-shadow: 0px 0px 0px #fff, 0px -2px 5px rgba(45, 45, 45, 0.1);
 
       &__brand {
-        width: 70px;
+        width: 85px;
         
         &--logoImg {
           width: 50%;
@@ -122,8 +122,8 @@
       &__container {
         position: fixed !important;
         top: $TOP-margin-level-1;
-        left: calc($LEFT-margin-level-1 + 8px);
-        width: $HEIGHT-level-1;
+        left: calc($LEFT-margin-level-1 - 10px);
+        width: calc($HEIGHT-level-1 + 60px);
 
         &--logoImg {
           width: 100%;
