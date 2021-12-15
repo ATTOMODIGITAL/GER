@@ -19,18 +19,21 @@ const ContentXs = ({ onClick }) => {
       <Link
           className="MenuXS__content__menuButtons--menuItem"
           to={`/restaurantes`}
+          {...(onClick ? { onClick: () => onClick(`/restaurantes`) } : {})}
         >
           <h2>Nuestros restaurantes</h2>
         </Link>
       <Link
           className="MenuXS__content__menuButtons--menuItem"
           to={`/nosotros`}
+          {...(onClick ? { onClick: () => onClick(`/nosotros`) } : {})}
         >
           <h2>Nuestro Grupo</h2>
         </Link>
       <Link
           className="MenuXS__content__menuButtons--menuItem"
           to={`/contacto`}
+          {...(onClick ? { onClick: () => onClick(`/contacto`) } : {})}
         >
           <h2>Contacto</h2>
         </Link>

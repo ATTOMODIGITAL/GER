@@ -20,9 +20,8 @@ const MenuXS = () => {
     }, 100)
   }
 
-  const handleLinkClick = pathname => {
-    const pathnames = [pathname, `${pathname}/`]
-    if (pathnames.some(path => path === window.location.pathname)) {
+  const handleLinkClick = (pathname) => {
+    if (pathname === window.location.pathname) {
       setOpenHam(false)
     }
   }
