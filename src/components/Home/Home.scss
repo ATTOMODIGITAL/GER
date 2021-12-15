@@ -58,10 +58,10 @@
   }
 
   .NavHomeXL {
-    height: calc($TOP-margin-mobile + 8px);
+    height: calc($TOP-margin-mobile + 35px);
     width: 100%;
     display: block;
-    padding: 0px 40px;
+    padding: 0px 40px 0px 32px;
 
     &__container {
       display: flex;
@@ -71,7 +71,7 @@
       height: 100%;
 
       &--img {
-        width: 60px;
+        width: 100px;
       }
 
       &--menu {
