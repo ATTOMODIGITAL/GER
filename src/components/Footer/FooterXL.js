@@ -35,7 +35,6 @@ const FooterXL = () => {
           <p style={{ color: "#c4c5c3" }}>Aviso Legal</p>
         </Link>
       </div>
-      
     </>
   )
 }
