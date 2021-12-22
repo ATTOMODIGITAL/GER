@@ -26,13 +26,13 @@ const FooterXL = () => {
 
       <div className="FooterXL__bottom__legal">
         <Link to="/privacidad" className="FooterXL__bottom__legal--item">
-          <p style={{ color: "#e3e7e1" }}>Política de privacidad</p>
+          <p style={{ color: "#c4c5c3" }}>Política de privacidad</p>
         </Link>
         <Link to="/cookies" className="FooterXL__bottom__legal--item">
-          <p style={{ color: "#e3e7e1" }}>Política de cookies</p>
+          <p style={{ color: "#c4c5c3" }}>Política de cookies</p>
         </Link>
         <Link to="/aviso-legal" className="FooterXL__bottom__legal--item">
-          <p style={{ color: "#e3e7e1" }}>Aviso Legal</p>
+          <p style={{ color: "#c4c5c3" }}>Aviso Legal</p>
         </Link>
       </div>
     </>

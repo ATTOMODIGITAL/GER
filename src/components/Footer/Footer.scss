@@ -19,7 +19,7 @@
       border-top: 1px solid #e3e7e1;
       background-color: rgb(255, 255, 255);
       margin-top: 50px;
-      height: 25vh;
+      height: 45vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -37,7 +37,6 @@
         justify-content: center;
         line-height: 0;
         width: 100%;
-        margin-bottom: 30px;
         text-decoration: none;
   
         &--img {
@@ -49,6 +48,8 @@
       }
   
       &__items {
+        margin-bottom: 35px;
+        margin-top: 35px;
         &--legal {
           text-decoration: none;
           line-height: 2rem;
@@ -117,7 +118,7 @@
         margin-top: 20px;
         &--item {
           margin-right: 20px;
-          color: #e3e7e1;
+          color: $c-text-light;
           text-decoration: none;
         }
       }
