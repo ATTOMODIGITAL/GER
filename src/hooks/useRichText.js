@@ -24,9 +24,7 @@ const options = {
 }
 
 const useRichText = (text) => {
-
   return renderRichText(text, options)
-  
 }
 
 export default useRichText
