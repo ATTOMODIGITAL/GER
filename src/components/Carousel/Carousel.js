@@ -11,7 +11,7 @@ const Carousel = React.memo(({ images, name, linked, initial, slug, dir1, dir2, 
   const [currentSlide, setCurrentSlide] = React.useState(0);
   const [sliderRef, slider] = useKeenSlider({
     initial: initial || 0,
-    //loop: true,
+    loop: true,
     centered: true,
     spacing: 0,
     mode: "snap",
