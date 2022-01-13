@@ -38,7 +38,7 @@ const IndexPage = () => {
         title="Home"
         lang="es"
         titleSEO={data.seoTitle}
-        description={useRichText(data.seoMetaDescription)}
+        description={data.seoMetaDescription.seoMetaDescription}
       />
       <Cookies />
       <Home imgsMob={imgsXL} imgsDesktop={imgsXL} links={urls} logos={logos} />

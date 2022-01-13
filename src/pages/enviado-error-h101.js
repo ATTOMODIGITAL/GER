@@ -15,7 +15,7 @@ const Error = () => {
         title="Contacto"
         lang="es"
         titleSEO={data.seoTitle}
-        description={useRichText(data.seoMetaDescripcion)}
+        description={data.seoMetaDescription.seoMetaDescription}
       />
       
       <div className="Main__titles">

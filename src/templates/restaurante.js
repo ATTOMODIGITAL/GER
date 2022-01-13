@@ -20,8 +20,8 @@ export const query = graphql`
   query ($slug: String!) {
     contentfulRestaurantes(url: { eq: $slug }) {
       seoTitle
-      seoMetaDescripcion {
-        raw
+      seoMetaDescription {
+        seoMetaDescription
       }
       nombre
       categoria
@@ -73,7 +73,7 @@ const Restaurante = props => {
         title={props.data.contentfulRestaurantes.nombre}
         lang="es"
         titleSEO={props.data.contentfulRestaurantes.seoTitle}
-        description={props.data.contentfulRestaurantes.seoMetaDescripcion}
+        description={props.data.contentfulRestaurantes.seoMetaDescription}
       />
 
       <div className="">

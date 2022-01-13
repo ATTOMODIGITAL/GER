@@ -8,7 +8,7 @@ const useHomesQuery = () => {
           node {
             seoTitle
             seoMetaDescription {
-              raw
+              seoMetaDescription
             }
           }
         }

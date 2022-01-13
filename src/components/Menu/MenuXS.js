@@ -71,7 +71,7 @@ const MenuXS = () => {
           || location.pathname.startsWith('/priv') 
           || location.pathname.startsWith('/cooki') 
           || location.pathname.startsWith('/reserv') 
-          ? <GoBack /> : "pp"
+          ? <GoBack /> : ""
         }
         </div>
       </div>

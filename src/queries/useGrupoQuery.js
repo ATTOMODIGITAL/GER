@@ -6,8 +6,8 @@ const UseGrupoQuery = () => {
       allContentfulElGrupo {
         edges {
           node {
-            seoMetaDescripcion {
-              raw
+            seoMetaDescription {
+              seoMetaDescription
             }
             seoTitle
             titulo

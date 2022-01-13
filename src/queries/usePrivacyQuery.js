@@ -7,7 +7,7 @@ const usePrivacidad = () => {
         edges {
           node {
             seoMetaDescription {
-              raw
+              seoMetaDescription
             }
             seoTitle
             texto {

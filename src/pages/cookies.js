@@ -14,7 +14,7 @@ const Cookies = () => {
         title="Política de Cookies"
         lang="es"
         titleSEO={data.seoTitle}
-        description={useRichText(data.seoMetaDescripcion)}
+        description={data.seoMetaDescription.seoMetaDescription}
       />
       <Layout>
         <div className="Main__titles">

@@ -3,7 +3,6 @@ import * as React from "react"
 import useListRestQuery from "../queries/useListRestQuery"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import useRichText from "../hooks/useRichText"
 import useWindowSize from "../hooks/useWindowSize"
 import ProjectItem from "../components/ProjectItem/ProjectItem"
 import Carousel from "../components/Carousel/Carousel"
@@ -22,7 +21,7 @@ const Restaurantes = () => {
         title="Restaurantes"
         lang="es"
         titleSEO={seoData.seoTitle}
-        description={useRichText(seoData.seoDescription)}
+        description={data.seoMetaDescription.seoMetaDescription}
       />
 
       <div className="Main__titles displayNoneXL">

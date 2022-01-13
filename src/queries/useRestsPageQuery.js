@@ -7,8 +7,8 @@ const useRestsPageQuery = () => {
         edges {
           node {
             seoTitle
-            seoDescription {
-              raw
+            seoMetaDescription {
+              seoMetaDescription
             }
           }
         }

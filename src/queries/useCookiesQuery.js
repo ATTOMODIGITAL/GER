@@ -10,8 +10,8 @@ const useCookiesQuery = () => {
             texto {
               raw
             }
-            seoMetaDescripcion {
-              raw
+            seoMetaDescription {
+              seoMetaDescription
             }
             seoTitle
           }

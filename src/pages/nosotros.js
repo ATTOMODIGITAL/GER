@@ -16,7 +16,7 @@ const Nosotros = () => {
         title="El Grupo"
         lang="es"
         titleSEO={data.seoTitle}
-        description={useRichText(data.seoMetaDescripcion)}
+        description={data.seoMetaDescription.seoMetaDescription}
       />
       <Layout>
         <div className="Main__titles">
