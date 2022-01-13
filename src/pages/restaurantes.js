@@ -21,7 +21,7 @@ const Restaurantes = () => {
         title="Restaurantes"
         lang="es"
         titleSEO={seoData.seoTitle}
-        description={data.seoMetaDescription.seoMetaDescription}
+        description={seoData.seoMetaDescription.seoMetaDescription}
       />
 
       <div className="Main__titles displayNoneXL">
