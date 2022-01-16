@@ -164,7 +164,6 @@ const Restaurante = props => {
                 props.data.contentfulRestaurantes.grupoDescripcion
               }
             />
-
             <div style={{ textAlign: "center", marginTop: 40 }}>
               <a
                 href={props.data.contentfulRestaurantes.instagramLink}
