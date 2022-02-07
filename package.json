@@ -36,6 +36,7 @@
     "use-query-params": "^1.2.3"
   },
   "devDependencies": {
+    "gatsby-plugin-netlify": "^4.1.0",
     "prettier": "^2.4.1"
   },
   "keywords": [

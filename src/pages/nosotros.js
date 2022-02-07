@@ -7,6 +7,7 @@ import useRichText from "../hooks/useRichText"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
+
 const Nosotros = () => {
   const data = useGrupoQuery()
 

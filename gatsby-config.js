@@ -19,6 +19,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     "gatsby-plugin-use-query-params",
+    'gatsby-plugin-netlify',
     {
       resolve: `gatsby-source-contentful`,
       options: {
