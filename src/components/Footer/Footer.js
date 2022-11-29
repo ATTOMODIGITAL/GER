@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <>
       <div className="FooterXS">
-        <FooterXS email={data.email} phone={data.telefono}/>
+        <FooterXS email={data.email} phone={data.telefono} description={JSON.parse(data.descripcionFooter.raw)} image={data.imagenFooter.url}/>
       </div>
 
       <div className="FooterXL">

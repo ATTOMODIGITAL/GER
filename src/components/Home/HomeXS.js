@@ -1,15 +1,25 @@
 import React from "react"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { Link } from "gatsby"
-
-import "./Home.scss"
 import MenuXS from "../Menu/MenuXS"
+import {HiOutlineChevronDoubleDown} from "react-icons/hi"
+import CardRestaurantXS from "../cardRestaurant/cardRestaurant"
+import Footer from "../Footer/Footer"
+import "./Home.scss"
 
-const HomeXS = ({ imgs, links }) => {
+const HomeXS = ({ restaurants, imgs, links }) => {
+
   return (
     <>
-      <MenuXS />
-      <div className="HomeXS--imgsContainer">
+      <div className="HomeXS__imageContainer">
+        <MenuXS />
+        <HiOutlineChevronDoubleDown style={{paddingBottom:"1rem", fontSize:"3.5em"}} color={"#ffff"}/>
+      </div>
+      <div className="HomeXS__restaurantsContainer">
+        <h1>Nuestros <br/> restaurantes</h1>
+        {restaurants.map((rest,i) => <CardRestaurantXS data={rest} link={links[i]}/>)}
+      </div>
+      <Footer/>
+
+      {/* <div className="HomeXS--imgsContainer">
 
         <Link to={`restaurantes/${links[2]}`} className="HomeXS--imgsContainer--link">
           <GatsbyImage
@@ -43,7 +53,7 @@ const HomeXS = ({ imgs, links }) => {
           />
         </Link>
 
-      </div>
+      </div> */}
     </>
   )
 }

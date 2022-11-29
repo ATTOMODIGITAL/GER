@@ -8,6 +8,12 @@ const useFooterQuery = () => {
           node {
             telefono
             email
+            descripcionFooter {
+              raw
+            }
+            imagenFooter {
+              url
+            }
           }
         }
       }

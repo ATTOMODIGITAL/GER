@@ -6,13 +6,13 @@ import HomeXL from "./HomeXL"
 import useViewport from "../../hooks/useViewport"
 import "./Home.scss"
 
-const Home = ({ imgsMob, imgsDesktop, links, logos }) => {
+const Home = ({ restaurants, imgsMob, imgsDesktop, links, logos }) => {
   useViewport()
 
   return (
     <>
       <div className="HomeXS">
-        <HomeXS imgs={imgsMob} links={links} />
+        <HomeXS restaurants={restaurants} imgs={imgsMob} links={links} />
       </div>
       
       <div className="NavHomeXL">
