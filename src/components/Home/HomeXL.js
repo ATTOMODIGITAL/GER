@@ -17,7 +17,7 @@ const HomeXL = ({videoDesktop, restaurants ,imgs, links, logos }) => {
       <div className="HomeXL__container">
         <div className="HomeXL__container__banner">
             <NavHomeXL />
-            <video src={videoDesktop.file.url} type="video/mp4" autoPlay muted playsInline loop 
+            <video src={videoDesktop.url} type="video/mp4" autoPlay muted playsInline loop 
               className="HomeXL__container__banner__video"
             >
             </video>
