@@ -1,11 +1,12 @@
 import React from "react";
 import { useKeenSlider } from "keen-slider/react";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { Link } from "gatsby";
 
 import "keen-slider/keen-slider.min.css";
 import "./CarouselSimple.scss";
 
-const CarouselSimple = React.memo(({ images, name, linked, initial, slug }) => {
+const CarouselSimple = React.memo(({ images, name, linked, initial, slug, link }) => {
   const [currentSlide, setCurrentSlide] = React.useState(0);
   const [sliderRef, slider] = useKeenSlider({
     initial: initial || 0,
@@ -22,18 +23,40 @@ const CarouselSimple = React.memo(({ images, name, linked, initial, slug }) => {
   return (
     <>
       <div className="navigation-wrapper-simple">
+
+      {link === undefined ? (
         <div ref={sliderRef} className="keen-slider">
           {images.map((img, i) => (
-            <GatsbyImage
-              image={getImage(img)}
-              key={i}
-              alt=""
-              className={`image_carousel_keen keen-slider__slide img_slides`}
-              backgroundColor="#f8f8f8"
-            />
+                <GatsbyImage
+                  image={getImage(img)}
+                  key={i}
+                  alt=""
+                  className={`image_carousel_keen keen-slider__slide img_slides`}
+                  backgroundColor="#f8f8f8"
+                />
           ))}
           <p className="carousel-name-project-simple">{name}</p>
         </div>
+        ) : (
+                <Link to={`restaurantes/${link}`}>
+        <div ref={sliderRef} className="keen-slider">
+          {images.map((img, i) => (
+                  <GatsbyImage
+                    image={getImage(img)}
+                    key={i}
+                    alt=""
+                    className={`image_carousel_keen keen-slider__slide img_slides`}
+                    backgroundColor="#f8f8f8"
+                  />
+
+              ))}
+          
+          <p className="carousel-name-project-simple">{name}</p>
+        </div>
+                </Link>
+        )
+      }
+      
         {slider && (
           <>
             <ArrowLeft

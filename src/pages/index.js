@@ -3,7 +3,7 @@ import Seo from "../components/seo"
 import Home from "../components/Home/Home"
 import Cookies from "../components/Cookies/Cookies"
 import useHomesQuery from "../queries/useHomesQuery"
-import useRichText from "../hooks/useRichText"
+//import useRichText from "../hooks/useRichText"
 import useListRestQuery from "../queries/useListRestQuery"
 import useViewport from "../hooks/useViewport"
 
@@ -41,7 +41,7 @@ const IndexPage = () => {
         description={data.seoMetaDescription.seoMetaDescription}
       />
       <Cookies />
-      <Home imgsMob={imgsXL} imgsDesktop={imgsXL} links={urls} logos={logos} />
+      <Home videoXS={data.videoHomeMobile} videoDesktop={data.videoHomeDesktop} restaurants={data2} imgsMob={imgsXL} imgsDesktop={imgsXL} links={urls} logos={logos} />
     </>
   )
 }
