@@ -54,6 +54,14 @@ module.exports = {
             cartaGrupo: "Node",
             reservasDeGrupo: "String"
           },
+          allContentfulHome:{
+            videoHomeDesktop: {
+              "url": "string"
+            },
+          videoHomeMobile: {
+            "url" : "string"
+          }
+        }
         },
       }
     },
