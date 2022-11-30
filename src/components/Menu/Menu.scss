@@ -26,7 +26,7 @@
     transform: translate(-50%);
     width: 25%;
     height: 3px;
-    background-color: rgba(255, 255, 255, 0.926);
+    //background-color: rgba(255, 255, 255, 0.926);
   }
 
   .MenuXS__header--background {
@@ -36,13 +36,14 @@
     left: 0;
     width: 100%;
     height: calc($TOP-margin-mobile + 5px);
-    background-color: #fff;
+    //background-color: #fff;
   }
 
   .MenuXS {
     &__header--bar {
       z-index: 99999;
-      position: fixed;
+      //position: fixed;
+      position: absolute;
       top: 3px;
       left: 0;
       display: flex;
@@ -51,10 +52,10 @@
       align-items: center;
       width: 100%;
       height: $TOP-margin-mobile;
-      background-color: #fff;
+      //background-color: #fff;
       padding: 10px 22px;
-      border-bottom: 1px solid #e3e7e1;
-      border-top: 1px solid #e3e7e1;
+      //border-bottom: 1px solid #e3e7e1;
+      //border-top: 1px solid #e3e7e1;
       box-shadow: 0px 0px 0px #fff, 0px -2px 5px rgba(45, 45, 45, 0.1);
 
       &__brand {

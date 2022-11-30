@@ -1,15 +1,33 @@
 import React from "react"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { Link } from "gatsby"
-
-import "./Home.scss"
 import MenuXS from "../Menu/MenuXS"
+import {HiOutlineChevronDoubleDown} from "react-icons/hi"
+import CardRestaurantXS from "../cardRestaurant/cardRestaurant"
+import Footer from "../Footer/Footer"
+import "./Home.scss"
 
-const HomeXS = ({ imgs, links }) => {
+const HomeXS = ({videoXS, restaurants, imgs, links }) => {
+
   return (
     <>
-      <MenuXS />
-      <div className="HomeXS--imgsContainer">
+      <div className="HomeXS__imageContainer">
+        <MenuXS />
+        <video autoPlay muted playsInline loop width={2000}
+        src={videoXS.file.url} type="video/mp4"
+              className="HomeXS__imageContainer__video"
+        >
+          </video>
+        <a href="#restaurants" style={{position: "absolute", top: "93vh"}}>
+            <HiOutlineChevronDoubleDown
+              className="animation"
+              style={{paddingBottom:"1rem", fontSize:"3.5em"}} color={"#ffff"}/></a>
+      </div>
+      <div id="restaurants" className="HomeXS__restaurantsContainer">
+        <h1>Nuestros <br/> restaurantes</h1>
+        {restaurants.map((rest,i) => <CardRestaurantXS key={i} data={rest} link={links[i]}/>)}
+      </div>
+      <Footer/>
+
+      {/* <div className="HomeXS--imgsContainer">
 
         <Link to={`restaurantes/${links[2]}`} className="HomeXS--imgsContainer--link">
           <GatsbyImage
@@ -43,7 +61,7 @@ const HomeXS = ({ imgs, links }) => {
           />
         </Link>
 
-      </div>
+      </div> */}
     </>
   )
 }

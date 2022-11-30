@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react"
-import { Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { Link } from "gatsby"
 import { useLocation } from '@reach/router';
 import HamburgerMenu from "react-hamburger-menu"
-
 import useLogoQuery from "../../queries/useLogoQuery"
 import Footer from "../Footer/Footer"
 import ContentXs from "./ContentXS"
@@ -41,17 +40,17 @@ const MenuXS = () => {
 
   return (
     <>
-      <div className="MenuXS__header--background"></div>
-      <div className="MenuXS__header--blankInShadow"></div>
+      {/* <div className="MenuXS__header--background"></div> */}
+      {/* <div className="MenuXS__header--blankInShadow"></div> */}
 
       <div className="MenuXS__header--bar">
         <HamburgerMenu
           isOpen={openHam}
           menuClicked={() => handleHamClick()}
-          color="#303546"
+          color="#ffffff"
           width={27}
           height={16}
-          strokeWidth={1}
+          strokeWidth={2}
           animationDuration={0.6}
           className="MenuXS__header--hamburger"
         />
