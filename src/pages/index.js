@@ -41,7 +41,7 @@ const IndexPage = () => {
         description={data.seoMetaDescription.seoMetaDescription}
       />
       <Cookies />
-      <Home restaurants={data2} imgsMob={imgsXL} imgsDesktop={imgsXL} links={urls} logos={logos} />
+      <Home videoXS={data.videoHomeMobile} videoDesktop={data.videoHomeDesktop} restaurants={data2} imgsMob={imgsXL} imgsDesktop={imgsXL} links={urls} logos={logos} />
     </>
   )
 }

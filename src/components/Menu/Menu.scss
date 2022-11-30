@@ -43,6 +43,7 @@
     &__header--bar {
       z-index: 99999;
       //position: fixed;
+      position: absolute;
       top: 3px;
       left: 0;
       display: flex;

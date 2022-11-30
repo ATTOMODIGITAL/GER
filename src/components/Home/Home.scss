@@ -20,6 +20,15 @@
     opacity: 1;
   }
 }
+
+@keyframes zoom {
+  0%{
+    font-size: 3.5rem;
+  }
+  100%{
+    font-size: 4.2rem;
+  }
+}
 /******************** MOBILE *********************/
 .HomeXL {
   display: none;
@@ -28,11 +37,18 @@
   display: none;
 }
 
+.animation{
+  animation: zoom 1s ease-in;
+  animation-duration: 1.2s;
+  animation-iteration-count: 2;
+  animation-delay: 1s;
+}
 .HomeXS {
   width: 100%;
+  position: relative;
   
   &__imageContainer{
-    background-image: url('./../../images/fondo-pantalla.png');
+    //background-image: url('./../../images/fondo-pantalla.png');
     background-position: top;
     background-size: cover;
     background-repeat: no-repeat;
@@ -41,6 +57,17 @@
     justify-content: space-between;
     align-items: center;
     height: 100vh;
+    &__video{
+      max-height: 100vh;
+      border: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      object-fit: cover;
+    }
   }
   &__restaurantsContainer{
     font-family: "Montserrat", sans-serif;
@@ -68,50 +95,47 @@
     height: calc($TOP-margin-mobile + 35px);
     width: 100%;
     display: block;
-    padding: 0px 40px 0px 32px;
-
     &__container {
+      padding: 1.5rem 40px 0px 32px;
+      z-index: 100;
       display: flex;
       justify-content: space-between;
       align-content: center;
-      align-items: center;
+      align-items: flex-start;
       height: 100%;
-
+      width: 100%;
       &--img {
         width: 100px;
       }
-
       &--menu {
         width: 37%;
         display: flex;
         justify-content: space-between;
         &--item {
           text-decoration: none;
-          color: $c-text;
+          color: $c-text-menuXL;
           position: relative;
           font-family: "Montserrat", sans-serif;
           font-size: 14px;
-
           &:hover {
-            color: $c-text;
+            color: $c-text-menuXL;
             cursor: pointer;
           }
-
           &::after {
             background: none repeat scroll 0 0 transparent;
             bottom: 0;
             content: "";
             display: block;
             height: 1px;
-            color: $c-text;
+            color: $c-text-menuXL;
             position: absolute;
-            background: $c-text;
+            background: $c-text-menuXL;
             transition: width 0.4s ease 0s, left 0.4s ease 0s;
             width: 0;
           }
           &:hover::after {
             width: 100%;
-            color: $c-text;
+            color: $c-text-menuXL;
             left: 0;
           }
         }
@@ -120,51 +144,176 @@
   }
 
   .HomeXL {
+    width: 100%;
     position: relative;
     display: flex;
     flex-direction: column;
-
     &__container {
       cursor: pointer;
-      padding: 0px 40px;
-
-      &__row {
-        padding-bottom: 30px;
-        overflow: hidden;
-        width: 100%;
+      //padding: 0px 40px;
+      &__banner{
+        position: relative;
+        min-width: 100vw;
+        height: 64vh;
+        //z-index: 1;
+        //padding: 1.5rem 3rem;
+        //background-image: url('./../../images/fondo-pantalla.png');
+        background-position: top;
+        background-size: cover;
+        background-repeat: no-repeat;
         display: flex;
-        justify-content: space-between;
-        align-content: center;
+        flex-direction: column;
         align-items: center;
+        justify-content: center;
+        &__video{
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          object-fit: cover;
+          
+        }
       }
-    }
-    .HomeXL__container__row--restCard {
-      width: 50%;
+      &__restaurants{
+        display: flex;
+        height: 40vh;
+        position: relative;
+        &--restCard{
+          width: 25%;
+          height: 100%;
+          &--img{
+            height: 100%;
+            background:  brightness(80%);
+            opacity: 0.8;
+          }
+        }
+        &--details{
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-around;
+          top: 0;
+          padding: 1.5rem 4rem;
+          height: 100%;
+          width: 100%;
+          &--title{
+            color: #000;
+            font-weight: 500;
+            font-size: 32px;
+          }
+          &--text{
+            color: #000;
+            font-family: "Montserrat", sans-serif;
+            font-weight: 500;
+            font-size: 18px;
+            text-align: center;
+            min-height: 150px;
+          }
+          &--button{
+            border: solid 1px #000;
+            width: 60%;
+            cursor: pointer;
+            font-size: 18px;
+            background-color: rgba(255, 255, 255, 0.6);
+            padding: 8px 16px;
+          }
+          &--hover{
+            min-height: 200px;
+            display: none;
+            &--item{
+              display: flex;
+              justify-content: flex-start;
+              align-items: flex-start;
+              gap: 0.5rem;
+              font-family: "Montserrat", sans-serif;
+              font-size: 18px;
+              width: 100%;
+              &:nth-child(2){
+                display: flex;
+                align-items: flex-start;
+                justify-content: flex-start;
+              }
+              & p{
+                color: #fff;
+                font-weight: 500;
+                font-size: 18px;
+              }
+              &--hour{
+                & p{
+                  color: #fff;
+                  font-weight: 500;
+                  font-size: 18px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+    //   &__row {
+    //     padding-bottom: 30px;
+    //     overflow: hidden;
+    //     width: 100%;
+    //     display: flex;
+    //     justify-content: space-between;
+    //     align-content: center;
+    //     align-items: center;
+    //   }
+     }
+    .HomeXL__container__restaurants--restCard {
+      //width: 50%;
       position: relative;
 
-      &--name {
-        visibility: hidden;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        color: #fff;
-        font-size: 32px;
-        font-weight: 500;
-        font-family: "Oswald", sans-serif;
-        width: 100%;
-        text-align: center;
-        width: 120px;
-      }
+      // &--name {
+      //   visibility: hidden;
+      //   position: absolute;
+      //   left: 50%;
+      //   top: 50%;
+      //   transform: translate(-50%, -50%);
+      //   color: #fff;
+      //   font-size: 32px;
+      //   font-weight: 500;
+      //   font-family: "Oswald", sans-serif;
+      //   width: 100%;
+      //   text-align: center;
+      //   width: 120px;
+      // }
 
       &:hover {
-        .HomeXL__container__row--restCard--img {
+        .HomeXL__container__restaurants--restCard--img {
+          opacity: 1;
           filter: brightness(50%);
-          animation: hoverImg 0.5s;
+          //animation: hoverImg 0.5s;
         }
-        .HomeXL__container__row--restCard--name {
-          animation: hoverName 0.4s;
-          visibility: visible;
+        // .HomeXL__container__row--restCard--name {
+        //   animation: hoverName 0.4s;
+        //   visibility: visible;
+        // }
+        .HomeXL__container__restaurants--details{
+          &--title{
+            color: #fff;
+          }
+          &--text{
+            display: none;
+          }
+          &--button{
+            background-color: #000;
+            color: #fff;
+          }
+          &--hover{
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            &--item{
+              display: flex;
+              align-items: flex-start;
+              justify-content: flex-start;
+            }
+          }
         }
       }
     }

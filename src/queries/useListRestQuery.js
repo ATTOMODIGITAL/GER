@@ -32,6 +32,10 @@ const UseListRestQuery = () => {
             horarioLinea2
             reservarLinkONo
             reservasDeGrupoONo
+            homeDescriptionText {
+              raw
+            }
+            homeNameDesktop
           }
         }
       }
