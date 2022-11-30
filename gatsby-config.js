@@ -56,10 +56,10 @@ module.exports = {
           },
           allContentfulHome:{
             videoHomeDesktop: {
-              "url": "string"
+              "url": "String"
             },
           videoHomeMobile: {
-            "url" : "string"
+            "url" : "String"
           }
         }
         },
