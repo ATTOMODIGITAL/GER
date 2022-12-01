@@ -11,10 +11,14 @@ const useHomesQuery = () => {
               seoMetaDescription
             }
             videoHomeDesktop {
-                url
+                file {
+                  url
+                }
             }
             videoHomeMobile {
-                url
+                file {
+                  url
+                }
             }
           }
         }

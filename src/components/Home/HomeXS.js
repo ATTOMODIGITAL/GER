@@ -12,7 +12,7 @@ const HomeXS = ({videoXS, restaurants, imgs, links }) => {
       <div className="HomeXS__imageContainer">
         <MenuXS />
         <video autoPlay muted playsInline loop width={2000}
-        src={videoXS.url} type="video/mp4"
+        src={videoXS.file.url} type="video/mp4"
               className="HomeXS__imageContainer__video"
         >
           </video>
