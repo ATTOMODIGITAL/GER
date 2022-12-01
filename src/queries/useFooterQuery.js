@@ -12,7 +12,9 @@ const useFooterQuery = () => {
               raw
             }
             imagenFooter {
-              url
+              file {
+                url
+              }
             }
           }
         }
