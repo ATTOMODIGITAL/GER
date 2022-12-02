@@ -33,10 +33,11 @@ const HomeXL = ({videoDesktop, restaurants ,imgs, links, logos }) => {
                   />
                   <div className="HomeXL__container__restaurants--details">
                     <h2 className="HomeXL__container__restaurants--details--title">{rest.node.homeNameDesktop}</h2>
+                    <p className="HomeXL__container__restaurants--details--text">{JSON.parse(rest.node.homeDescriptionText.raw).content[0].content[0].value}</p>
                     <div className="HomeXL__container__restaurants--details--hover">
                       <div className="HomeXL__container__restaurants--details--hover--item">
                         <GoLocation style={{color:"#fff"}}/>
-                        <p>{rest.node.direccionLinea1}</p>
+                        <p className="HomeXL__container__restaurants--details--hover--location">{rest.node.direccionLinea1}</p>
                       </div>
                       <div className="HomeXL__container__restaurants--details--hover--item">
                         <HiOutlineClock style={{color:"#fff"}}/>
@@ -46,7 +47,6 @@ const HomeXL = ({videoDesktop, restaurants ,imgs, links, logos }) => {
                         </div>
                       </div>
                     </div>
-                    <p className="HomeXL__container__restaurants--details--text">{JSON.parse(rest.node.homeDescriptionText.raw).content[0].content[0].value}</p>
                     <button className="HomeXL__container__restaurants--details--button">Ver más</button>
                   </div>
               </Link>
