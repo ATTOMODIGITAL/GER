@@ -39,8 +39,8 @@ const MenuXS = () => {
     }
   }, [openHam])
 
-  const path = window.location.href;
-  console.log(openHam)
+  const path = window?.location.href;
+
   return (
     <>
       {/* <div className="MenuXS__header--background"></div> */}

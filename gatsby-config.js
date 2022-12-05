@@ -10,7 +10,8 @@ module.exports = {
     siteUrl: `https://www.grupoelrincon.es/`,
   },
   flags: {
-    PARALLEL_QUERY_RUNNING: true
+    PARALLEL_QUERY_RUNNING: true,
+      DEV_SSR: true
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
