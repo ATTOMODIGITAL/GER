@@ -8,7 +8,7 @@ const CardRestaurantXS = ({data, link}) => {
 
     return (
         <div className="cardRestaurantXS">
-            <h1>{data.node.nombre.toUpperCase()}</h1>
+            <h1 className="cardRestaurantXS__title">{data.node.nombre.toUpperCase()}</h1>
             <div className="cardRestaurantXS__images">
                 <CarouselSimple images={data.node.mobileListadoImgs} name={""} link={link}/>
             </div>
