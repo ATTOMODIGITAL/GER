@@ -1,13 +1,14 @@
 import React from 'react'
+import CarouselDots from '../Carousel/CarouselDots'
 
-import CarouselSimple from '../Carousel/CarouselSimple'
+//import CarouselSimple from '../Carousel/CarouselSimple'
 import "./Dishes.scss"
 
 const Dishes = ({ images, name }) => {
   return (
     <div className="Dishes">
       <h4 style={{marginBottom: 20, marginTop: 25}}>Nuestros platos</h4>
-      <CarouselSimple images={images} name={name}/>
+      <CarouselDots images={images} name={name}/>
     </div>
   )
 }
