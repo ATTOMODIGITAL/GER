@@ -7,6 +7,7 @@ import useLogoQuery from "../../queries/useLogoQuery"
 import Footer from "../Footer/Footer"
 import ContentXs from "./ContentXS"
 import GoBack from "../GoBack/GoBrack"
+import darkLogo from './../../images/logo-dark.png'
 
 const MenuXS = () => {
   const [openHam, setOpenHam] = useState(false)
@@ -47,7 +48,7 @@ const MenuXS = () => {
         <HamburgerMenu
           isOpen={openHam}
           menuClicked={() => handleHamClick()}
-          color="#ffffff"
+          color={openHam ? "#000000" : "#ffffff"}
           width={27}
           height={16}
           strokeWidth={2}
@@ -55,13 +56,24 @@ const MenuXS = () => {
           className="MenuXS__header--hamburger"
         />
         
-        <Link to="/" className="MenuXS__header--bar__brand">
-          <GatsbyImage
-            image={getImage(data.logo)}
-            alt="GER"
-            className="MenuXS__header__brand--logoImg"
-          />
-        </Link>
+        {openHam ? 
+          <Link to="/" className="MenuXS__header--bar__brand">
+            <img
+              src={darkLogo}
+              alt="GER"
+              style={{width:"85px"}}
+              className="MenuXS__header__brand--logoImg"
+            />
+          </Link>
+         : 
+          <Link to="/" className="MenuXS__header--bar__brand">
+            <GatsbyImage
+              image={getImage(data.logo)}
+              alt="GER"
+              className="MenuXS__header__brand--logoImg"
+            />
+          </Link>
+        }
         
         <div style={{ width: 27, color: "#fff" }}>
         {
