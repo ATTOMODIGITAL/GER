@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
-
+//import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import darkLogo from './../../images/logo-dark.png'
 import useLogoQuery from "../../queries/useLogoQuery"
 
 const Menu = () => {
@@ -11,8 +11,8 @@ const Menu = () => {
     <>
       <div className="MenuXL__brand">
         <Link className="MenuXL__brand__container" to="/">
-          <GatsbyImage
-            image={getImage(data.logo)}
+          <img
+            src={darkLogo}
             alt="GER"
             className="MenuXL__brand__container--logoImg"
           />
