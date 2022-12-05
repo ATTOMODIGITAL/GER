@@ -16,10 +16,11 @@ const HomeXS = ({videoXS, restaurants, imgs, links }) => {
               className="HomeXS__imageContainer__video"
         >
           </video>
-        <a href="#restaurants" style={{position: "absolute", top: "93vh"}}>
+        <div onClick={()=> window.scroll(0,window.innerHeight)}
+         style={{position: "absolute", top: "93vh"}}>
             <HiOutlineChevronDoubleDown
               className="animation"
-              style={{paddingBottom:"1rem", fontSize:"3.5em"}} color={"#ffff"}/></a>
+              style={{paddingBottom:"1rem", fontSize:"3.5em"}} color={"#ffff"}/></div>
       </div>
       <div id="restaurants" className="HomeXS__restaurantsContainer">
         <h1>Nuestros <br/> restaurantes</h1>
