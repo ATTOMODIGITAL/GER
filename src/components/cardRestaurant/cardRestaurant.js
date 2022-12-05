@@ -1,6 +1,7 @@
 import React from "react"
 import ButtonsHomeXS from "../ButtonsHomeXS/buttonsHomeXS"
-import CarouselSimple from "../Carousel/CarouselSimple"
+import CarouselDots from "../Carousel/CarouselDots"
+//import CarouselSimple from "../Carousel/CarouselSimple"
 import './cardRestaurant..scss'
 
 
@@ -10,7 +11,7 @@ const CardRestaurantXS = ({data, link}) => {
         <div className="cardRestaurantXS">
             <h1>{data.node.nombre.toUpperCase()}</h1>
             <div className="cardRestaurantXS__images">
-                <CarouselSimple images={data.node.mobileListadoImgs} name={""} link={link}/>
+                <CarouselDots images={data.node.mobileListadoImgs} name={""} link={link}/>
             </div>
             <ButtonsHomeXS
                 booking={data.node.reservarLinkONo}
