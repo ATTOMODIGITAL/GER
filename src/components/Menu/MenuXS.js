@@ -38,6 +38,14 @@ const MenuXS = () => {
       htmlNode.style.overflow = null
     }
   }, [openHam])
+  
+  let path =""
+  function isBrowser(){
+     if (typeof window !== "undefined")
+     path = window?.location.href;
+
+  }
+  isBrowser()
 
   return (
     <>
@@ -48,7 +56,7 @@ const MenuXS = () => {
         <HamburgerMenu
           isOpen={openHam}
           menuClicked={() => handleHamClick()}
-          color={openHam ? "#000000" : "#ffffff"}
+          color={openHam ? "#000000" : path.includes('restaurant') || path.includes('contacto')  || path.includes('nosotros') || path.includes('privacidad') || path.includes('cookies') || path.includes('legal') ? "#000000" :"#ffffff"}
           width={27}
           height={16}
           strokeWidth={2}
@@ -56,7 +64,7 @@ const MenuXS = () => {
           className="MenuXS__header--hamburger"
         />
         
-        {openHam ? 
+        {openHam || path.includes('restaurant') || path.includes('contacto') || path.includes('nosotros') || path.includes('privacidad') || path.includes('cookies') || path.includes('legal')? 
           <Link to="/" className="MenuXS__header--bar__brand">
             <img
               src={darkLogo}
