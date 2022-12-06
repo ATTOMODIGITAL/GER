@@ -38,8 +38,14 @@ const MenuXS = () => {
       htmlNode.style.overflow = null
     }
   }, [openHam])
+  
+  let path =""
+  function isBrowser(){
+     if (typeof window !== "undefined")
+     path = window?.location.href;
 
-  const path = window?.location.href;
+  }
+  isBrowser()
 
   return (
     <>
