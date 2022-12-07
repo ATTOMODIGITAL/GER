@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 //import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import darkLogo from './../../images/logo-dark.png'
+import darkLogo from './../../images/logo-dark.svg'
 import useLogoQuery from "../../queries/useLogoQuery"
 
 const Menu = () => {

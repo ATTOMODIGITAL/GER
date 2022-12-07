@@ -7,7 +7,7 @@ import useLogoQuery from "../../queries/useLogoQuery"
 import Footer from "../Footer/Footer"
 import ContentXs from "./ContentXS"
 import GoBack from "../GoBack/GoBrack"
-import darkLogo from './../../images/logo-dark.png'
+import darkLogo from './../../images/logo-dark.svg'
 
 const MenuXS = () => {
   const [openHam, setOpenHam] = useState(false)
