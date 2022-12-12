@@ -6,10 +6,16 @@ import "./Dishes.scss"
 
 const Dishes = ({ images, name }) => {
   return (
-    <div className="Dishes">
-      <h4 style={{marginBottom: 20, marginTop: 25}}>Nuestros platos</h4>
-      <CarouselDots images={images} name={name}/>
-    </div>
+   <>
+    {
+    images ? 
+        <div className="Dishes">
+        <h4 style={{marginBottom: 20, marginTop: 25}}>Nuestros platos</h4>
+        <CarouselDots images={images} name={name}/>
+      </div>
+      : <></>
+   }
+   </>
   )
 }
 
