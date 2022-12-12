@@ -19,13 +19,16 @@ const GroupInfo = ({ group, menu, name, grupoDescripcion }) => {
           <h4>Eventos para grupos {name}</h4>
           <Text text={grupoDescripcion}/>
           <div className="GrupoInfo__buttons">
-            <a
-              href={`${menu?.file?.url}`}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Carta
-            </a>
+            {
+              menu && 
+                <a
+                href={`${menu?.file?.url}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Carta
+              </a>
+            }
             <Link
               to={`/reservas-grupos?restaurante=${name}`}
             >

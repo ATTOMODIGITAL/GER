@@ -22,6 +22,7 @@ const IndexPage = () => {
     data2[1].node.url,
     data2[2].node.url,
     data2[3].node.url,
+    data2[4].node.url,
   ]
   const logos = [
     data2[0].node.logo,
