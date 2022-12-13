@@ -6,7 +6,7 @@ const FooterXS = ({ email, phone, description, image }) => {
   return (
     <div className="FooterXS__container">
       <h3>VISITANOS</h3>
-      <img className="FooterXS__container__image" src={image} alt={image} />
+      <Link to="/" ><img className="FooterXS__container__image" src={image} alt={image} /></Link>
       <p className="FooterXS__container__description">{description.content[0].content[0].value}</p>
 
       <div className="FooterXS__container__items">
