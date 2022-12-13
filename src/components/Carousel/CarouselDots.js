@@ -46,7 +46,7 @@ const CarouselDots = ( {images, name, linked, initial, slug, link } ) => {
       <div className="navigation-wrapper-simple">
       {link === undefined ? (
         <div ref={sliderRef} className="keen-slider">
-          {images.map((img, i) => (
+          {images?.map((img, i) => (
                 <GatsbyImage
                   image={getImage(img)}
                   key={i}
