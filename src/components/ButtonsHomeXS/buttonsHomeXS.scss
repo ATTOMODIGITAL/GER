@@ -3,7 +3,8 @@
 .ButtonsHomeXS {
   display: flex;
   justify-content: space-evenly;
-  padding-top: 15px;
+  //padding-top: 15px;
+  padding-top: 0px;
 
   &__buton {
     @include button;
@@ -16,7 +17,7 @@
   align-items: center;
   gap: 1.5rem;
   &__buton {
-    margin-top: 5px;
+    //margin-top: 5px;
     font-size: 12px !important;
   }
 }
