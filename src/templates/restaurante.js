@@ -130,12 +130,14 @@ const Restaurante = props => {
               <h6>{props.data.contentfulRestaurantes.categoria}</h6>
             </div>
 
-            <InfoRestXS
+            { props.data.contentfulRestaurantes.nombre.toUpperCase() !== "PONZANITO" ? 
+              <InfoRestXS
               dir1={props.data.contentfulRestaurantes.direccionLinea1}
               dir2={props.data.contentfulRestaurantes.direccionLinea2}
               time1={props.data.contentfulRestaurantes.horarioLinea1}
               time2={props.data.contentfulRestaurantes.horarioLinea2}
-            />
+            /> : null
+            }
 
             <div className="">
               <ButtonsCTAs
@@ -164,7 +166,7 @@ const Restaurante = props => {
                 props.data.contentfulRestaurantes.grupoDescripcion
               }
             />
-            <div style={{ textAlign: "center", marginTop: 40 }}>
+            <div style={{ textAlign: "center", marginTop: 40, marginBottom: 50 }}>
               <a
                 href={props.data.contentfulRestaurantes.instagramLink}
                 target="_blank"
