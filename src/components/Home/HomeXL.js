@@ -23,35 +23,67 @@ const HomeXL = ({videoDesktop, restaurants ,imgs, links, logos }) => {
             </video>
         </div>
         <div className="HomeXL__container__restaurants">
-            {restaurants.map((rest, i) => (
-              <div key={i} className="HomeXL__container__restaurants--restCard">
-                <Link to={`restaurantes/${rest.node.url}`}>
-                  <GatsbyImage
-                    image={getImage(rest.node.homeImg)}
-                    alt=""
-                    className="HomeXL__container__restaurants--restCard--img"
-                  />
-                  <div className="HomeXL__container__restaurants--details">
-                    <h2 className="HomeXL__container__restaurants--details--title">{rest.node.homeNameDesktop}</h2>
-                    <p className="HomeXL__container__restaurants--details--text">{JSON.parse(rest.node.homeDescriptionText.raw).content[0].content[0].value}</p>
-                    <div className="HomeXL__container__restaurants--details--hover">
-                      <div className="HomeXL__container__restaurants--details--hover--item">
-                        <GoLocation style={{color:"#fff"}}/>
-                        <p className="HomeXL__container__restaurants--details--hover--location">{rest.node.direccionLinea1}</p>
-                      </div>
-                      <div className="HomeXL__container__restaurants--details--hover--item">
-                        <HiOutlineClock style={{color:"#fff"}}/>
-                        <div className="HomeXL__container__restaurants--details--hover--item--hour">
-                          <p>{rest.node.horarioLinea1}</p>
-                          <p>{rest.node.horarioLinea2}</p>
+            {restaurants.map((rest, i) => {
+              if(rest.node.homeNameDesktop === 'PONZANITO' )
+                return (<div key={i} className="HomeXL__container__restaurants--restCard">
+                  <Link to={`restaurantes/${rest.node.url}`}>
+                    <GatsbyImage
+                      image={getImage(rest.node.homeImg)}
+                      alt=""
+                      className="HomeXL__container__restaurants--restCard--img"
+                    />
+                    <div className="HomeXL__container__restaurants--details">
+                      <h2 className="HomeXL__container__restaurants--details--title">{rest.node.homeNameDesktop}</h2>
+                      <p className="HomeXL__container__restaurants--details--text">{JSON.parse(rest.node.homeDescriptionText.raw).content[0].content[0].value}</p>
+                      {/* <div className="HomeXL__container__restaurants--details--hover">
+                        <div className="HomeXL__container__restaurants--details--hover--item">
+                          <GoLocation style={{color:"#fff"}}/>
+                          <p className="HomeXL__container__restaurants--details--hover--location">{rest.node.direccionLinea1}</p>
+                        </div>
+                         <div className="HomeXL__container__restaurants--details--hover--item">
+                          <HiOutlineClock style={{color:"#fff"}}/>
+                          <div className="HomeXL__container__restaurants--details--hover--item--hour">
+                            <p>{rest.node.horarioLinea1}</p>
+                            <p>{rest.node.horarioLinea2}</p>
+                          </div>
+                        </div> 
+                      </div> */}
+                      <button className="HomeXL__container__restaurants--details--button">Próximamente</button>
+                    </div>
+                  </Link>
+                </div> )
+              else   
+                return (<div key={i} className="HomeXL__container__restaurants--restCard">
+                  <Link to={`restaurantes/${rest.node.url}`}>
+                    <GatsbyImage
+                      image={getImage(rest.node.homeImg)}
+                      alt=""
+                      className="HomeXL__container__restaurants--restCard--img"
+                    />
+                    <div className="HomeXL__container__restaurants--details">
+                      <h2 className="HomeXL__container__restaurants--details--title">{rest.node.homeNameDesktop}</h2>
+                      <p className="HomeXL__container__restaurants--details--text">{JSON.parse(rest.node.homeDescriptionText.raw).content[0].content[0].value}</p>
+                      <div className="HomeXL__container__restaurants--details--hover">
+                        <div className="HomeXL__container__restaurants--details--hover--item">
+                          <GoLocation style={{color:"#fff"}}/>
+                          <p className="HomeXL__container__restaurants--details--hover--location">{rest.node.direccionLinea1}</p>
+                        </div>
+                        <div className="HomeXL__container__restaurants--details--hover--item">
+                          <HiOutlineClock style={{color:"#fff"}}/>
+                          <div className="HomeXL__container__restaurants--details--hover--item--hour">
+                            <p>{rest.node.horarioLinea1}</p>
+                            <p>{rest.node.horarioLinea2}</p>
+                          </div>
                         </div>
                       </div>
+                      <button className="HomeXL__container__restaurants--details--button">Ver más</button>
                     </div>
-                    <button className="HomeXL__container__restaurants--details--button">Ver más</button>
-                  </div>
-              </Link>
-              </div>
-            )
+                  </Link>
+                </div> )
+              
+              
+              
+            }
 
             )}
         </div>
