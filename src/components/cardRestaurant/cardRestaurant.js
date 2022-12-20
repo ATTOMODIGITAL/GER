@@ -16,6 +16,8 @@ const CardRestaurantXS = ({data, link}) => {
             <ButtonsHomeXS
                 booking={data.node.reservarLinkONo}
                 menu={data.node.carta}
+                name={data.node.nombre.toUpperCase()}
+                restaurantLink={data.node.url}
               />
         </div>
     )
