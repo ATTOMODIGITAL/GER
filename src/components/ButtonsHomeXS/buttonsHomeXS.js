@@ -3,12 +3,13 @@ import "./buttonsHomeXS.scss"
 
 const ButtonsHomeXS = ({ booking, menu, extraClassname, name, restaurantLink }) => {
   const isItBooked = () => {
-    if (booking.toLowerCase() === "no") {
+    if (booking === undefined) {
       return false
     } else {
       return true
     }
   }
+  console.log(booking)
 
   return (
     <>

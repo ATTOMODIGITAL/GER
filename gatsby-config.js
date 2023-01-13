@@ -23,8 +23,8 @@ module.exports = {
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        spaceId: "wkmwvhizbvon",
-        accessToken: "_YLOZZg3qJlHVqyLW2Z0VuRNz6b1rdt4o5HuASHe94A",
+        spaceId: "ebycxjbz1rs6",
+        accessToken: "wxuxNPt9YXtrjQPTgWMQ_LtCT5hmu2Oau4SBHVDnLYg",
         downloadLocal: true,
       },
     },

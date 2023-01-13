@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from "gatsby"
 const UseListRestQuery = () => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulRestaurantes(sort: { fields: ordenListado, order: ASC }) {
+      allContentfulRestaurantes(sort: {fields: ordenListado, order: ASC}) {
         edges {
           node {
             url
@@ -15,10 +15,10 @@ const UseListRestQuery = () => {
             logo {
               gatsbyImageData(placeholder: DOMINANT_COLOR, layout: FULL_WIDTH)
             }
-            mobileListadoImgs {
+            mobileListadoImg {
               gatsbyImageData(placeholder: DOMINANT_COLOR, layout: FULL_WIDTH)
             }
-            desktopListadoImgs {
+            desktopDetalleImgs {
               gatsbyImageData(placeholder: DOMINANT_COLOR, layout: FULL_WIDTH)
             }
             carta {
@@ -26,13 +26,17 @@ const UseListRestQuery = () => {
                 url
               }
             }
+            reservar
             direccionLinea1
             direccionLinea2
             horarioLinea1
             horarioLinea2
             reservarLinkONo
             reservasDeGrupoONo
-            homeDescriptionText {
+            descripcin{
+              raw
+            }
+            breveDescripcinHomepage {
               raw
             }
             homeNameDesktop

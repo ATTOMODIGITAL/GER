@@ -6,14 +6,12 @@ const useCookiesQuery = () => {
       allContentfulCookies {
         edges {
           node {
+            seoTitle
+            seoMetaDescription
             titulo
             texto {
               raw
             }
-            seoMetaDescription {
-              seoMetaDescription
-            }
-            seoTitle
           }
         }
       }
