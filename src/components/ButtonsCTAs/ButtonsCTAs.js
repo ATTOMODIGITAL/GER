@@ -3,7 +3,7 @@ import "./ButtonsCTAs.scss"
 
 const ButtonsCTAs = ({ booking, menu, extraClassname }) => {
   const isItBooked = () => {
-    if (booking === undefined) {
+    if (booking === undefined || booking === null ) {
       return false
     } else {
       return true
