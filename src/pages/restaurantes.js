@@ -37,7 +37,7 @@ const Restaurantes = () => {
               name={rest.node.nombre}
               year={rest.node.zona}
               slug={rest.node.url}
-              imgs={rest.node.desktopListadoImgs.slice(0, 4)}
+              imgs={rest.node.desktopDetalleImgs.slice(0, 4)}
               dir1={rest.node.direccionLinea1} dir2={rest.node.direccionLinea2} time1={rest.node.horarioLinea1} time2={rest.node.horarioLinea2} 
               menu={rest.node.carta} booking={rest.node.reservarLinkONo} bookGroup={rest.node.reservasDeGrupoONo}
               
@@ -48,7 +48,7 @@ const Restaurantes = () => {
             <div className="container">
               <Carousel
                 key={i}
-                images={rest.node.mobileListadoImgs.slice(0, 4)}
+                images={rest.node.mobileListadoImg.slice(0, 4)}
                 linked={true}
                 slug={`restaurantes/${rest.node.url}`}
                 dir1={rest.node.direccionLinea1} dir2={rest.node.direccionLinea2} time1={rest.node.horarioLinea1} time2={rest.node.horarioLinea2} 

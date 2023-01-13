@@ -39,10 +39,10 @@ const IndexPage = () => {
         title="Home"
         lang="es"
         titleSEO={data.seoTitle}
-        description={data.seoMetaDescription.seoMetaDescription}
+        description={data.seoMetaDescription}
       />
       <Cookies />
-      <Home videoXS={data.videoHomeMobile} videoDesktop={data.videoHomeDesktop} restaurants={data2} imgsMob={imgsXL} imgsDesktop={imgsXL} links={urls} logos={logos} />
+      <Home videoXS={data.videoMobile} videoDesktop={data.videoDesktop} restaurants={data2} imgsMob={imgsXL} imgsDesktop={imgsXL} links={urls} logos={logos} />
     </>
   )
 }

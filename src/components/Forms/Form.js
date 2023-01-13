@@ -26,7 +26,7 @@ const Form = ({ groupOrNot }) => {
     fields: {
       rest: "", name: "", email: "", phone: "",
       message: "", legal: "", comms: false, group: group(),
-      emailToRest: useEmailRestQuery().emailRestaurante
+      emailToRest: useEmailRestQuery().email
     },
     errors: {
       rest: "", name: validators.name(),

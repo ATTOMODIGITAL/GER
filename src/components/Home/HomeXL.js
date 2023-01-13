@@ -34,7 +34,7 @@ const HomeXL = ({videoDesktop, restaurants ,imgs, links, logos }) => {
                     />
                     <div className="HomeXL__container__restaurants--details">
                       <h2 className="HomeXL__container__restaurants--details--title">{rest.node.homeNameDesktop}</h2>
-                      <p className="HomeXL__container__restaurants--details--text">{JSON.parse(rest.node.homeDescriptionText.raw).content[0].content[0].value}</p>
+                      <p className="HomeXL__container__restaurants--details--text">{JSON.parse(rest.node.breveDescripcinHomepage.raw).content[0].content[0].value}</p>
                       {/* <div className="HomeXL__container__restaurants--details--hover">
                         <div className="HomeXL__container__restaurants--details--hover--item">
                           <GoLocation style={{color:"#fff"}}/>
@@ -62,7 +62,7 @@ const HomeXL = ({videoDesktop, restaurants ,imgs, links, logos }) => {
                     />
                     <div className="HomeXL__container__restaurants--details">
                       <h2 className="HomeXL__container__restaurants--details--title">{rest.node.homeNameDesktop}</h2>
-                      <p className="HomeXL__container__restaurants--details--text">{JSON.parse(rest.node.homeDescriptionText.raw).content[0].content[0].value}</p>
+                      <p className="HomeXL__container__restaurants--details--text">{JSON.parse(rest.node.breveDescripcinHomepage.raw).content[0].content[0].value}</p>
                       <div className="HomeXL__container__restaurants--details--hover">
                         <div className="HomeXL__container__restaurants--details--hover--item">
                           <GoLocation style={{color:"#fff"}}/>

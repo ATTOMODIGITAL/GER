@@ -3,19 +3,17 @@ import { graphql, useStaticQuery } from "gatsby"
 const UseGrupoQuery = () => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulElGrupo {
+      allContentfulNuestroGrupo {
         edges {
           node {
-            seoMetaDescription {
-              seoMetaDescription
-            }
             seoTitle
-            titulo
-            subtitulo
-            texto {
+            seoMetaDescription
+            ttulo
+            subttulo
+            descripcionEmpresa {
               raw
             }
-            imagen {
+            imagenEmpresa {
               gatsbyImageData(layout: FULL_WIDTH, placeholder: DOMINANT_COLOR)
             }
           }
@@ -24,7 +22,7 @@ const UseGrupoQuery = () => {
     }
   `)
 
-  return data.allContentfulElGrupo.edges[0].node
+  return data.allContentfulNuestroGrupo.edges[0].node
 }
 
 export default UseGrupoQuery

@@ -17,21 +17,21 @@ const Nosotros = () => {
         title="El Grupo"
         lang="es"
         titleSEO={data.seoTitle}
-        description={data.seoMetaDescription.seoMetaDescription}
+        description={data.seoMetaDescription}
       />
       <Layout>
         <div className="Main__titles">
-          <h1>{data.titulo}</h1>
-          <h6>{data.subtitulo}</h6>
+          <h1>{data.ttulo}</h1>
+          <h6>{data.subttulo}</h6>
         </div>
 
         <div className="Main__text">
-          <p>{useRichText(data.texto)}</p>
+          <p>{useRichText(data.descripcionEmpresa)}</p>
         </div>
 
         <div className="Main__img">
           <GatsbyImage
-            image={getImage(data.imagen)}
+            image={getImage(data.imagenEmpresa)}
             alt="GER"
             className="Main__img--img"
           />
