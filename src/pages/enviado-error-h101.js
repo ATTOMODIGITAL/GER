@@ -15,7 +15,7 @@ const Error = () => {
         title="Contacto"
         lang="es"
         titleSEO={data.seoTitle}
-        description={data.seoMetaDescription.seoMetaDescription}
+        description={data.seoMetaDescription}
       />
       
       <div className="Main__titles">
@@ -23,7 +23,7 @@ const Error = () => {
         <h6>{data.subtitulo}</h6>
       </div>
       <div className="Main__text">
-        <p>{useRichText(data.texto)}</p>
+        <p>{useRichText(data.textoDescriptivo)}</p>
       </div>
 
       <div>

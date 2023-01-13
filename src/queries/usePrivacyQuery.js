@@ -6,10 +6,8 @@ const usePrivacidad = () => {
       allContentfulPrivacidad {
         edges {
           node {
-            seoMetaDescription {
-              seoMetaDescription
-            }
             seoTitle
+            seoMetaDescription
             texto {
               raw
             }

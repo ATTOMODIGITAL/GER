@@ -14,7 +14,7 @@ const Privacidad = () => {
         title="Política de privacidad"
         lang="es"
         titleSEO={data.seoTitle}
-        description={data.seoMetaDescription.seoMetaDescription}
+        description={data.seoMetaDescription}
       />
       <Layout>
         <div className="Main__titles">
