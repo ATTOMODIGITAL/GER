@@ -41,11 +41,7 @@ export const query = graphql`
         raw
       }
       reservar
-      carta {
-        file {
-          url
-        }
-      }
+      
       descripcin{
         raw
       }
@@ -93,7 +89,8 @@ const Restaurante = props => {
             <div className="Main__element">
               <ButtonsCTAs
                 booking={props.data.contentfulRestaurantes.reservar}
-                menu={props.data.contentfulRestaurantes.carta}
+                //menu={props.data.contentfulRestaurantes.carta}
+                menu={""}
                 extraClassname={true}
               />
             </div>
@@ -153,7 +150,8 @@ const Restaurante = props => {
             <div className="">
               <ButtonsCTAs
                 booking={props.data.contentfulRestaurantes.reservar}
-                menu={props.data.contentfulRestaurantes.carta}
+                //menu={props.data.contentfulRestaurantes.carta}
+                menu={""}
                 extraClassname={true}
               />
             </div>

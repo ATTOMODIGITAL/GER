@@ -12,16 +12,18 @@ const ButtonsCTAs = ({ booking, menu, extraClassname }) => {
 
   return (
     <>
-      {menu && 
+      {booking && 
         <div className={`ButtonsCTAs ${extraClassname ? "ExtraButtonsCTAs" : "ExtraButtonsCTA"}`}>
-          <a
-            href={`${menu?.file?.url}`}
-            // target="_blank"
-            rel="noreferrer"
-            className={`ButtonsCTAs__buton ${extraClassname ?  "" : "ExtraButtonsCTA__buton"}`}
-          >
-            Ver carta
-          </a>
+          {menu !== "" && 
+            <a
+              href={`${menu?.file?.url}`}
+              // target="_blank"
+              rel="noreferrer"
+              className={`ButtonsCTAs__buton ${extraClassname ?  "" : "ExtraButtonsCTA__buton"}`}
+            >
+              Ver carta
+            </a>
+          }
           {isItBooked() && (
             <a
               className={`ButtonsCTAs__buton ${extraClassname ?  "" : "ExtraButtonsCTA__buton"}`}
