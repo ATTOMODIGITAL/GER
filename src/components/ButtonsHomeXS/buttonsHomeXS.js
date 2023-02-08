@@ -9,20 +9,23 @@ const ButtonsHomeXS = ({ booking, menu, extraClassname, name, restaurantLink }) 
       return true
     }
   }
-  console.log(booking)
+  // console.log(name)
+  // console.log(booking)
 
   return (
     <>
-      {menu &&
+      {booking &&
         <div className={`ButtonsHomeXS ${extraClassname ? "ExtraButtonsHomeXS" : "ExtraButtonsHomeXS"}`}>
-          <a
-            href={`${menu?.file?.url}`}
-            // target="_blank"
-            rel="noreferrer"
-            className={`ButtonsHomeXS__buton ${extraClassname ?  "" : "ExtraButtonsHomeXS__buton"}`}
-          >
-            Ver carta
-          </a>
+          {menu !== "" &&
+            <a
+              href={`${menu?.file?.url}`}
+              // target="_blank"
+              rel="noreferrer"
+              className={`ButtonsHomeXS__buton ${extraClassname ?  "" : "ExtraButtonsHomeXS__buton"}`}
+            >
+              Ver carta
+            </a>
+          }
           {isItBooked() && (
             <a
               className={`ButtonsHomeXS__buton ${extraClassname ?  "" : "ExtraButtonsHomeXS__buton"}`}
