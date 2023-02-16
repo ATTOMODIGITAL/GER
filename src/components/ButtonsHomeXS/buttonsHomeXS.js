@@ -3,7 +3,7 @@ import "./buttonsHomeXS.scss"
 
 const ButtonsHomeXS = ({ booking, menu, extraClassname, name, restaurantLink }) => {
   const isItBooked = () => {
-    if (booking === undefined) {
+    if (booking === undefined || booking === null || booking === "No") {
       return false
     } else {
       return true
@@ -14,9 +14,9 @@ const ButtonsHomeXS = ({ booking, menu, extraClassname, name, restaurantLink }) 
 
   return (
     <>
-      {booking &&
+      {menu &&
         <div className={`ButtonsHomeXS ${extraClassname ? "ExtraButtonsHomeXS" : "ExtraButtonsHomeXS"}`}>
-          {menu !== "" &&
+          {/* {menu !== "" && */}
             <a
               href={`${menu?.file?.url}`}
               // target="_blank"
@@ -25,7 +25,7 @@ const ButtonsHomeXS = ({ booking, menu, extraClassname, name, restaurantLink }) 
             >
               Ver carta
             </a>
-          }
+          {/* } */}
           {isItBooked() && (
             <a
               className={`ButtonsHomeXS__buton ${extraClassname ?  "" : "ExtraButtonsHomeXS__buton"}`}
