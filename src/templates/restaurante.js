@@ -16,11 +16,7 @@ import GoBack from "../components/GoBack/GoBrack"
 import { IoLogoInstagram } from "react-icons/io"
 import { FaTripadvisor } from "react-icons/fa"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-// cartaGrupo {
-//   file {
-//     url
-//   }
-// }
+
 export const query = graphql`
   query ($slug: String!) {
     contentfulRestaurantes(url: { eq: $slug }) {
@@ -44,6 +40,11 @@ export const query = graphql`
       
       descripcin{
         raw
+      }
+      carta {
+        file {
+          url
+        }
       }
       grupoDescripcion {
         raw
@@ -89,8 +90,8 @@ const Restaurante = props => {
             <div className="Main__element">
               <ButtonsCTAs
                 booking={props.data.contentfulRestaurantes.reservar}
-                //menu={props.data.contentfulRestaurantes.carta}
-                menu={""}
+                menu={props.data.contentfulRestaurantes.carta}
+                // menu={""}
                 extraClassname={true}
               />
             </div>
@@ -150,8 +151,8 @@ const Restaurante = props => {
             <div className="">
               <ButtonsCTAs
                 booking={props.data.contentfulRestaurantes.reservar}
-                //menu={props.data.contentfulRestaurantes.carta}
-                menu={""}
+                menu={props.data.contentfulRestaurantes.carta}
+                // menu={""}
                 extraClassname={true}
               />
             </div>

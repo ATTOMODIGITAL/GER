@@ -2,8 +2,9 @@ import React from "react"
 import "./ButtonsCTAs.scss"
 
 const ButtonsCTAs = ({ booking, menu, extraClassname }) => {
+  console.log("booking CTA",booking)
   const isItBooked = () => {
-    if (booking === undefined || booking === null ) {
+    if (booking === undefined || booking === null || booking === "No") {
       return false
     } else {
       return true
@@ -12,9 +13,9 @@ const ButtonsCTAs = ({ booking, menu, extraClassname }) => {
 
   return (
     <>
-      {booking && 
+      {menu && 
         <div className={`ButtonsCTAs ${extraClassname ? "ExtraButtonsCTAs" : "ExtraButtonsCTA"}`}>
-          {menu !== "" && 
+          {/* {menu !== "" &&  */}
             <a
               href={`${menu?.file?.url}`}
               // target="_blank"
@@ -23,7 +24,7 @@ const ButtonsCTAs = ({ booking, menu, extraClassname }) => {
             >
               Ver carta
             </a>
-          }
+          {/* } */}
           {isItBooked() && (
             <a
               className={`ButtonsCTAs__buton ${extraClassname ?  "" : "ExtraButtonsCTA__buton"}`}
