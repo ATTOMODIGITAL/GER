@@ -8,6 +8,7 @@ import ProjectItem from "../components/ProjectItem/ProjectItem"
 import Carousel from "../components/Carousel/Carousel"
 import useViewport from "../hooks/useViewport"
 import useRestsPageQuery from "../queries/useRestsPageQuery"
+import { Script } from "gatsby"
 
 const Restaurantes = () => {
   const data = useListRestQuery()
@@ -23,7 +24,9 @@ const Restaurantes = () => {
         titleSEO={seoData.seoTitle}
         description={seoData.seoMetaDescription.seoMetaDescription}
       />
-
+      <Script>
+            {`function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:"c7083958ef736a97d794353925bdd4b9"})});`}
+      </Script>
       <div className="Main__titles displayNoneXL">
         <h1>Nuestros restaurantes</h1>
         <h6>Grupo El Rincón</h6>
