@@ -17,18 +17,18 @@ const ButtonsHomeXS = ({ booking, menu, extraClassname, name, restaurantLink }) 
       {menu &&
         <div className={`ButtonsHomeXS ${extraClassname ? "ExtraButtonsHomeXS" : "ExtraButtonsHomeXS"}`}>
           {/* {menu !== "" && */}
-            <a
-              href={`${menu?.file?.url}`}
-              // target="_blank"
-              rel="noreferrer"
-              className={`ButtonsHomeXS__buton ${extraClassname ?  "" : "ExtraButtonsHomeXS__buton"}`}
-            >
-              Ver carta
-            </a>
+          <a
+            href={`${menu?.file?.url}`}
+            // target="_blank"
+            rel="noreferrer"
+            className={`ButtonsHomeXS__buton ${extraClassname ? "" : "ExtraButtonsHomeXS__buton"}`}
+          >
+            Ver carta
+          </a>
           {/* } */}
           {isItBooked() && (
             <a
-              className={`ButtonsHomeXS__buton ${extraClassname ?  "" : "ExtraButtonsHomeXS__buton"}`}
+              className={`ButtonsHomeXS__buton ${extraClassname ? "" : "ExtraButtonsHomeXS__buton"}`}
               href={booking}
               // target="_blank"
               rel="noreferrer"
@@ -38,7 +38,7 @@ const ButtonsHomeXS = ({ booking, menu, extraClassname, name, restaurantLink }) 
           )}
         </div>
       }
-      {name === "PONZANITO" && 
+      {/* {name === "PONZANITO" && 
       <div className={`ButtonsHomeXS ${extraClassname ? "ExtraButtonsHomeXS" : "ExtraButtonsHomeXS"}`}>
           <a
             href={`restaurantes/${restaurantLink}`}
@@ -49,7 +49,7 @@ const ButtonsHomeXS = ({ booking, menu, extraClassname, name, restaurantLink }) 
             Próximamente
           </a>
         </div>  
-      }
+      } */}
     </>
   )
 }

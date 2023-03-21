@@ -139,14 +139,15 @@ const Restaurante = props => {
               <h6>{props.data.contentfulRestaurantes.tipoDeRestaurante}</h6>
             </div>
 
-            { props.data.contentfulRestaurantes.nombre.toUpperCase() !== "PONZANITO" ? 
-              <InfoRestXS
+            {/* { props.data.contentfulRestaurantes.nombre.toUpperCase() !== "PONZANITO" ?  */}
+            <InfoRestXS
               dir1={props.data.contentfulRestaurantes.direccionLinea1}
               dir2={props.data.contentfulRestaurantes.direccionLinea2}
               time1={props.data.contentfulRestaurantes.horarioLinea1}
               time2={props.data.contentfulRestaurantes.horarioLinea2}
-            /> : null
-            }
+            />
+            {/* : null */}
+            {/* } */}
 
             <div className="">
               <ButtonsCTAs
@@ -160,7 +161,7 @@ const Restaurante = props => {
             {/* <GroupImgs
               imgs={props.data.contentfulRestaurantes.mobileListadoImg}
             /> */}
-             <GatsbyImage
+            <GatsbyImage
               image={getImage(props.data.contentfulRestaurantes.homeImg)}
               style={{ marginBottom: "30px", marginTop: "30px" }}
               alt="img"
