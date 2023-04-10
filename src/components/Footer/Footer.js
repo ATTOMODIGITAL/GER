@@ -1,6 +1,7 @@
 import React from "react"
 
 import useFooterQuery from "../../queries/useFooterQuery"
+import { StaticImage } from "gatsby-plugin-image"
 import FooterXS from "./FooterXS"
 import FooterXL from "./FooterXL"
 import "./Footer.scss"
@@ -13,6 +14,28 @@ const Footer = () => {
     <>
       <div className="FooterXS">
         <FooterXS email={data.email} phone={data.telefono} description={JSON.parse(data.descripcionFooter.raw)} image={data.imagenFooter.file.url}/>
+      </div>
+
+      <div className="LogosKitDigital">
+        <StaticImage
+              src="../../images/logoKitDigital1.jpg"
+              alt="Attomo"
+              placeholder="none"              
+              height={70}
+              
+            />
+        <StaticImage
+              src="../../images/logoKitDigital2.jpg"
+              alt="Attomo"
+              placeholder="none"            
+              height={70}            
+            />
+          <StaticImage
+              src="../../images/logoKitDigital3.jpeg"
+              alt="Attomo"
+              placeholder="none"              
+              height={70}
+            />
       </div>
 
       <div className="FooterXL">
