@@ -9,6 +9,11 @@
     display: none;
   }
 
+  .LogosKitDigital{
+    margin: 20px 0;
+    
+  }
+
   .FooterXS {
     width: 100%;
     display: flex;
@@ -132,6 +137,12 @@
 @media (min-width: $break-point) {
   .FooterXS {
     display: none;
+  }
+
+  .LogosKitDigital{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 40px 0;
   }
 
   .FooterXL {
