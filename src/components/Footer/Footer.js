@@ -21,20 +21,20 @@ const Footer = () => {
               src="../../images/logoKitDigital1.jpg"
               alt="Attomo"
               placeholder="none"              
-              height={50}
+              height={70}
               
             />
         <StaticImage
               src="../../images/logoKitDigital2.jpg"
               alt="Attomo"
               placeholder="none"            
-              height={50}            
+              height={70}            
             />
           <StaticImage
               src="../../images/logoKitDigital3.jpeg"
               alt="Attomo"
               placeholder="none"              
-              height={50}
+              height={70}
             />
       </div>
 

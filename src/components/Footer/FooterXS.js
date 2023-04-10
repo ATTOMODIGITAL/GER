@@ -36,6 +36,29 @@ const FooterXS = ({ email, phone, description, image }) => {
 
         </div>
 
+        <div className="LogosKitDigital-mv">
+        <StaticImage
+              src="../../images/logoKitDigital1.jpg"
+              alt="Attomo"
+              placeholder="none"              
+              height={50}
+              
+              
+            />
+        <StaticImage
+              src="../../images/logoKitDigital2.jpg"
+              alt="Attomo"
+              placeholder="none"            
+              height={50}            
+            />
+          <StaticImage
+              src="../../images/logoKitDigital3.jpeg"
+              alt="Attomo"
+              placeholder="none"              
+              height={50}
+            />
+      </div>
+
       <a
         className="FooterXS__container__attomo"
         href="https://attomo.digital/"
