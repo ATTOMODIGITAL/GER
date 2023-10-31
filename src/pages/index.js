@@ -1,5 +1,6 @@
 import * as React from "react"
 import Seo from "../components/seo"
+import { Script } from "gatsby"
 import Home from "../components/Home/Home"
 import Cookies from "../components/Cookies/Cookies"
 import useHomesQuery from "../queries/useHomesQuery"
@@ -69,6 +70,7 @@ const IndexPage = () => {
         links={urls}
         logos={logos}
       />
+
     </>
   )
 }
