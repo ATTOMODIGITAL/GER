@@ -24,19 +24,43 @@ const Form = ({ groupOrNot }) => {
   const [touched, setTouched] = useState({})
   const [state, setState] = useState({
     fields: {
-      rest: "", name: "", email: "", phone: "",
-      message: "", legal: "", comms: false, group: group(),
-      emailToRest: useEmailRestQuery().email
+      rest: "",
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
+      legal: "",
+      comms: false,
+      group: group(),
+      emailToRest: useEmailRestQuery().email,
     },
     errors: {
-      rest: "", name: validators.name(),
-      email: validators.email(), phone: validators.phone(), 
-      message: validators.message(), legal: validators.legal(),
+      rest: "",
+      name: validators.name(),
+      email: validators.email(),
+      phone: validators.phone(),
+      message: validators.message(),
+      legal: validators.legal(),
       comms: "",
     },
   })
+
+  function eliminarDuplicados(arr) {
+    const uniqueArray = []
+    for (const obj of arr) {
+      if (
+        !uniqueArray.some(item => JSON.stringify(item) === JSON.stringify(obj))
+      ) {
+        uniqueArray.push(obj)
+      }
+    }
+    return uniqueArray
+  }
+
+  const arraySinDuplicados = eliminarDuplicados(data)
+
   const groupRestsOrdered = orderGroupRests(dataGroup, groupRest)
-  const orderedRests = orderRests( data )
+  const orderedRests = orderRests(arraySinDuplicados)
 
   const isValid = () => {
     const { errors } = state
@@ -48,7 +72,7 @@ const Form = ({ groupOrNot }) => {
     // send the data
     if (isValid()) {
       setLoader(true)
-      
+
       sendData(state.fields)
         .then(() => navigate("/enviado-success"))
         .catch(err => {
@@ -131,15 +155,19 @@ const Form = ({ groupOrNot }) => {
         <form method="post" className="Form" onSubmit={onSubmit}>
           <div className="Form__rests">
             {groupOrNot ? (
-              <Select 
-                labelname="Restaurante" name="rest" 
-                onChange={onChange} value={state.fields.rest}
+              <Select
+                labelname="Restaurante"
+                name="rest"
+                onChange={onChange}
+                value={state.fields.rest}
                 array={groupRestsOrdered}
               />
             ) : (
-              <Select 
-                labelname="Restaurante" name="rest" 
-                onChange={onChange} value={state.fields.rest}
+              <Select
+                labelname="Restaurante"
+                name="rest"
+                onChange={onChange}
+                value={state.fields.rest}
                 array={orderedRests}
               />
             )}
@@ -147,28 +175,52 @@ const Form = ({ groupOrNot }) => {
 
           <div className="Form__userInfo">
             <Input
-              name="name" type="text"
-              value={state.fields.name} text="Nombre"
-              extraClass="infoInput" onFocus={onFocus} 
-              onChange={onChange} onBlur={onBlur}
-              error={(state.errors.name && touched.name) 
-              || (state.errors.name && resError.error) ? state.errors.name : ""}
+              name="name"
+              type="text"
+              value={state.fields.name}
+              text="Nombre"
+              extraClass="infoInput"
+              onFocus={onFocus}
+              onChange={onChange}
+              onBlur={onBlur}
+              error={
+                (state.errors.name && touched.name) ||
+                (state.errors.name && resError.error)
+                  ? state.errors.name
+                  : ""
+              }
             />
             <Input
-              name="email" type="email"
-              value={state.fields.email} text="Email"
-              extraClass="infoInput" onFocus={onFocus}
-              onChange={onChange} onBlur={onBlur}
-              error={(state.errors.email && touched.email) 
-              || (state.errors.email && resError.error) ? state.errors.email : ""}
+              name="email"
+              type="email"
+              value={state.fields.email}
+              text="Email"
+              extraClass="infoInput"
+              onFocus={onFocus}
+              onChange={onChange}
+              onBlur={onBlur}
+              error={
+                (state.errors.email && touched.email) ||
+                (state.errors.email && resError.error)
+                  ? state.errors.email
+                  : ""
+              }
             />
             <Input
-              name="phone" type="text"
-              text="Teléfono" extraClass="infoInput"
-              value={state.fields.phone} onFocus={onFocus}
-              onChange={onChange} onBlur={onBlur}
-              error={(state.errors.phone && touched.phone) 
-              || (state.errors.phone && resError.error) ? state.errors.phone : ""}
+              name="phone"
+              type="text"
+              text="Teléfono"
+              extraClass="infoInput"
+              value={state.fields.phone}
+              onFocus={onFocus}
+              onChange={onChange}
+              onBlur={onBlur}
+              error={
+                (state.errors.phone && touched.phone) ||
+                (state.errors.phone && resError.error)
+                  ? state.errors.phone
+                  : ""
+              }
             />
           </div>
 
@@ -178,15 +230,20 @@ const Form = ({ groupOrNot }) => {
                 <textarea
                   name="message"
                   className="Input__container--input__field message-container"
-                  type="text" placeholder=" " value={state.fields.message}
-                  onChange={onChange} onBlur={onBlur} onFocus={onFocus}
+                  type="text"
+                  placeholder=" "
+                  value={state.fields.message}
+                  onChange={onChange}
+                  onBlur={onBlur}
+                  onFocus={onFocus}
                 />
                 <span className="Input__container--input__label">Mensaje</span>
                 <p className="Input__container--input__error">
                   <small>
-                  {(state.errors.message && touched.message) 
-                  || (state.errors.message && resError.error) ? 
-                  state.errors.message : ""}
+                    {(state.errors.message && touched.message) ||
+                    (state.errors.message && resError.error)
+                      ? state.errors.message
+                      : ""}
                   </small>
                 </p>
               </label>
