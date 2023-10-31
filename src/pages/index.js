@@ -7,7 +7,6 @@ import useHomesQuery from "../queries/useHomesQuery"
 //import useRichText from "../hooks/useRichText"
 import useListRestQuery from "../queries/useListRestQuery"
 import useViewport from "../hooks/useViewport"
-import { Script } from "gatsby"
 
 const IndexPage = () => {
   const data = useHomesQuery()
