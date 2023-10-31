@@ -15,20 +15,6 @@ const Restaurantes = () => {
   const size = useWindowSize()
   useViewport()
 
-  function eliminarDuplicados(arr) {
-    const uniqueArray = []
-    for (const obj of arr) {
-      if (
-        !uniqueArray.some(item => JSON.stringify(item) === JSON.stringify(obj))
-      ) {
-        uniqueArray.push(obj)
-      }
-    }
-    return uniqueArray
-  }
-
-  const arraySinDuplicados = eliminarDuplicados(data)
-
   return (
     <Layout>
       <Seo
@@ -37,13 +23,7 @@ const Restaurantes = () => {
         titleSEO={seoData.seoTitle}
         description={seoData.seoMetaDescription.seoMetaDescription}
       />
-<<<<<<< Updated upstream
 
-=======
-      <Script>
-        {`function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:"c7083958ef736a97d794353925bdd4b9"})});`}
-      </Script>
->>>>>>> Stashed changes
       <div className="Main__titles displayNoneXL">
         <h1>Nuestros restaurantes</h1>
         <h6>Grupo El Rincón</h6>
@@ -51,7 +31,7 @@ const Restaurantes = () => {
 
       <div className="Main__text">
         {size > 880 // ------------------------------ PROJECT ITEM DESKTOP
-          ? arraySinDuplicados.map((rest, i) => (
+          ? data.map((rest, i) => (
               <ProjectItem
                 key={i}
                 name={rest.node.nombre}
@@ -68,7 +48,7 @@ const Restaurantes = () => {
               />
             ))
           : // ------------------------------------------ CAROUSEL MOBILE
-            arraySinDuplicados.map((rest, i) => (
+            data.map((rest, i) => (
               <div className="container">
                 <Carousel
                   key={i}
