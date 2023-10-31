@@ -55,9 +55,17 @@ const IndexPage = () => {
         description={data.seoMetaDescription}
       />
       <Cookies />
-<<<<<<< Updated upstream
-      <Home videoXS={data.videoMobile} videoDesktop={data.videoDesktop} restaurants={data2} imgsMob={imgsXL} imgsDesktop={imgsXL} links={urls} logos={logos} />
-=======
+
+      <Home
+        videoXS={data.videoMobile}
+        videoDesktop={data.videoDesktop}
+        restaurants={data2}
+        imgsMob={imgsXL}
+        imgsDesktop={imgsXL}
+        links={urls}
+        logos={logos}
+      />
+
       <Script>
         {`function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:"c7083958ef736a97d794353925bdd4b9"})});`}
       </Script>
@@ -70,7 +78,6 @@ const IndexPage = () => {
         links={urls}
         logos={logos}
       />
->>>>>>> Stashed changes
     </>
   )
 }
