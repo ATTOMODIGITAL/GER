@@ -30,42 +30,51 @@ const Restaurantes = () => {
       </div>
 
       <div className="Main__text">
-      {size > 880 // ------------------------------ PROJECT ITEM DESKTOP
-        ? data.map((rest, i) => (
-            <ProjectItem
-              key={i}
-              name={rest.node.nombre}
-              year={rest.node.zona}
-              slug={rest.node.url}
-              imgs={rest.node.desktopDetalleImgs.slice(0, 4)}
-              dir1={rest.node.direccionLinea1} dir2={rest.node.direccionLinea2} time1={rest.node.horarioLinea1} time2={rest.node.horarioLinea2} 
-              menu={rest.node.carta} booking={rest.node.reservar} bookGroup={rest.node.reservasDeGrupoONo}
-              
-            />
-          ))
-        : // ------------------------------------------ CAROUSEL MOBILE
-          data.map((rest, i) => (
-            <div className="container">
-              <Carousel
+        {size > 880 // ------------------------------ PROJECT ITEM DESKTOP
+          ? data.map((rest, i) => (
+              <ProjectItem
                 key={i}
-                images={rest.node.mobileListadoImg.slice(0, 4)}
-                linked={true}
-                slug={`restaurantes/${rest.node.url}`}
-                dir1={rest.node.direccionLinea1} dir2={rest.node.direccionLinea2} time1={rest.node.horarioLinea1} time2={rest.node.horarioLinea2} 
-                menu={rest.node.carta} booking={rest.node.reservar} bookGroup={rest.node.reservasDeGrupoONo}
+                name={rest.node.nombre}
+                year={rest.node.zona}
+                slug={rest.node.url}
+                imgs={rest.node.desktopDetalleImgs.slice(0, 4)}
+                dir1={rest.node.direccionLinea1}
+                dir2={rest.node.direccionLinea2}
+                time1={rest.node.horarioLinea1}
+                time2={rest.node.horarioLinea2}
+                menu={rest.node.carta}
+                booking={rest.node.reservar}
+                bookGroup={rest.node.reservasDeGrupoONo}
               />
-              <div className="justify-content-center text-center mb-5 mt-2">
-                <p>
-                  <b style={{fontSize: 16, lineHeight: 0}}>{rest.node.nombre}</b>
-                  <br />
-                  {rest.node.zona}
-                </p>
+            ))
+          : // ------------------------------------------ CAROUSEL MOBILE
+            data.map((rest, i) => (
+              <div className="container">
+                <Carousel
+                  key={i}
+                  images={rest.node.mobileListadoImg.slice(0, 4)}
+                  linked={true}
+                  slug={`restaurantes/${rest.node.url}`}
+                  dir1={rest.node.direccionLinea1}
+                  dir2={rest.node.direccionLinea2}
+                  time1={rest.node.horarioLinea1}
+                  time2={rest.node.horarioLinea2}
+                  menu={rest.node.carta}
+                  booking={rest.node.reservar}
+                  bookGroup={rest.node.reservasDeGrupoONo}
+                />
+                <div className="justify-content-center text-center mb-5 mt-2">
+                  <p>
+                    <b style={{ fontSize: 16, lineHeight: 0 }}>
+                      {rest.node.nombre}
+                    </b>
+                    <br />
+                    {rest.node.zona}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
-      
+            ))}
       </div>
-
     </Layout>
   )
 }
