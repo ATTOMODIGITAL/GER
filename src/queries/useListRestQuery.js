@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from "gatsby"
 const UseListRestQuery = () => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulRestaurantes(sort: {fields: ordenListado, order: ASC}) {
+      allContentfulRestaurantes(sort: { fields: ordenListado, order: ASC }) {
         edges {
           node {
             url
@@ -33,7 +33,7 @@ const UseListRestQuery = () => {
             horarioLinea2
             reservarLinkONo
             reservasDeGrupoONo
-            descripcin{
+            descripcin {
               raw
             }
             breveDescripcinHomepage {
@@ -45,7 +45,6 @@ const UseListRestQuery = () => {
       }
     }
   `)
-
   return data.allContentfulRestaurantes.edges
 }
 
