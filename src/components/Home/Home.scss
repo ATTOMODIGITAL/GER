@@ -202,7 +202,7 @@
         height: 40vh;
         position: relative;
         &--restCard{
-          width: 25%;
+          flex: 1;
           height: 100%;
           background-color: rgb(255, 255, 255);
           &--img{
